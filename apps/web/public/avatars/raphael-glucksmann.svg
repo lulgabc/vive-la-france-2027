@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Raphaël Glucksmann">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E75480" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#060a11" stop-opacity="0.98"/>
+    </linearGradient>
+    <pattern id="p" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M12 0H0V12" fill="none" stroke="#ffffff" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <circle cx="64" cy="64" r="62" fill="url(#g)" stroke="#E75480" stroke-opacity="0.55" stroke-width="2"/>
+  <circle cx="64" cy="64" r="56" fill="url(#p)"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#ffffff" fill-opacity="0.96">RG</text>
+  <text x="64" y="102" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" letter-spacing="3" fill="#ffffff" fill-opacity="0.62">PS</text>
+</svg>

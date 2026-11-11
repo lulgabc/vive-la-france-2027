@@ -1,0 +1,816 @@
+{
+ "source": "Conseil constitutionnel — parrainages des candidats à l’élection présidentielle 2022",
+ "source_url": "https://www.data.gouv.fr/fr/datasets/parrainages-des-candidats-a-lelection-presidentielle-francaise-de-2022/",
+ "as_of": "2022-03-07",
+ "cycle": 2022,
+ "total": 13427,
+ "bloc_totals": {
+  "left": 5290,
+  "center": 2098,
+  "right": 2638,
+  "rn": 622,
+  "rec": 741,
+  "other": 2038
+ },
+ "candidates": [
+  {
+   "name": "PÉCRESSE Valérie",
+   "candidate_id": null,
+   "bloc": "right",
+   "total": 2636,
+   "departments": 107,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1322,
+    "Conseillère départementale": 330,
+    "Conseiller départemental": 261,
+    "Conseillère régionale": 163,
+    "Conseiller régional": 125,
+    "Sénateur": 90
+   }
+  },
+  {
+   "name": "MACRON Emmanuel",
+   "candidate_id": null,
+   "bloc": "center",
+   "total": 2098,
+   "departments": 107,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1215,
+    "Député": 180,
+    "Députée": 155,
+    "Conseillère départementale": 90,
+    "Conseiller départemental": 86,
+    "Conseillère régionale": 58
+   }
+  },
+  {
+   "name": "HIDALGO Anne",
+   "candidate_id": null,
+   "bloc": "left",
+   "total": 1440,
+   "departments": 96,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 688,
+    "Conseillère départementale": 199,
+    "Conseiller départemental": 189,
+    "Conseiller régional": 85,
+    "Conseillère régionale": 84,
+    "Sénateur": 38
+   }
+  },
+  {
+   "name": "MÉLENCHON Jean-Luc",
+   "candidate_id": "jean-luc-melenchon",
+   "bloc": "left",
+   "total": 906,
+   "departments": 104,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 667,
+    "Conseillère départementale": 33,
+    "Membre d'une assemblée d'une collectivité territoriale d'outre-mer à statut particulier": 31,
+    "Conseiller départemental": 29,
+    "Conseiller régional": 24,
+    "Conseillère régionale": 21
+   }
+  },
+  {
+   "name": "ZEMMOUR Éric",
+   "candidate_id": "eric-zemmour",
+   "bloc": "rec",
+   "total": 741,
+   "departments": 95,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 632,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 30,
+    "Conseillère départementale": 12,
+    "Conseiller départemental": 11,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 9,
+    "Conseillère régionale": 9
+   }
+  },
+  {
+   "name": "JADOT Yannick",
+   "candidate_id": "yannick-jadot",
+   "bloc": "left",
+   "total": 712,
+   "departments": 98,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 292,
+    "Conseillère régionale": 77,
+    "Conseillère départementale": 70,
+    "Conseiller régional": 60,
+    "Conseiller départemental": 50,
+    "Conseillère métropolitaine de Lyon": 27
+   }
+  },
+  {
+   "name": "LASSALLE Jean",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 642,
+   "departments": 86,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 606,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 16,
+    "Conseiller départemental": 7,
+    "Membre de l'Assemblée de Corse": 3,
+    "Conseillère départementale": 2,
+    "Conseillère à l'Assemblée des Français de l'étranger": 2
+   }
+  },
+  {
+   "name": "ROUSSEL Fabien",
+   "candidate_id": "fabien-roussel",
+   "bloc": "left",
+   "total": 626,
+   "departments": 95,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 394,
+    "Conseillère départementale": 64,
+    "Conseiller départemental": 49,
+    "Conseillère régionale": 36,
+    "Conseiller régional": 26,
+    "Sénateur": 8
+   }
+  },
+  {
+   "name": "LE PEN Marine",
+   "candidate_id": "marine-le-pen",
+   "bloc": "rn",
+   "total": 622,
+   "departments": 101,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 292,
+    "Conseiller régional": 128,
+    "Conseillère régionale": 113,
+    "Conseiller départemental": 15,
+    "Conseillère départementale": 14,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 13
+   }
+  },
+  {
+   "name": "DUPONT-AIGNAN Nicolas",
+   "candidate_id": "nicolas-dupont-aignan",
+   "bloc": "other",
+   "total": 600,
+   "departments": 84,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 569,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 19,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 3,
+    "Conseiller départemental": 3,
+    "Conseillère régionale": 2,
+    "Conseillère départementale": 2
+   }
+  },
+  {
+   "name": "POUTOU Philippe",
+   "candidate_id": null,
+   "bloc": "left",
+   "total": 596,
+   "departments": 91,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 506,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 33,
+    "Conseiller départemental": 13,
+    "Conseillère départementale": 12,
+    "Membre d'une assemblée d'une collectivité territoriale d'outre-mer à statut particulier": 9,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 6
+   }
+  },
+  {
+   "name": "ARTHAUD Nathalie",
+   "candidate_id": "nathalie-arthaud",
+   "bloc": "left",
+   "total": 576,
+   "departments": 75,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 525,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 36,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 14,
+    "Conseiller départemental": 1
+   }
+  },
+  {
+   "name": "ASSELINEAU François",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 293,
+   "departments": 59,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 233,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 38,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 20,
+    "Conseillère départementale": 1,
+    "Président du conseil consulaire": 1
+   }
+  },
+  {
+   "name": "TAUBIRA Christiane",
+   "candidate_id": null,
+   "bloc": "left",
+   "total": 274,
+   "departments": 80,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 170,
+    "Membre d'une assemblée d'une collectivité territoriale d'outre-mer à statut particulier": 23,
+    "Conseiller départemental": 18,
+    "Conseillère départementale": 16,
+    "Conseillère régionale": 13,
+    "Conseiller régional": 12
+   }
+  },
+  {
+   "name": "KAZIB Anasse",
+   "candidate_id": null,
+   "bloc": "left",
+   "total": 160,
+   "departments": 46,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 155,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 3,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 2
+   }
+  },
+  {
+   "name": "THOUY Hélène",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 139,
+   "departments": 68,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 120,
+    "Conseillère départementale": 7,
+    "Conseillère régionale": 2,
+    "Conseiller départemental": 2,
+    "Président d'un EPCI à fiscalité propre": 2,
+    "Conseiller régional": 1
+   }
+  },
+  {
+   "name": "KOENIG Gaspard",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 107,
+   "departments": 53,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 86,
+    "Membre de l'Assemblée de Corse": 6,
+    "Conseiller départemental": 4,
+    "Sénateur": 3,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 2,
+    "Conseiller de Paris": 1
+   }
+  },
+  {
+   "name": "KUZMANOVIC Georges",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 49,
+   "departments": 26,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 46,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 1,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 1,
+    "Conseillère régionale": 1
+   }
+  },
+  {
+   "name": "MIGUET Nicolas",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 40,
+   "departments": 29,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 38,
+    "Conseillère départementale": 1,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 1
+   }
+  },
+  {
+   "name": "EGGER Clara",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 36,
+   "departments": 26,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 34,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 1,
+    "Présidente du conseil consulaire": 1
+   }
+  },
+  {
+   "name": "CHICHE Arnaud",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 21,
+   "departments": 16,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 19,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 1,
+    "Président d'un EPCI à fiscalité propre": 1
+   }
+  },
+  {
+   "name": "MARTINEZ Antoine",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 13,
+   "departments": 9,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 13
+   }
+  },
+  {
+   "name": "FORTANÉ Jean-Marc",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 12,
+   "departments": 11,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 12
+   }
+  },
+  {
+   "name": "SMATI  Rafik",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 10,
+   "departments": 7,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 8,
+    "Conseiller départemental": 1,
+    "Conseillère départementale": 1
+   }
+  },
+  {
+   "name": "ROCCA Martin",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 9,
+   "departments": 9,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 9
+   }
+  },
+  {
+   "name": "CAU Marie",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 8,
+   "departments": 5,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 8
+   }
+  },
+  {
+   "name": "WAECHTER Antoine",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 7,
+   "departments": 7,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 6,
+    "Conseiller régional": 1
+   }
+  },
+  {
+   "name": "BÉKAERT Corinne",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 6,
+   "departments": 6,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 6
+   }
+  },
+  {
+   "name": "MEURICE Guillaume",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 6,
+   "departments": 6,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 3,
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 1,
+    "Conseiller départemental": 1,
+    "Maire déléguée d'une commune associée ou d'une commune déléguée": 1
+   }
+  },
+  {
+   "name": "BARNIER Michel",
+   "candidate_id": null,
+   "bloc": "right",
+   "total": 2,
+   "departments": 2,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 2
+   }
+  },
+  {
+   "name": "RIVOAL Stéphanie",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 2,
+   "departments": 2,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 2
+   }
+  },
+  {
+   "name": "VIEIRA Gildas",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 2,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 2
+   }
+  },
+  {
+   "name": "FIORILE Eric Régis",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 2,
+   "departments": 2,
+   "top_office": "Maire délégué d'une commune associée ou d'une commune déléguée",
+   "office_counts": {
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 1,
+    "Maire": 1
+   }
+  },
+  {
+   "name": "LAURUT Christian",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 2,
+   "departments": 2,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 2
+   }
+  },
+  {
+   "name": "JUVING-BRUNET Alexandre",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 2,
+   "departments": 2,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 2
+   }
+  },
+  {
+   "name": "LACROIX  Nicolas",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 2,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 2
+   }
+  },
+  {
+   "name": "MARECHAL Philippe Célestin",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "MAZUEL Philippe",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "SCHOVANEC Josef",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "FESSARD DE FOUCAULT Bertrand",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "PHILIPPOT Florian",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "COJAN Patrick",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "HOLLANDE François",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "LAM Yaya",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "MÉNARD Emmanuelle",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "WENDLINGER Stéphane",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "DELGA Carole",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "CAHEZ Thierry",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "ROCQUEMONT Antoine",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "SAINT-PAUL Laetitia",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire délégué d'une commune associée ou d'une commune déléguée",
+   "office_counts": {
+    "Maire délégué d'une commune associée ou d'une commune déléguée": 1
+   }
+  },
+  {
+   "name": "BORLOO Jean-Louis",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Conseiller à l'Assemblée des Français de l'étranger",
+   "office_counts": {
+    "Conseiller à l'Assemblée des Français de l'étranger": 1
+   }
+  },
+  {
+   "name": "MONTEBOURG Arnaud",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "BLANCHET Christophe",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "MONTSERRAT Paul",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "PESQUET Thomas",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "ARNAL Christian-Jacques",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "GIFFON Jean Baptiste",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "GLUCKSMANN Raphaël",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "PHILIPPE Edouard",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "RUFFIN François",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "CAZENEUVE  Bernard",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "CHAUDOT Michel",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "DELABY Vincent",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Maire",
+   "office_counts": {
+    "Maire": 1
+   }
+  },
+  {
+   "name": "HERROU Cédric",
+   "candidate_id": null,
+   "bloc": "other",
+   "total": 1,
+   "departments": 1,
+   "top_office": "Député",
+   "office_counts": {
+    "Député": 1
+   }
+  }
+ ]
+}

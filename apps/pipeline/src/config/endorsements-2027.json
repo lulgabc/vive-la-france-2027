@@ -1,0 +1,138 @@
+{
+  "as_of": "2026-11-10",
+  "note": "Curated public endorsements and parrainage promises. Parrainage counts are candidate/team claims unless published by the Conseil constitutionnel; they are not votes and not probabilities.",
+  "items": [
+    {
+      "candidate_id": "edouard-philippe",
+      "endorser_name": "Gérald Darmanin",
+      "endorser_type": "office",
+      "office": "Ministre de la Justice",
+      "party_id": "renaissance",
+      "weight": 7,
+      "announced_at": "2026-08-31",
+      "source_name": "CNEWS",
+      "source_url": "https://www.cnews.fr/france/2026-11-03/presidentielle-2027-gerald-darmanin-appelle-gabriel-attal-et-bruno-retailleau-se",
+      "quote": "Il faut se rassembler derrière Édouard Philippe."
+    },
+    {
+      "candidate_id": "edouard-philippe",
+      "endorser_name": "Maud Bregeon",
+      "endorser_type": "office",
+      "office": "Porte-parole du gouvernement",
+      "party_id": "renaissance",
+      "weight": 5,
+      "announced_at": "2026-06-30",
+      "source_name": "Le Parisien",
+      "source_url": "https://www.leparisien.fr/elections/presidentielle/presidentielle-2027-attal-philippe-glucksmann-lisnard-qui-veut-ou-pas-dune-grande-primaire-des-democrates-02-11-2026-OYZWGPQK7JAYJE3MKFE3ZGBP4U.php",
+      "quote": "Édouard Philippe reste de très loin le mieux placé pour se qualifier au second tour."
+    },
+    {
+      "candidate_id": "raphael-glucksmann",
+      "endorser_name": "Olivier Faure",
+      "endorser_type": "party",
+      "office": "Premier secrétaire du Parti socialiste",
+      "party_id": "ps",
+      "weight": 8,
+      "announced_at": "2026-10-15",
+      "source_name": "RTL",
+      "source_url": "https://www.rtl.fr/actu/politique/presidentielle-2027-marine-tondelier-va-t-elle-maintenir-sa-candidature-7900689377",
+      "quote": "Olivier Faure confirme son soutien à Raphaël Glucksmann pour la présidentielle 2027."
+    },
+    {
+      "candidate_id": "raphael-glucksmann",
+      "endorser_name": "Philippe Brun",
+      "endorser_type": "office",
+      "office": "Député du Val-d’Oise",
+      "party_id": "ps",
+      "weight": 4,
+      "announced_at": "2026-08-28",
+      "source_name": "Le Parisien",
+      "source_url": "https://www.leparisien.fr/politique/presidentielle-2027-qui-sont-les-candidats-qui-pourrait-se-lancer-dans-la-course-notre-suivi-en-temps-reel-12-09-2026-KQJ4A7QVERCNJCLGCJGJYY2O74.php",
+      "quote": "Le patron des députés socialistes annonce soutenir la candidature de Raphaël Glucksmann."
+    },
+    {
+      "candidate_id": "raphael-glucksmann",
+      "endorser_name": "Yannick Jadot",
+      "endorser_type": "office",
+      "office": "Sénateur de Paris",
+      "party_id": "eelv",
+      "weight": 5,
+      "announced_at": "2026-10-20",
+      "source_name": "RTL",
+      "source_url": "https://www.rtl.fr/actu/politique/presidentielle-2027-marine-tondelier-va-t-elle-maintenir-sa-candidature-7900689377",
+      "quote": "Certains écologistes préfèrent se rallier à Raphaël Glucksmann, à l’image du sénateur Yannick Jadot."
+    },
+    {
+      "candidate_id": "jean-luc-melenchon",
+      "endorser_name": "Majorité des députés communistes",
+      "endorser_type": "collective",
+      "office": "Groupe communiste à l’Assemblée nationale",
+      "party_id": "pcf",
+      "weight": 6,
+      "announced_at": "2026-11-05",
+      "source_name": "Europe 1",
+      "source_url": "https://www.europe1.fr/politique/presidentielle-2027-jean-luc-melenchon-en-hausse-dans-les-sondages-le-leader-insoumis-publie-son-livre-programme-1212635",
+      "quote": "La majorité des députés communistes annoncent lâcher Fabien Roussel pour rejoindre les rangs insoumis."
+    },
+    {
+      "candidate_id": "marine-le-pen",
+      "endorser_name": "Jordan Bardella",
+      "endorser_type": "party",
+      "office": "Président du Rassemblement national",
+      "party_id": "rn",
+      "weight": 8,
+      "announced_at": "2026-07-07",
+      "source_name": "LCP",
+      "source_url": "https://lcp.fr/actualites/presidentielle-2027-la-liste-des-candidats-deja-en-lice-et-des-pretendants-436373",
+      "quote": "Marine Le Pen confirme sa candidature à l’élection présidentielle."
+    },
+    {
+      "candidate_id": "marine-le-pen",
+      "endorser_name": "Louis Aliot",
+      "endorser_type": "office",
+      "office": "Maire de Perpignan, vice-président du RN",
+      "party_id": "rn",
+      "weight": 5,
+      "announced_at": "2026-09-03",
+      "source_name": "L’Indépendant",
+      "source_url": "https://www.lindependant.fr/2026/09/03/presidentielle-2027-marine-le-pen-a-rassemble-400-parrainages-jean-luc-melenchon-a-peine-200-les-500-signatures-necessaires-a-chaque-candidat-une-13533779.php",
+      "quote": "Le Rassemblement national disposerait déjà de 400 signatures d’élus."
+    },
+    {
+      "candidate_id": "david-lisnard",
+      "endorser_name": "Promesses de parrainages",
+      "endorser_type": "collective",
+      "office": "Élus locaux",
+      "party_id": "lr",
+      "weight": 6,
+      "announced_at": "2026-09-02",
+      "source_name": "PresiTracker2027",
+      "source_url": "https://presitracker2027.fr/parrainages",
+      "quote": "500 promesses de parrainages annoncées au 2 septembre 2026, non vérifiées par le Conseil constitutionnel."
+    },
+    {
+      "candidate_id": "dominique-de-villepin",
+      "endorser_name": "Promesses de parrainages",
+      "endorser_type": "collective",
+      "office": "Élus locaux",
+      "party_id": "divers",
+      "weight": 5,
+      "announced_at": "2026-10-22",
+      "source_name": "PresiTracker2027",
+      "source_url": "https://presitracker2027.fr/parrainages",
+      "quote": "300 promesses de parrainages annoncées au 22 octobre 2026, non vérifiées."
+    },
+    {
+      "candidate_id": "jean-luc-melenchon",
+      "endorser_name": "Promesses de parrainages",
+      "endorser_type": "collective",
+      "office": "Élus locaux",
+      "party_id": "lfi",
+      "weight": 4,
+      "announced_at": "2026-09-03",
+      "source_name": "L’Indépendant",
+      "source_url": "https://www.lindependant.fr/2026/09/03/presidentielle-2027-marine-le-pen-a-rassemble-400-parrainages-jean-luc-melenchon-a-peine-200-les-500-signatures-necessaires-a-chaque-candidat-une-13533779.php",
+      "quote": "Jean-Luc Mélenchon comptait un peu plus de 200 parrainages début septembre 2026."
+    }
+  ]
+}

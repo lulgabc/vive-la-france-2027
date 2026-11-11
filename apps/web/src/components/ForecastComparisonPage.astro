@@ -1,0 +1,267 @@
+---
+import { env } from 'cloudflare:workers';
+import { readForecastComparison } from '../lib/api';
+import { BLOCS, BLOC_META } from '../lib/legislative';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const db = (env as any).DB as D1Database | undefined;
+const comparison = await readForecastComparison(db);
+
+const copy = {
+  fr: {
+    kicker: 'Prévisions / audit',
+    title: 'Scénarios enregistrés',
+    subtitle: 'Chaque snapshot quotidien conserve les sièges par bloc et les intervalles à 80 %. Les courbes se remplissent au fil des jours.',
+    runs: 'runs',
+    outcomes: 'résultats',
+    latest: 'Dernier snapshot',
+    seats: 'sièges',
+    range: '80 %',
+    history: 'Historique',
+    noHistory: 'Un seul snapshot pour le moment.',
+    table: 'Journal des runs',
+    date: 'Date',
+    model: 'Modèle',
+    seed: 'Seed',
+    empty: 'Aucun scénario enregistré. Lancez le cron quotidien ou POST /admin/forecast/snapshot.',
+    note: 'Les sièges sont une sortie de modèle mécanique, pas une prévision. Les intervalles reflètent l’incertitude du modèle, pas l’issue de l’élection.',
+  },
+  en: {
+    kicker: 'Forecasts / audit',
+    title: 'Stored scenarios',
+    subtitle: 'Each daily snapshot keeps seats per bloc and 80% intervals. The series fills up over time.',
+    runs: 'runs',
+    outcomes: 'outcomes',
+    latest: 'Latest snapshot',
+    seats: 'seats',
+    range: '80%',
+    history: 'History',
+    noHistory: 'Only one snapshot so far.',
+    table: 'Run log',
+    date: 'Date',
+    model: 'Model',
+    seed: 'Seed',
+    empty: 'No stored scenario. Run the daily cron or POST /admin/forecast/snapshot.',
+    note: 'Seats are a mechanical model output, not a forecast. Intervals reflect model uncertainty, not the election outcome.',
+  },
+  zh: {
+    kicker: '预测 / 审计',
+    title: '已保存情景',
+    subtitle: '每日快照保存各阵营席位和 80% 区间；曲线会随时间累积。',
+    runs: '次运行',
+    outcomes: '条结果',
+    latest: '最新快照',
+    seats: '席',
+    range: '80%',
+    history: '历史',
+    noHistory: '目前只有一个快照。',
+    table: '运行日志',
+    date: '日期',
+    model: '模型',
+    seed: '随机种子',
+    empty: '暂无情景。运行每日 cron 或 POST /admin/forecast/snapshot。',
+    note: '席位是机械模型输出，不是预测。区间反映模型不确定性，不是选举结果。',
+  },
+}[lang];
+
+const locale = lang === 'zh' ? 'zh-CN' : lang === 'en' ? 'en-GB' : 'fr-FR';
+const dateFmt = new Intl.DateTimeFormat(locale, { dateStyle: 'short', timeStyle: 'short' });
+
+type Run = {
+  id: string;
+  model_version: string;
+  election_id: string;
+  created_at: string;
+  seed: number;
+  outcomes: number;
+};
+
+const runs = comparison.runs as Run[];
+const seatRows = comparison.seats as Array<{
+  id: string;
+  model_version: string;
+  created_at: string;
+  bloc: string;
+  seats: number;
+  p10: number | null;
+  p90: number | null;
+}>;
+
+const runsByModel = new Map<string, Run[]>();
+for (const run of runs) {
+  const list = runsByModel.get(run.model_version) ?? [];
+  list.push(run);
+  runsByModel.set(run.model_version, list);
+}
+
+const seatsByRun = new Map<string, Array<{ bloc: string; seats: number; p10: number | null; p90: number | null }>>();
+for (const row of seatRows) {
+  const list = seatsByRun.get(row.id) ?? [];
+  list.push(row);
+  seatsByRun.set(row.id, list);
+}
+
+// One point per model per day: prefer the compact snapshot stored later in the day.
+const seriesByModel = new Map<string, Map<string, Record<string, number>>>();
+for (const row of seatRows) {
+  const day = row.created_at.slice(0, 10);
+  const modelSeries = seriesByModel.get(row.model_version) ?? new Map();
+  const point = modelSeries.get(day) ?? {};
+  point[row.bloc] = row.seats;
+  modelSeries.set(day, point);
+  seriesByModel.set(row.model_version, modelSeries);
+}
+
+const latestModels = [...runsByModel.entries()]
+  .map(([model, list]) => {
+    const latest = [...list].sort((a, b) => b.created_at.localeCompare(a.created_at))[0];
+    const seats = seatsByRun.get(latest.id) ?? [];
+    return { model, latest, seats };
+  })
+  .filter((item) => item.seats.length > 0)
+  .sort((a, b) => b.latest.created_at.localeCompare(a.latest.created_at))
+  .slice(0, 8);
+
+function sparkPoints(values: number[], width = 160, height = 30): string {
+  if (values.length < 2) return '';
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const span = max - min || 1;
+  return values
+    .map((value, index) => {
+      const x = (index / (values.length - 1)) * width;
+      const y = height - 3 - ((value - min) / span) * (height - 6);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(' ');
+}
+
+function modelLabel(model: string): string {
+  return model
+    .replace('mechanical legislative scenario: ', '')
+    .replace(' + national bloc swing + ', ' · ')
+    .replace(' runoff affinity', '');
+}
+---
+
+<section class="border-b border-rule">
+  <div class="container-page py-8 md:py-10">
+    <div class="kicker">{copy.kicker}</div>
+    <h1 class="mt-2 font-display text-4xl md:text-5xl tracking-tight">{copy.title}</h1>
+    <p class="mt-3 max-w-3xl text-sm text-muted">{copy.subtitle}</p>
+  </div>
+</section>
+
+<section class="container-page py-6 md:py-8">
+  <div class="grid gap-3 sm:grid-cols-3">
+    <div class="border border-rule bg-white/30 p-4">
+      <div class="kicker">{copy.runs}</div>
+      <div class="mt-1 font-display text-3xl font-semibold tabular-nums">{runs.length}</div>
+    </div>
+    <div class="border border-rule bg-white/30 p-4">
+      <div class="kicker">{copy.outcomes}</div>
+      <div class="mt-1 font-display text-3xl font-semibold tabular-nums">{runs.reduce((sum, run) => sum + Number(run.outcomes ?? 0), 0)}</div>
+    </div>
+    <div class="border border-rule bg-white/30 p-4">
+      <div class="kicker">{copy.latest}</div>
+      <div class="mt-1 font-display text-2xl font-semibold tabular-nums">{runs.length ? dateFmt.format(new Date(runs[runs.length - 1].created_at)) : '—'}</div>
+    </div>
+  </div>
+
+  {runs.length === 0 ? (
+    <p class="mt-6 text-sm text-muted">{copy.empty}</p>
+  ) : (
+    <>
+      <div class="mt-6 grid gap-3">
+        {latestModels.map(({ model, latest, seats }) => {
+          const modelSeries = seriesByModel.get(model) ?? new Map();
+          const days = [...modelSeries.keys()].sort();
+          const total = seats.reduce((sum, row) => sum + Number(row.seats ?? 0), 0);
+          return (
+            <article class="border border-rule bg-white/30 p-4">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <div>
+                  <div class="font-mono text-[9px] uppercase tracking-[0.12em] text-muted">{latest.election_id} · seed {latest.seed} · {latest.outcomes} outcomes</div>
+                  <h2 class="mt-0.5 text-sm font-semibold">{modelLabel(model)}</h2>
+                </div>
+                <div class="text-right font-mono text-[10px] text-muted">
+                  {copy.latest}: {dateFmt.format(new Date(latest.created_at))}<br />{copy.seats}: {total}
+                </div>
+              </div>
+              <div class="mt-3 flex h-4 w-full overflow-hidden border border-rule">
+                {BLOCS.map((bloc) => {
+                  const row = seats.find((item) => item.bloc === bloc);
+                  const count = Number(row?.seats ?? 0);
+                  return (
+                    <div
+                      class="h-full"
+                      style={`width:${(count / Math.max(1, total)) * 100}%; background:${BLOC_META[bloc].color}`}
+                      title={`${BLOC_META[bloc][lang]}: ${count}`}
+                    ></div>
+                  );
+                })}
+              </div>
+              <div class="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-6">
+                {BLOCS.map((bloc) => {
+                  const row = seats.find((item) => item.bloc === bloc);
+                  if (!row) return null;
+                  const values = days.map((day) => Number(modelSeries.get(day)?.[bloc] ?? 0));
+                  const points = sparkPoints(values, 100, 24);
+                  return (
+                    <div class="border border-rule/70 px-2 py-1.5">
+                      <div class="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.06em] text-muted">
+                        <span class="h-2 w-2 rounded-full" style={`background:${BLOC_META[bloc].color}`}></span>
+                        {BLOC_META[bloc][lang]}
+                      </div>
+                      <div class="mt-0.5 flex items-baseline gap-1.5">
+                        <span class="font-display text-lg font-semibold">{row.seats}</span>
+                        <span class="font-mono text-[8px] text-muted">{row.p10 != null ? Math.round(row.p10) : '—'}–{row.p90 != null ? Math.round(row.p90) : '—'}</span>
+                      </div>
+                      {points ? (
+                        <svg viewBox="0 0 100 24" class="mt-1 h-5 w-full" aria-label={copy.history}>
+                          <polyline fill="none" stroke={BLOC_META[bloc].color} stroke-width="1.4" points={points} />
+                        </svg>
+                      ) : (
+                        <div class="mt-1 font-mono text-[8px] text-muted">{copy.noHistory}</div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <div class="mt-6 border border-rule bg-white/30 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-rule text-left text-xs uppercase tracking-wider text-muted">
+              <th class="p-3 font-semibold">{copy.date}</th>
+              <th class="p-3 font-semibold">{copy.model}</th>
+              <th class="p-3 font-semibold text-right">{copy.seed}</th>
+              <th class="p-3 font-semibold text-right">{copy.outcomes}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...runs].reverse().slice(0, 24).map((run) => (
+              <tr class="border-b border-rule last:border-b-0">
+                <td class="p-3 text-muted whitespace-nowrap">{dateFmt.format(new Date(run.created_at))}</td>
+                <td class="p-3">{modelLabel(run.model_version)}</td>
+                <td class="p-3 text-right font-mono text-xs">{run.seed}</td>
+                <td class="p-3 text-right font-mono text-xs">{run.outcomes}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  )}
+
+  <p class="mt-4 max-w-3xl text-xs text-muted">{copy.note}</p>
+</section>

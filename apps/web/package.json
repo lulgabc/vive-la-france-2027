@@ -1,0 +1,30 @@
+{
+  "name": "@vlf/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.4.6",
+    "@astrojs/svelte": "^9.1.2",
+    "@vlf/domain": "workspace:*",
+    "astro": "^7.4.8",
+    "d3-geo": "^3.1.2",
+    "svelte": "^5.57.3",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@cloudflare/workers-types": "^5.20261110.1",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/d3-geo": "^3.1.1",
+    "@types/topojson-client": "^3.1.5",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.0"
+  }
+}

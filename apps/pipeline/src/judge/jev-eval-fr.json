@@ -1,0 +1,3242 @@
+[
+ {
+  "id": "real-001",
+  "title": "Présidentielle 2027 : Marine Le Pen en tête du dernier sondage",
+  "excerpt": "La candidate du RN devance Jean-Luc Mélenchon au premier tour.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-002",
+  "title": "Le RN obtient un pré-accord de deux banques européennes pour financer sa campagne",
+  "excerpt": "Le parti espère un prêt de plus de 10 millions d’euros.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-003",
+  "title": "Teddy Riner annonce sa candidature à l’élection présidentielle 2027",
+  "excerpt": "Le judoka veut porter un projet autour du sport et de la jeunesse.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-004",
+  "title": "Éthiopie : construction d’un nouveau barrage pour renforcer son indépendance énergétique",
+  "excerpt": "Le projet hydroélectrique doit exporter de l’électricité dans la région.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-005",
+  "title": "Recrutement : avec l’essor de l’IA, le risque de voir le ghosting devenir la norme",
+  "excerpt": "Les candidats disparaissent parfois sans prévenir d’un processus de recrutement.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-006",
+  "title": "Sondage Ifop : Gabriel Attal progresse chez les électeurs de droite",
+  "excerpt": "L’enquête teste plusieurs hypothèses de premier tour.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-007",
+  "title": "Taxe sur les superprofits, chèque énergie : le plan écologique de Raphaël Glucksmann",
+  "excerpt": "Le candidat présente un programme de 200 milliards d’euros.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-008",
+  "title": "Judo : Teddy Riner change d’entraîneur avant la campagne présidentielle",
+  "excerpt": "Le champion prépare sa candidature et sa saison sportive.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-009",
+  "title": "Gabriel Attal prêt à voter pour Bruno Retailleau ou David Lisnard",
+  "excerpt": "Le candidat de Renaissance évoque ses préférences en cas de second tour.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-010",
+  "title": "CNews, à la fois incontournable et infréquentable pour les candidats",
+  "excerpt": "Les prétendants ajustent leur stratégie face à la chaîne.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-011",
+  "title": "Guerre en Ukraine : la Russie accuse l’Europe de prolonger le conflit",
+  "excerpt": "Les négociations diplomatiques patinent.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "real-012",
+  "title": "Retraites : le gouvernement ouvre une concertation avec les syndicats",
+  "excerpt": "Le dossier pourrait revenir dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": false,
+  "label_source": "human-smoke"
+ },
+ {
+  "id": "syn-278",
+  "title": "Mayotte : la crise de l’eau s’aggrave",
+  "excerpt": "Les habitants dénoncent le manque d’infrastructures et l’immigration irrégulière.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-349",
+  "title": "Institutions : le Sénat examine une réforme de la décentralisation",
+  "excerpt": "Les élus locaux demandent plus de compétences.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-082",
+  "title": "Le RSA sera réformé pour inciter au retour à l’emploi",
+  "excerpt": "Le gouvernement veut expérimenter un accompagnement renforcé des bénéficiaires.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-109",
+  "title": "Nicolas Dupont-Aignan veut encadrer les prix des médicaments",
+  "excerpt": "Le candidat cible les pénuries et le coût des traitements. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-161",
+  "title": "Xavier Bertrand propose une taxe carbone aux frontières",
+  "excerpt": "Le candidat veut protéger l’industrie européenne et financer la transition. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-186",
+  "title": "Moyen-Orient : la France appelle à un cessez-le-feu",
+  "excerpt": "La diplomatie française tente de peser sur les négociations régionales.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-222",
+  "title": "Procès : l’ancien ministre comparaît pour corruption",
+  "excerpt": "Le tribunal doit examiner des faits de détournement de fonds publics.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-120",
+  "title": "Université : les étudiants réclament une hausse des bourses",
+  "excerpt": "La précarité étudiante et le coût du logement sont au centre des débats.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-037",
+  "title": "Le SMIC sera revalorisé plus tôt que prévu, annonce le gouvernement",
+  "excerpt": "L’exécutif veut répondre à la colère sur le pouvoir d’achat. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-094",
+  "title": "Déserts médicaux : les maires réclament des maisons de santé",
+  "excerpt": "Les habitants doivent parfois parcourir des dizaines de kilomètres pour consulter.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-077",
+  "title": "Assurance chômage : la réforme entre en vigueur",
+  "excerpt": "Les règles d’indemnisation changent pour les demandeurs d’emploi. La candidate ou le candidat Reconquête veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-053",
+  "title": "Jean-Luc Mélenchon veut durcir les conditions du droit d’asile",
+  "excerpt": "Le candidat propose de réduire l’immigration et de renforcer les frontières. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-256",
+  "title": "Le gouvernement dénonce les « wokistes » et le communautarisme",
+  "excerpt": "Le rapport place la culture et l’identité au cœur de son programme.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-290",
+  "title": "Bretagne : la ligne à grande vitesse prend du retard",
+  "excerpt": "Les collectivités s’inquiètent du financement et de la desserte.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-188",
+  "title": "Russie : de nouvelles sanctions européennes adoptées",
+  "excerpt": "Les Vingt-Sept ciblent les financements et les exportations stratégiques.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-048",
+  "title": "Le gouvernement promet un référendum sur l’immigration",
+  "excerpt": "Le parti veut modifier la Constitution et les règles du droit du sol.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-225",
+  "title": "Marine Le Pen veut instaurer une peine de prison automatique pour les récidivistes",
+  "excerpt": "Le candidat défend une justice plus ferme et plus lisible. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-129",
+  "title": "Éducation : le gouvernement présente son plan contre le harcèlement",
+  "excerpt": "Les établissements devront renforcer la prévention et l’accompagnement. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-169",
+  "title": "Éric Zemmour veut renégocier les traités européens",
+  "excerpt": "Le candidat propose une Europe plus sociale et moins technocratique. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-192",
+  "title": "Le gouvernement défend une défense européenne commune",
+  "excerpt": "Le texte prévoit d’augmenter les dépenses militaires et la coopération.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-269",
+  "title": "Laïcité : le gouvernement présente une charte aux associations",
+  "excerpt": "Le texte doit préciser les règles du financement public et du cultuel. La candidate ou le candidat EELV veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-078",
+  "title": "Le Sénat dénonce la baisse des budgets sociaux",
+  "excerpt": "Le rapport promet un plan contre la pauvreté et les inégalités.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-218",
+  "title": "La Cour des comptes promet de réformer le Conseil constitutionnel",
+  "excerpt": "Le texte prévoit plus de transparence et de contrôle démocratique.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-149",
+  "title": "Marine Tondelier promet la rénovation thermique de 500 000 logements par an",
+  "excerpt": "Le programme cible les passoires énergétiques et la facture des ménages. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-042",
+  "title": "Terrorisme : le gouvernement renforce le plan Vigipirate",
+  "excerpt": "Les forces de sécurité sont mobilisées après une attaque déjouée.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-039",
+  "title": "Jean-Luc Mélenchon veut durcir les conditions du droit d’asile",
+  "excerpt": "Le candidat propose de réduire l’immigration et de renforcer les frontières. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-other-358",
+  "title": "Numérique : les Français passent plus de temps sur les réseaux sociaux",
+  "excerpt": "Une étude mesure l’évolution des usages depuis cinq ans.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-100",
+  "title": "Le gouvernement propose la création d’un service public de la santé",
+  "excerpt": "Le texte prévoit de mieux rembourser les médicaments et les mutuelles.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-253",
+  "title": "Xavier Bertrand propose de supprimer les subventions aux associations militantes",
+  "excerpt": "Le candidat veut recentrer l’argent public sur la culture traditionnelle. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-255",
+  "title": "Laïcité : le gouvernement présente une charte aux associations",
+  "excerpt": "Le texte doit préciser les règles du financement public et du cultuel. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-160",
+  "title": "Éolien : le Sénat adopte une loi pour accélérer les projets",
+  "excerpt": "Le texte doit réduire les délais et mieux associer les territoires.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-162",
+  "title": "Inondations : l’état de catastrophe naturelle reconnu dans le Sud",
+  "excerpt": "Les habitants et les exploitations agricoles évaluent les dégâts.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-338",
+  "title": "Guerre en Ukraine : la Russie accuse l’Europe de prolonger le conflit",
+  "excerpt": "Les négociations diplomatiques patinent.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-024",
+  "title": "Le Sénat veut conditionner les aides publiques aux salaires",
+  "excerpt": "Le rapport défend un revenu minimum plus élevé et une réforme fiscale.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-233",
+  "title": "Garde à vue : la réforme des droits de la défense entre en vigueur",
+  "excerpt": "Les associations saluent des avancées mais demandent plus de moyens. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-337",
+  "title": "Judo : Teddy Riner change d’entraîneur avant les championnats",
+  "excerpt": "Le champion prépare sa saison sportive et les Jeux olympiques.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "hard-neg-352",
+  "title": "Campagne de vaccination contre la grippe : les pharmacies participent",
+  "excerpt": "Les autorités sanitaires encouragent les personnes fragiles à se faire vacciner.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-300",
+  "title": "Les Français plébiscitent le télétravail selon une étude",
+  "excerpt": "Les entreprises adaptent leurs organisations et leurs bureaux.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-209",
+  "title": "Marine Tondelier propose un référendum sur la réforme des institutions",
+  "excerpt": "Le candidat veut réduire le nombre de parlementaires et introduire la proportionnelle. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-324",
+  "title": "Une étude rencontre les syndicats à Paris",
+  "excerpt": "Le rapport veut écouter les représentants des salariés.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-014",
+  "title": "Inflation : les salaires du privé ont progressé moins vite que les prix",
+  "excerpt": "Les ménages modestes subissent de plein fouet la hausse des prix alimentaires.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-116",
+  "title": "Une étude veut encadrer les prix des médicaments",
+  "excerpt": "Le rapport cible les pénuries et le coût des traitements.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-259",
+  "title": "Racisme : une enquête ouvre après des tags dans une école",
+  "excerpt": "Les associations demandent des actes et pas seulement des condamnations. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-345",
+  "title": "Sécurité : un réseau de trafiquants démantelé à Marseille",
+  "excerpt": "Les enquêteurs ont saisi des armes et de la drogue.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-239",
+  "title": "Marine Le Pen veut instaurer une peine de prison automatique pour les récidivistes",
+  "excerpt": "Le candidat défend une justice plus ferme et plus lisible. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-341",
+  "title": "Météo : la sécheresse s’aggrave dans le Sud-Est",
+  "excerpt": "Les restrictions d’eau pourraient être renforcées.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-016",
+  "title": "Le SMIC sera revalorisé plus tôt que prévu, annonce le gouvernement",
+  "excerpt": "L’exécutif veut répondre à la colère sur le pouvoir d’achat.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-121",
+  "title": "David Lisnard veut interdire le téléphone portable au collège",
+  "excerpt": "Le candidat défend une école plus exigeante et plus protectrice. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-086",
+  "title": "La Cour des comptes promet d’abroger la réforme des retraites",
+  "excerpt": "Le rapport veut revenir à 62 ans et ouvrir une concertation avec les syndicats.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-021",
+  "title": "Inflation : les salaires du privé ont progressé moins vite que les prix",
+  "excerpt": "Les ménages modestes subissent de plein fouet la hausse des prix alimentaires. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-214",
+  "title": "Le Premier ministre engage sa responsabilité sur le budget",
+  "excerpt": "Les oppositions dénoncent un manque de débat parlementaire.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-018",
+  "title": "Chômage : le nombre de demandeurs d’emploi repart à la hausse",
+  "excerpt": "Les économistes s’inquiètent de la croissance et de l’emploi industriel.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-154",
+  "title": "Le Sénat propose une taxe carbone aux frontières",
+  "excerpt": "Le rapport veut protéger l’industrie européenne et financer la transition.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-216",
+  "title": "La Cour des comptes propose un référendum sur la réforme des institutions",
+  "excerpt": "Le rapport veut réduire le nombre de parlementaires et introduire la proportionnelle.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-026",
+  "title": "Une étude présente son plan pour les petites entreprises",
+  "excerpt": "Le texte prévoit des exonérations de cotisations et un crédit d’impôt.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-317",
+  "title": "Édouard Philippe rencontre les syndicats à Paris",
+  "excerpt": "Le candidat veut écouter les représentants des salariés. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-076",
+  "title": "Le Sénat veut augmenter les pensions de 10 %",
+  "excerpt": "Le rapport cible les retraités modestes et les veuves.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-111",
+  "title": "Bruno Retailleau promet de revaloriser le salaire des infirmiers",
+  "excerpt": "Le candidat veut rendre les métiers du soin plus attractifs. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-280",
+  "title": "Les élus locaux promet un plan pour les outre-mer",
+  "excerpt": "Le rapport veut rattraper les retards d’équipement et de logement.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-080",
+  "title": "Retraites : les syndicats appellent à une nouvelle journée de mobilisation",
+  "excerpt": "La contestation sociale se poursuit contre le report de l’âge de départ.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-178",
+  "title": "Le gouvernement défend une défense européenne commune",
+  "excerpt": "Le texte prévoit d’augmenter les dépenses militaires et la coopération.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-060",
+  "title": "Le Sénat veut durcir les conditions du droit d’asile",
+  "excerpt": "Le rapport propose de réduire l’immigration et de renforcer les frontières.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-112",
+  "title": "La Cour des comptes promet 10 000 médecins supplémentaires dans les territoires",
+  "excerpt": "Le rapport veut lutter contre les déserts médicaux et les urgences saturées.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-231",
+  "title": "Justice : les avocats dénoncent la surcharge des tribunaux",
+  "excerpt": "Les délais de jugement s’allongent dans plusieurs juridictions. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-303",
+  "title": "Édouard Philippe rencontre les syndicats à Paris",
+  "excerpt": "Le candidat veut écouter les représentants des salariés. La candidate ou le candidat Horizons veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-285",
+  "title": "Mayotte : la crise de l’eau s’aggrave",
+  "excerpt": "Les habitants dénoncent le manque d’infrastructures et l’immigration irrégulière. La candidate ou le candidat RN veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-058",
+  "title": "Police : les syndicats réclament des effectifs et des moyens",
+  "excerpt": "Les agents dénoncent la charge de travail et le manque de matériel.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-139",
+  "title": "École : les parents dénoncent le manque de remplaçants",
+  "excerpt": "Les absences d’enseignants perturbent la rentrée dans plusieurs académies. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-038",
+  "title": "La Cour des comptes veut conditionner les aides publiques aux salaires",
+  "excerpt": "Le rapport défend un revenu minimum plus élevé et une réforme fiscale.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-034",
+  "title": "La Cour des comptes promet une baisse de la TVA sur les produits de première nécessité",
+  "excerpt": "Le rapport veut agir sur le pouvoir d’achat et les prix du quotidien.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-327",
+  "title": "Gabriel Attal cherche à incarner le renouveau",
+  "excerpt": "L’ancien Premier ministre veut rassembler la majorité présidentielle.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "hard-neg-339",
+  "title": "Retraites : le gouvernement ouvre une concertation avec les syndicats",
+  "excerpt": "Le dossier pourrait revenir dans le débat public.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-307",
+  "title": "Les Français plébiscitent le télétravail selon une étude",
+  "excerpt": "Les entreprises adaptent leurs organisations et leurs bureaux. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-201",
+  "title": "Nicolas Dupont-Aignan propose une assemblée citoyenne tirée au sort",
+  "excerpt": "Le candidat veut associer les Français aux grandes décisions. La candidate ou le candidat DLF veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-164",
+  "title": "Le Sénat présente un plan de 200 milliards d’euros pour le climat",
+  "excerpt": "Le rapport veut rénover les logements et accélérer les énergies renouvelables.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-279",
+  "title": "François Hollande propose de fusionner les intercommunalités",
+  "excerpt": "Le candidat veut simplifier l’organisation territoriale et réduire les coûts. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-180",
+  "title": "Le Sénat propose de sortir du commandement intégré de l’OTAN",
+  "excerpt": "Le rapport veut une politique étrangère plus indépendante.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-270",
+  "title": "Le Sénat dénonce les « wokistes » et le communautarisme",
+  "excerpt": "Le rapport place la culture et l’identité au cœur de son programme.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-096",
+  "title": "Santé mentale : un plan national présenté par le gouvernement",
+  "excerpt": "Les jeunes et les soignants sont les premières cibles du dispositif.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-353",
+  "title": "La campagne de fouilles archéologiques reprend en Bourgogne",
+  "excerpt": "Les chercheurs espèrent mettre au jour un village gallo-romain.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-224",
+  "title": "Justice : les avocats dénoncent la surcharge des tribunaux",
+  "excerpt": "Les délais de jugement s’allongent dans plusieurs juridictions.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-171",
+  "title": "Gabriel Attal défend une défense européenne commune",
+  "excerpt": "Le programme prévoit d’augmenter les dépenses militaires et la coopération. La candidate ou le candidat Renaissance veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-069",
+  "title": "Fabien Roussel veut augmenter les pensions de 10 %",
+  "excerpt": "Le candidat cible les retraités modestes et les veuves. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-083",
+  "title": "Fabien Roussel veut augmenter les pensions de 10 %",
+  "excerpt": "Le candidat cible les retraités modestes et les veuves. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-145",
+  "title": "Jean-Luc Mélenchon défend la construction de nouveaux réacteurs nucléaires",
+  "excerpt": "Le programme mise sur l’énergie décarbonée et l’indépendance énergétique. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-072",
+  "title": "La Cour des comptes promet d’abroger la réforme des retraites",
+  "excerpt": "Le rapport veut revenir à 62 ans et ouvrir une concertation avec les syndicats.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-119",
+  "title": "Marine Le Pen propose de réformer le baccalauréat",
+  "excerpt": "Le programme prévoit davantage de contrôle continu et d’orientation. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-277",
+  "title": "Gabriel Attal promet une loi pour les territoires ruraux",
+  "excerpt": "Le candidat veut garantir les services publics et la couverture mobile. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-227",
+  "title": "David Lisnard accuse le gouvernement d’avoir affaibli l’État de droit",
+  "excerpt": "Le débat sur les libertés publiques s’invite dans la campagne. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-197",
+  "title": "Édouard Philippe promet de réformer le Conseil constitutionnel",
+  "excerpt": "Le programme prévoit plus de transparence et de contrôle démocratique. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-099",
+  "title": "Hôpital : les soignants dénoncent le manque de lits et de personnel",
+  "excerpt": "Les urgences de plusieurs villes sont en tension cet hiver. La candidate ou le candidat LFI veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-240",
+  "title": "Garde à vue : la réforme des droits de la défense entre en vigueur",
+  "excerpt": "Les associations saluent des avancées mais demandent plus de moyens.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-070",
+  "title": "Assurance chômage : la réforme entre en vigueur",
+  "excerpt": "Les règles d’indemnisation changent pour les demandeurs d’emploi.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-181",
+  "title": "Russie : de nouvelles sanctions européennes adoptées",
+  "excerpt": "Les Vingt-Sept ciblent les financements et les exportations stratégiques. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-242",
+  "title": "Une étude promet de réformer la justice des mineurs",
+  "excerpt": "Le rapport veut des peines plus rapides et un meilleur accompagnement éducatif.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-340",
+  "title": "CNews, à la fois incontournable et infréquentable pour les invités",
+  "excerpt": "La chaîne ajuste sa stratégie face aux critiques.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-075",
+  "title": "Le RSA sera réformé pour inciter au retour à l’emploi",
+  "excerpt": "Le gouvernement veut expérimenter un accompagnement renforcé des bénéficiaires. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-251",
+  "title": "Jean-Luc Mélenchon veut inscrire la défense du patrimoine dans la Constitution",
+  "excerpt": "Le programme prévoit un fonds pour les monuments locaux. La candidate ou le candidat LFI veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-156",
+  "title": "La Cour des comptes promet la rénovation thermique de 500 000 logements par an",
+  "excerpt": "Le texte cible les passoires énergétiques et la facture des ménages.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-141",
+  "title": "Université : les étudiants réclament une hausse des bourses",
+  "excerpt": "La précarité étudiante et le coût du logement sont au centre des débats. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-168",
+  "title": "Une étude propose une taxe carbone aux frontières",
+  "excerpt": "Le rapport veut protéger l’industrie européenne et financer la transition.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-025",
+  "title": "Chômage : le nombre de demandeurs d’emploi repart à la hausse",
+  "excerpt": "Les économistes s’inquiètent de la croissance et de l’emploi industriel. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-051",
+  "title": "Police : les syndicats réclament des effectifs et des moyens",
+  "excerpt": "Les agents dénoncent la charge de travail et le manque de matériel. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-067",
+  "title": "François Hollande propose une retraite à 60 ans pour les carrières longues",
+  "excerpt": "Le programme social prévoit aussi une revalorisation des petites pensions. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-354",
+  "title": "Élection du bureau de l’association des maires de France",
+  "excerpt": "Les élus locaux se réunissent pour leur congrès annuel.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-257",
+  "title": "Musées : les tarifs augmentent pour les visiteurs étrangers",
+  "excerpt": "La mesure vise à financer l’entretien du patrimoine. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-212",
+  "title": "Sénat : le texte sur la décentralisation est adopté",
+  "excerpt": "Les élus locaux demandent davantage de compétences et de ressources.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-185",
+  "title": "Gabriel Attal défend une défense européenne commune",
+  "excerpt": "Le programme prévoit d’augmenter les dépenses militaires et la coopération. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-151",
+  "title": "Sécheresse : plusieurs départements limitent l’usage de l’eau",
+  "excerpt": "Les agriculteurs et les collectivités s’adaptent au manque de pluie. La candidate ou le candidat Horizons veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-150",
+  "title": "Une étude présente un plan de 200 milliards d’euros pour le climat",
+  "excerpt": "Le rapport veut rénover les logements et accélérer les énergies renouvelables.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-271",
+  "title": "Musées : les tarifs augmentent pour les visiteurs étrangers",
+  "excerpt": "La mesure vise à financer l’entretien du patrimoine. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-323",
+  "title": "Météo : un épisode de froid attendu sur la moitié nord",
+  "excerpt": "Les températures vont chuter de plusieurs degrés cette semaine. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-288",
+  "title": "Corse : les élus demandent un statut autonome",
+  "excerpt": "Le gouvernement ouvre des discussions sur les compétences de l’île.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-275",
+  "title": "Éric Zemmour veut supprimer les départements",
+  "excerpt": "Le programme prévoit de renforcer les régions et les communes. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-170",
+  "title": "Ukraine : les dirigeants européens discutent d’un nouveau paquet d’aide",
+  "excerpt": "La guerre et la sécurité du continent dominent le sommet de Bruxelles.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-015",
+  "title": "David Lisnard propose un impôt sur les superprofits pour financer le budget",
+  "excerpt": "La mesure vise les grandes entreprises et la dette publique. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-118",
+  "title": "École : les parents dénoncent le manque de remplaçants",
+  "excerpt": "Les absences d’enseignants perturbent la rentrée dans plusieurs académies.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-057",
+  "title": "Marine Tondelier propose de construire 20 000 places de prison",
+  "excerpt": "Le candidat veut une politique pénale plus ferme contre la délinquance. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-302",
+  "title": "Météo : un épisode de froid attendu sur la moitié nord",
+  "excerpt": "Les températures vont chuter de plusieurs degrés cette semaine.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-305",
+  "title": "François Ruffin dévoile son affiche de campagne",
+  "excerpt": "Le candidat mise sur une image sobre et présidentielle. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-144",
+  "title": "Sécheresse : plusieurs départements limitent l’usage de l’eau",
+  "excerpt": "Les agriculteurs et les collectivités s’adaptent au manque de pluie.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-131",
+  "title": "Raphaël Glucksmann promet de recruter 20 000 enseignants",
+  "excerpt": "Le candidat veut réduire les classes et revaloriser le métier. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-215",
+  "title": "Nicolas Dupont-Aignan propose une assemblée citoyenne tirée au sort",
+  "excerpt": "Le candidat veut associer les Français aux grandes décisions. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-167",
+  "title": "Éolien : le Sénat adopte une loi pour accélérer les projets",
+  "excerpt": "Le texte doit réduire les délais et mieux associer les territoires. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-346",
+  "title": "Justice : un procès pour fraude fiscale s’ouvre à Paris",
+  "excerpt": "Le prévenu conteste les faits qui lui sont reprochés.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-041",
+  "title": "Xavier Bertrand promet un référendum sur l’immigration",
+  "excerpt": "Le parti veut modifier la Constitution et les règles du droit du sol. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-074",
+  "title": "Le Sénat propose une retraite à 60 ans pour les carrières longues",
+  "excerpt": "Le texte social prévoit aussi une revalorisation des petites pensions.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-088",
+  "title": "La Cour des comptes propose une retraite à 60 ans pour les carrières longues",
+  "excerpt": "Le texte social prévoit aussi une revalorisation des petites pensions.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-301",
+  "title": "Marine Tondelier publie son livre programme",
+  "excerpt": "L’ouvrage détaille la stratégie du candidat pour 2027. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-220",
+  "title": "Le gouvernement veut instaurer le vote à 16 ans",
+  "excerpt": "Le rapport défend une démocratie plus participative et une citoyenneté précoce.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-115",
+  "title": "Déserts médicaux : les maires réclament des maisons de santé",
+  "excerpt": "Les habitants doivent parfois parcourir des dizaines de kilomètres pour consulter. La candidate ou le candidat LR veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-204",
+  "title": "La Cour des comptes promet de réformer le Conseil constitutionnel",
+  "excerpt": "Le texte prévoit plus de transparence et de contrôle démocratique.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-248",
+  "title": "Laïcité : le gouvernement présente une charte aux associations",
+  "excerpt": "Le texte doit préciser les règles du financement public et du cultuel.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-219",
+  "title": "Sénat : le texte sur la décentralisation est adopté",
+  "excerpt": "Les élus locaux demandent davantage de compétences et de ressources. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-245",
+  "title": "Justice : les avocats dénoncent la surcharge des tribunaux",
+  "excerpt": "Les délais de jugement s’allongent dans plusieurs juridictions. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-294",
+  "title": "La Cour des comptes promet un plan pour les outre-mer",
+  "excerpt": "Le rapport veut rattraper les retards d’équipement et de logement.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-198",
+  "title": "Sénat : le texte sur la décentralisation est adopté",
+  "excerpt": "Les élus locaux demandent davantage de compétences et de ressources.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-260",
+  "title": "Une étude propose de supprimer les subventions aux associations militantes",
+  "excerpt": "Le rapport veut recentrer l’argent public sur la culture traditionnelle.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-081",
+  "title": "François Hollande propose une retraite à 60 ans pour les carrières longues",
+  "excerpt": "Le programme social prévoit aussi une revalorisation des petites pensions. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-158",
+  "title": "Sécheresse : plusieurs départements limitent l’usage de l’eau",
+  "excerpt": "Les agriculteurs et les collectivités s’adaptent au manque de pluie.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-101",
+  "title": "Déserts médicaux : les maires réclament des maisons de santé",
+  "excerpt": "Les habitants doivent parfois parcourir des dizaines de kilomètres pour consulter. La candidate ou le candidat LR veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-296",
+  "title": "La Cour des comptes veut supprimer les départements",
+  "excerpt": "Le texte prévoit de renforcer les régions et les communes.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-266",
+  "title": "Racisme : une enquête ouvre après des tags dans une école",
+  "excerpt": "Les associations demandent des actes et pas seulement des condamnations.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-159",
+  "title": "Jean-Luc Mélenchon défend la construction de nouveaux réacteurs nucléaires",
+  "excerpt": "Le programme mise sur l’énergie décarbonée et l’indépendance énergétique. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-263",
+  "title": "Bruno Retailleau dénonce les « wokistes » et le communautarisme",
+  "excerpt": "Le candidat place la culture et l’identité au cœur de son programme. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-089",
+  "title": "Le RSA sera réformé pour inciter au retour à l’emploi",
+  "excerpt": "Le gouvernement veut expérimenter un accompagnement renforcé des bénéficiaires. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-098",
+  "title": "Les élus locaux promet 10 000 médecins supplémentaires dans les territoires",
+  "excerpt": "Le rapport veut lutter contre les déserts médicaux et les urgences saturées.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-332",
+  "title": "Fabien Roussel réclame une hausse du SMIC",
+  "excerpt": "Le communiste dénonce la baisse du pouvoir d’achat.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "syn-322",
+  "title": "La Cour des comptes publie son livre programme",
+  "excerpt": "L’ouvrage détaille la stratégie du candidat pour 2027.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-210",
+  "title": "Assemblée nationale : une motion de censure déposée",
+  "excerpt": "Le gouvernement est accusé de passer en force avec le 49.3.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-032",
+  "title": "Chômage : le nombre de demandeurs d’emploi repart à la hausse",
+  "excerpt": "Les économistes s’inquiètent de la croissance et de l’emploi industriel.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-027",
+  "title": "Marine Le Pen promet une baisse de la TVA sur les produits de première nécessité",
+  "excerpt": "Le candidat veut agir sur le pouvoir d’achat et les prix du quotidien. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-107",
+  "title": "François Ruffin propose la création d’un service public de la santé",
+  "excerpt": "Le programme prévoit de mieux rembourser les médicaments et les mutuelles. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-309",
+  "title": "Météo : un épisode de froid attendu sur la moitié nord",
+  "excerpt": "Les températures vont chuter de plusieurs degrés cette semaine. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-258",
+  "title": "Le Sénat veut inscrire la défense du patrimoine dans la Constitution",
+  "excerpt": "Le texte prévoit un fonds pour les monuments locaux.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-205",
+  "title": "Sénat : le texte sur la décentralisation est adopté",
+  "excerpt": "Les élus locaux demandent davantage de compétences et de ressources. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-103",
+  "title": "Santé mentale : un plan national présenté par le gouvernement",
+  "excerpt": "Les jeunes et les soignants sont les premières cibles du dispositif. La candidate ou le candidat EELV veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-246",
+  "title": "Le gouvernement veut instaurer une peine de prison automatique pour les récidivistes",
+  "excerpt": "Le rapport défend une justice plus ferme et plus lisible.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-326",
+  "title": "Jean-Luc Mélenchon rassemble ses soutiens à Marseille",
+  "excerpt": "Le leader de La France insoumise défend la retraite à 60 ans et le SMIC à 1 600 euros.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "syn-173",
+  "title": "François Hollande propose de sortir du commandement intégré de l’OTAN",
+  "excerpt": "Le candidat veut une politique étrangère plus indépendante. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-244",
+  "title": "Les élus locaux propose de supprimer la Cour de justice de la République",
+  "excerpt": "Le texte veut renforcer l’indépendance des magistrats.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-298",
+  "title": "Les élus locaux promet une loi pour les territoires ruraux",
+  "excerpt": "Le rapport veut garantir les services publics et la couverture mobile.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-241",
+  "title": "David Lisnard accuse le gouvernement d’avoir affaibli l’État de droit",
+  "excerpt": "Le débat sur les libertés publiques s’invite dans la campagne. La candidate ou le candidat LR veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-283",
+  "title": "Bretagne : la ligne à grande vitesse prend du retard",
+  "excerpt": "Les collectivités s’inquiètent du financement et de la desserte. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-183",
+  "title": "Éric Zemmour veut renégocier les traités européens",
+  "excerpt": "Le candidat propose une Europe plus sociale et moins technocratique. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-153",
+  "title": "Éolien : le Sénat adopte une loi pour accélérer les projets",
+  "excerpt": "Le texte doit réduire les délais et mieux associer les territoires. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-056",
+  "title": "Terrorisme : le gouvernement renforce le plan Vigipirate",
+  "excerpt": "Les forces de sécurité sont mobilisées après une attaque déjouée.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-050",
+  "title": "Une étude propose de construire 20 000 places de prison",
+  "excerpt": "Le rapport veut une politique pénale plus ferme contre la délinquance.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-126",
+  "title": "Le gouvernement propose de réformer le baccalauréat",
+  "excerpt": "Le texte prévoit davantage de contrôle continu et d’orientation.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-297",
+  "title": "Bretagne : la ligne à grande vitesse prend du retard",
+  "excerpt": "Les collectivités s’inquiètent du financement et de la desserte. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-207",
+  "title": "Le Premier ministre engage sa responsabilité sur le budget",
+  "excerpt": "Les oppositions dénoncent un manque de débat parlementaire. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-347",
+  "title": "Culture : le festival d’Avignon dévoile sa programmation",
+  "excerpt": "Les organisateurs promettent une édition tournée vers la jeunesse.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-315",
+  "title": "Marine Tondelier publie son livre programme",
+  "excerpt": "L’ouvrage détaille la stratégie du candidat pour 2027. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-229",
+  "title": "Procès : l’ancien ministre comparaît pour corruption",
+  "excerpt": "Le tribunal doit examiner des faits de détournement de fonds publics. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-281",
+  "title": "Corse : les élus demandent un statut autonome",
+  "excerpt": "Le gouvernement ouvre des discussions sur les compétences de l’île. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-106",
+  "title": "Hôpital : les soignants dénoncent le manque de lits et de personnel",
+  "excerpt": "Les urgences de plusieurs villes sont en tension cet hiver.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-312",
+  "title": "Une étude dévoile son affiche de campagne",
+  "excerpt": "Le rapport mise sur une image sobre et présidentielle.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-329",
+  "title": "Raphaël Glucksmann veut une Europe plus sociale",
+  "excerpt": "Le candidat socialiste plaide pour un salaire minimum européen.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "hard-neg-336",
+  "title": "Recrutement : avec l’essor de l’IA, le ghosting devient la norme",
+  "excerpt": "Les candidats disparaissent parfois sans prévenir d’un processus de recrutement.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-102",
+  "title": "Une étude veut encadrer les prix des médicaments",
+  "excerpt": "Le rapport cible les pénuries et le coût des traitements.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-163",
+  "title": "Marine Tondelier promet la rénovation thermique de 500 000 logements par an",
+  "excerpt": "Le programme cible les passoires énergétiques et la facture des ménages. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-268",
+  "title": "Une étude promet un plan pour la langue française",
+  "excerpt": "Le rapport veut défendre la culture et l’identité dans les écoles.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-237",
+  "title": "Raphaël Glucksmann propose de supprimer la Cour de justice de la République",
+  "excerpt": "Le programme veut renforcer l’indépendance des magistrats. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-110",
+  "title": "Santé mentale : un plan national présenté par le gouvernement",
+  "excerpt": "Les jeunes et les soignants sont les premières cibles du dispositif.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-238",
+  "title": "Justice : les avocats dénoncent la surcharge des tribunaux",
+  "excerpt": "Les délais de jugement s’allongent dans plusieurs juridictions.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-179",
+  "title": "Moyen-Orient : la France appelle à un cessez-le-feu",
+  "excerpt": "La diplomatie française tente de peser sur les négociations régionales. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-166",
+  "title": "Une étude défend la construction de nouveaux réacteurs nucléaires",
+  "excerpt": "Le texte mise sur l’énergie décarbonée et l’indépendance énergétique.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-128",
+  "title": "Le Sénat veut interdire le téléphone portable au collège",
+  "excerpt": "Le rapport défend une école plus exigeante et plus protectrice.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-208",
+  "title": "Une étude propose une assemblée citoyenne tirée au sort",
+  "excerpt": "Le rapport veut associer les Français aux grandes décisions.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-142",
+  "title": "La Cour des comptes veut interdire le téléphone portable au collège",
+  "excerpt": "Le rapport défend une école plus exigeante et plus protectrice.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-066",
+  "title": "Retraites : les syndicats appellent à une nouvelle journée de mobilisation",
+  "excerpt": "La contestation sociale se poursuit contre le report de l’âge de départ.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-138",
+  "title": "Une étude promet de recruter 20 000 enseignants",
+  "excerpt": "Le rapport veut réduire les classes et revaloriser le métier.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-232",
+  "title": "Une étude veut instaurer une peine de prison automatique pour les récidivistes",
+  "excerpt": "Le rapport défend une justice plus ferme et plus lisible.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-292",
+  "title": "Mayotte : la crise de l’eau s’aggrave",
+  "excerpt": "Les habitants dénoncent le manque d’infrastructures et l’immigration irrégulière.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-148",
+  "title": "Inondations : l’état de catastrophe naturelle reconnu dans le Sud",
+  "excerpt": "Les habitants et les exploitations agricoles évaluent les dégâts.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-293",
+  "title": "François Hollande propose de fusionner les intercommunalités",
+  "excerpt": "Le candidat veut simplifier l’organisation territoriale et réduire les coûts. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-127",
+  "title": "Université : les étudiants réclament une hausse des bourses",
+  "excerpt": "La précarité étudiante et le coût du logement sont au centre des débats. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-276",
+  "title": "Bretagne : la ligne à grande vitesse prend du retard",
+  "excerpt": "Les collectivités s’inquiètent du financement et de la desserte.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-137",
+  "title": "Éric Zemmour promet la gratuité des cantines scolaires",
+  "excerpt": "La mesure vise les familles modestes et les communes rurales. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-334",
+  "title": "Nicolas Dupont-Aignan critique l’Union européenne",
+  "excerpt": "Le souverainiste appelle à un référendum sur les traités.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "syn-031",
+  "title": "Éric Zemmour veut conditionner les aides publiques aux salaires",
+  "excerpt": "Le candidat défend un revenu minimum plus élevé et une réforme fiscale. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-243",
+  "title": "Procès : l’ancien ministre comparaît pour corruption",
+  "excerpt": "Le tribunal doit examiner des faits de détournement de fonds publics. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-133",
+  "title": "Marine Le Pen propose de réformer le baccalauréat",
+  "excerpt": "Le programme prévoit davantage de contrôle continu et d’orientation. La candidate ou le candidat RN veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-029",
+  "title": "David Lisnard propose un impôt sur les superprofits pour financer le budget",
+  "excerpt": "La mesure vise les grandes entreprises et la dette publique. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-325",
+  "title": "Marine Le Pen présente son programme économique à Lille",
+  "excerpt": "La candidate du Rassemblement national veut baisser la TVA et durcir les frontières.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "syn-286",
+  "title": "La Cour des comptes propose de fusionner les intercommunalités",
+  "excerpt": "Le rapport veut simplifier l’organisation territoriale et réduire les coûts.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-230",
+  "title": "Le Sénat propose de supprimer la Cour de justice de la République",
+  "excerpt": "Le texte veut renforcer l’indépendance des magistrats.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-254",
+  "title": "Une étude promet un plan pour la langue française",
+  "excerpt": "Le rapport veut défendre la culture et l’identité dans les écoles.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-217",
+  "title": "Assemblée nationale : une motion de censure déposée",
+  "excerpt": "Le gouvernement est accusé de passer en force avec le 49.3. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-132",
+  "title": "École : les parents dénoncent le manque de remplaçants",
+  "excerpt": "Les absences d’enseignants perturbent la rentrée dans plusieurs académies.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-other-357",
+  "title": "Transports : la grève des conducteurs perturbe les lignes régionales",
+  "excerpt": "Les syndicats réclament une hausse des salaires.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-252",
+  "title": "Racisme : une enquête ouvre après des tags dans une école",
+  "excerpt": "Les associations demandent des actes et pas seulement des condamnations.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-017",
+  "title": "Éric Zemmour veut conditionner les aides publiques aux salaires",
+  "excerpt": "Le candidat défend un revenu minimum plus élevé et une réforme fiscale. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-351",
+  "title": "Élection de Miss France : la cérémonie bat des records d’audience",
+  "excerpt": "Le concours attire un large public sur TF1.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-055",
+  "title": "Xavier Bertrand promet un référendum sur l’immigration",
+  "excerpt": "Le parti veut modifier la Constitution et les règles du droit du sol. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-193",
+  "title": "Moyen-Orient : la France appelle à un cessez-le-feu",
+  "excerpt": "La diplomatie française tente de peser sur les négociations régionales. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-291",
+  "title": "Gabriel Attal promet une loi pour les territoires ruraux",
+  "excerpt": "Le candidat veut garantir les services publics et la couverture mobile. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-316",
+  "title": "Météo : un épisode de froid attendu sur la moitié nord",
+  "excerpt": "Les températures vont chuter de plusieurs degrés cette semaine.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-344",
+  "title": "Inflation : les prix alimentaires continuent de progresser",
+  "excerpt": "Les ménages modestes modifient leurs achats.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-035",
+  "title": "Inflation : les salaires du privé ont progressé moins vite que les prix",
+  "excerpt": "Les ménages modestes subissent de plein fouet la hausse des prix alimentaires. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-289",
+  "title": "Éric Zemmour veut supprimer les départements",
+  "excerpt": "Le programme prévoit de renforcer les régions et les communes. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-295",
+  "title": "Corse : les élus demandent un statut autonome",
+  "excerpt": "Le gouvernement ouvre des discussions sur les compétences de l’île. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-306",
+  "title": "Le gouvernement annonce une grande convention sur les institutions",
+  "excerpt": "Le rapport veut rassembler au-delà de son parti.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-321",
+  "title": "Les Français plébiscitent le télétravail selon une étude",
+  "excerpt": "Les entreprises adaptent leurs organisations et leurs bureaux. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-140",
+  "title": "Le gouvernement propose de réformer le baccalauréat",
+  "excerpt": "Le texte prévoit davantage de contrôle continu et d’orientation.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-211",
+  "title": "Édouard Philippe promet de réformer le Conseil constitutionnel",
+  "excerpt": "Le programme prévoit plus de transparence et de contrôle démocratique. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-282",
+  "title": "La Cour des comptes veut supprimer les départements",
+  "excerpt": "Le texte prévoit de renforcer les régions et les communes.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-028",
+  "title": "Inflation : les salaires du privé ont progressé moins vite que les prix",
+  "excerpt": "Les ménages modestes subissent de plein fouet la hausse des prix alimentaires.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-044",
+  "title": "Police : les syndicats réclament des effectifs et des moyens",
+  "excerpt": "Les agents dénoncent la charge de travail et le manque de matériel.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-134",
+  "title": "Université : les étudiants réclament une hausse des bourses",
+  "excerpt": "La précarité étudiante et le coût du logement sont au centre des débats.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-328",
+  "title": "Édouard Philippe dévoile ses propositions sur l’hôpital",
+  "excerpt": "Le maire du Havre prépare sa candidature et critique la gestion gouvernementale.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "syn-226",
+  "title": "Garde à vue : la réforme des droits de la défense entre en vigueur",
+  "excerpt": "Les associations saluent des avancées mais demandent plus de moyens.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-249",
+  "title": "Bruno Retailleau dénonce les « wokistes » et le communautarisme",
+  "excerpt": "Le candidat place la culture et l’identité au cœur de son programme. La candidate ou le candidat LR veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-108",
+  "title": "Déserts médicaux : les maires réclament des maisons de santé",
+  "excerpt": "Les habitants doivent parfois parcourir des dizaines de kilomètres pour consulter.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-196",
+  "title": "Assemblée nationale : une motion de censure déposée",
+  "excerpt": "Le gouvernement est accusé de passer en force avec le 49.3.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-155",
+  "title": "Inondations : l’état de catastrophe naturelle reconnu dans le Sud",
+  "excerpt": "Les habitants et les exploitations agricoles évaluent les dégâts. La candidate ou le candidat DLF veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-206",
+  "title": "Le gouvernement veut instaurer le vote à 16 ans",
+  "excerpt": "Le rapport défend une démocratie plus participative et une citoyenneté précoce.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-064",
+  "title": "Les élus locaux propose de construire 20 000 places de prison",
+  "excerpt": "Le rapport veut une politique pénale plus ferme contre la délinquance.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-105",
+  "title": "Édouard Philippe promet 10 000 médecins supplémentaires dans les territoires",
+  "excerpt": "Le candidat veut lutter contre les déserts médicaux et les urgences saturées. La candidate ou le candidat Horizons veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-223",
+  "title": "Raphaël Glucksmann propose de supprimer la Cour de justice de la République",
+  "excerpt": "Le programme veut renforcer l’indépendance des magistrats. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-047",
+  "title": "Insécurité : les maires demandent davantage de police de proximité",
+  "excerpt": "La délinquance et les trafics inquiètent les élus locaux. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-125",
+  "title": "École : les parents dénoncent le manque de remplaçants",
+  "excerpt": "Les absences d’enseignants perturbent la rentrée dans plusieurs académies. La candidate ou le candidat Renaissance veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-319",
+  "title": "François Ruffin dévoile son affiche de campagne",
+  "excerpt": "Le candidat mise sur une image sobre et présidentielle. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-040",
+  "title": "Insécurité : les maires demandent davantage de police de proximité",
+  "excerpt": "La délinquance et les trafics inquiètent les élus locaux.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-165",
+  "title": "Sécheresse : plusieurs départements limitent l’usage de l’eau",
+  "excerpt": "Les agriculteurs et les collectivités s’adaptent au manque de pluie. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-020",
+  "title": "Le Sénat promet une baisse de la TVA sur les produits de première nécessité",
+  "excerpt": "Le rapport veut agir sur le pouvoir d’achat et les prix du quotidien.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-135",
+  "title": "David Lisnard veut interdire le téléphone portable au collège",
+  "excerpt": "Le candidat défend une école plus exigeante et plus protectrice. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-272",
+  "title": "Une étude veut inscrire la défense du patrimoine dans la Constitution",
+  "excerpt": "Le texte prévoit un fonds pour les monuments locaux.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-124",
+  "title": "Une étude promet de recruter 20 000 enseignants",
+  "excerpt": "Le rapport veut réduire les classes et revaloriser le métier.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-113",
+  "title": "Hôpital : les soignants dénoncent le manque de lits et de personnel",
+  "excerpt": "Les urgences de plusieurs villes sont en tension cet hiver. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-073",
+  "title": "Retraites : les syndicats appellent à une nouvelle journée de mobilisation",
+  "excerpt": "La contestation sociale se poursuit contre le report de l’âge de départ. La candidate ou le candidat RN veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-033",
+  "title": "Gabriel Attal présente son plan pour les petites entreprises",
+  "excerpt": "Le programme prévoit des exonérations de cotisations et un crédit d’impôt. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-308",
+  "title": "Une étude publie son livre programme",
+  "excerpt": "L’ouvrage détaille la stratégie du candidat pour 2027.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-189",
+  "title": "Fabien Roussel veut conditionner l’aide au développement au respect des droits",
+  "excerpt": "Le candidat défend une diplomatie plus ferme et plus transparente. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-157",
+  "title": "Bruno Retailleau présente un plan de 200 milliards d’euros pour le climat",
+  "excerpt": "Le candidat veut rénover les logements et accélérer les énergies renouvelables. La candidate ou le candidat LR veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-274",
+  "title": "Corse : les élus demandent un statut autonome",
+  "excerpt": "Le gouvernement ouvre des discussions sur les compétences de l’île.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-122",
+  "title": "Éducation : le gouvernement présente son plan contre le harcèlement",
+  "excerpt": "Les établissements devront renforcer la prévention et l’accompagnement.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-147",
+  "title": "Xavier Bertrand propose une taxe carbone aux frontières",
+  "excerpt": "Le candidat veut protéger l’industrie européenne et financer la transition. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-091",
+  "title": "Édouard Philippe promet 10 000 médecins supplémentaires dans les territoires",
+  "excerpt": "Le candidat veut lutter contre les déserts médicaux et les urgences saturées. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-090",
+  "title": "Le gouvernement veut augmenter les pensions de 10 %",
+  "excerpt": "Le rapport cible les retraités modestes et les veuves.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-199",
+  "title": "François Ruffin veut instaurer le vote à 16 ans",
+  "excerpt": "Le candidat défend une démocratie plus participative et une citoyenneté précoce. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-202",
+  "title": "Une étude propose un référendum sur la réforme des institutions",
+  "excerpt": "Le rapport veut réduire le nombre de parlementaires et introduire la proportionnelle.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-other-355",
+  "title": "Le prix du timbre augmentera en janvier",
+  "excerpt": "La Poste justifie la hausse par l’inflation et la baisse du courrier.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-234",
+  "title": "Une étude accuse le gouvernement d’avoir affaibli l’État de droit",
+  "excerpt": "Le débat sur les libertés publiques s’invite dans la opération.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-043",
+  "title": "Marine Tondelier propose de construire 20 000 places de prison",
+  "excerpt": "Le candidat veut une politique pénale plus ferme contre la délinquance. La candidate ou le candidat EELV veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-071",
+  "title": "Raphaël Glucksmann dénonce la baisse des budgets sociaux",
+  "excerpt": "Le candidat promet un plan contre la pauvreté et les inégalités. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-250",
+  "title": "Musées : les tarifs augmentent pour les visiteurs étrangers",
+  "excerpt": "La mesure vise à financer l’entretien du patrimoine.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-130",
+  "title": "La Cour des comptes promet la gratuité des cantines scolaires",
+  "excerpt": "La mesure vise les familles modestes et les communes rurales.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-143",
+  "title": "Bruno Retailleau présente un plan de 200 milliards d’euros pour le climat",
+  "excerpt": "Le candidat veut rénover les logements et accélérer les énergies renouvelables. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-330",
+  "title": "Bruno Retailleau durcit son discours sur l’immigration",
+  "excerpt": "Le président des Républicains veut un référendum sur les frontières.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "syn-136",
+  "title": "Éducation : le gouvernement présente son plan contre le harcèlement",
+  "excerpt": "Les établissements devront renforcer la prévention et l’accompagnement.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-190",
+  "title": "Une étude veut renégocier les traités européens",
+  "excerpt": "Le rapport propose une Europe plus sociale et moins technocratique.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-other-359",
+  "title": "Agriculture : les producteurs de fruits alertent sur les récoltes",
+  "excerpt": "Le gel et la sécheresse ont endommagé plusieurs exploitations.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-228",
+  "title": "La Cour des comptes promet de réformer la justice des mineurs",
+  "excerpt": "Le rapport veut des peines plus rapides et un meilleur accompagnement éducatif.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-318",
+  "title": "Le prix du timbre augmentera en janvier",
+  "excerpt": "La Poste justifie la hausse par l’inflation et la baisse du courrier.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-299",
+  "title": "Xavier Bertrand annonce une grande convention sur les institutions",
+  "excerpt": "Le candidat veut rassembler au-delà de son parti. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-175",
+  "title": "Fabien Roussel veut conditionner l’aide au développement au respect des droits",
+  "excerpt": "Le candidat défend une diplomatie plus ferme et plus transparente. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-084",
+  "title": "Assurance chômage : la réforme entre en vigueur",
+  "excerpt": "Les règles d’indemnisation changent pour les demandeurs d’emploi.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-054",
+  "title": "Insécurité : les maires demandent davantage de police de proximité",
+  "excerpt": "La délinquance et les trafics inquiètent les élus locaux.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-045",
+  "title": "Édouard Philippe accuse son adversaire d’avoir favorisé l’immigration clandestine",
+  "excerpt": "Le débat sur les frontières et l’asile domine la campagne. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-052",
+  "title": "Une étude accuse son adversaire d’avoir favorisé l’immigration clandestine",
+  "excerpt": "Le débat sur les frontières et l’asile domine la opération.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-062",
+  "title": "Le gouvernement promet un référendum sur l’immigration",
+  "excerpt": "Le parti veut modifier la Constitution et les règles du droit du sol.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-097",
+  "title": "Bruno Retailleau promet de revaloriser le salaire des infirmiers",
+  "excerpt": "Le candidat veut rendre les métiers du soin plus attractifs. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-284",
+  "title": "Le gouvernement promet une loi pour les territoires ruraux",
+  "excerpt": "Le rapport veut garantir les services publics et la couverture mobile.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-063",
+  "title": "Terrorisme : le gouvernement renforce le plan Vigipirate",
+  "excerpt": "Les forces de sécurité sont mobilisées après une attaque déjouée. La candidate ou le candidat DLF veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-194",
+  "title": "Le Sénat propose de sortir du commandement intégré de l’OTAN",
+  "excerpt": "Le rapport veut une politique étrangère plus indépendante.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-287",
+  "title": "David Lisnard promet un plan pour les outre-mer",
+  "excerpt": "Le candidat veut rattraper les retards d’équipement et de logement. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-other-360",
+  "title": "Sport : les clubs amateurs manquent de bénévoles",
+  "excerpt": "Les fédérations cherchent de nouvelles recrues.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-348",
+  "title": "Outre-mer : la crise de l’eau s’aggrave à Mayotte",
+  "excerpt": "Les habitants dénoncent le manque d’infrastructures.",
+  "election_related": false,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-087",
+  "title": "Retraites : les syndicats appellent à une nouvelle journée de mobilisation",
+  "excerpt": "La contestation sociale se poursuit contre le report de l’âge de départ. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-117",
+  "title": "Raphaël Glucksmann promet de recruter 20 000 enseignants",
+  "excerpt": "Le candidat veut réduire les classes et revaloriser le métier. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-247",
+  "title": "Nicolas Dupont-Aignan promet un plan pour la langue française",
+  "excerpt": "Le candidat veut défendre la culture et l’identité dans les écoles. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-333",
+  "title": "Éric Zemmour réunit ses partisans à Paris",
+  "excerpt": "Le candidat de Reconquête veut réduire l’immigration et la dette.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "hard-neg-343",
+  "title": "École : une rentrée sous tension dans les académies",
+  "excerpt": "Les syndicats dénoncent le manque de professeurs remplaçants.",
+  "election_related": false,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-184",
+  "title": "Ukraine : les dirigeants européens discutent d’un nouveau paquet d’aide",
+  "excerpt": "La guerre et la sécurité du continent dominent le sommet de Bruxelles.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-174",
+  "title": "Russie : de nouvelles sanctions européennes adoptées",
+  "excerpt": "Les Vingt-Sept ciblent les financements et les exportations stratégiques.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-191",
+  "title": "Ukraine : les dirigeants européens discutent d’un nouveau paquet d’aide",
+  "excerpt": "La guerre et la sécurité du continent dominent le sommet de Bruxelles. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-046",
+  "title": "Une étude veut durcir les conditions du droit d’asile",
+  "excerpt": "Le rapport propose de réduire l’immigration et de renforcer les frontières.",
+  "election_related": false,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-350",
+  "title": "Europe : les Vingt-Sept discutent d’un nouveau paquet d’aide à l’Ukraine",
+  "excerpt": "Le sommet de Bruxelles doit aussi aborder la défense commune.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-085",
+  "title": "Raphaël Glucksmann dénonce la baisse des budgets sociaux",
+  "excerpt": "Le candidat promet un plan contre la pauvreté et les inégalités. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-pos-331",
+  "title": "Marine Tondelier défend la transition écologique",
+  "excerpt": "L’écologiste propose de rénover les logements et de sortir des énergies fossiles.",
+  "election_related": true,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template-hard-positive"
+ },
+ {
+  "id": "syn-203",
+  "title": "Assemblée nationale : une motion de censure déposée",
+  "excerpt": "Le gouvernement est accusé de passer en force avec le 49.3. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-177",
+  "title": "Ukraine : les dirigeants européens discutent d’un nouveau paquet d’aide",
+  "excerpt": "La guerre et la sécurité du continent dominent le sommet de Bruxelles. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-213",
+  "title": "François Ruffin veut instaurer le vote à 16 ans",
+  "excerpt": "Le candidat défend une démocratie plus participative et une citoyenneté précoce. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-314",
+  "title": "Les Français plébiscitent le télétravail selon une étude",
+  "excerpt": "Les entreprises adaptent leurs organisations et leurs bureaux.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-310",
+  "title": "La Cour des comptes rencontre les syndicats à Paris",
+  "excerpt": "Le rapport veut écouter les représentants des salariés.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-068",
+  "title": "Le RSA sera réformé pour inciter au retour à l’emploi",
+  "excerpt": "Le gouvernement veut expérimenter un accompagnement renforcé des bénéficiaires.",
+  "election_related": false,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-267",
+  "title": "Xavier Bertrand propose de supprimer les subventions aux associations militantes",
+  "excerpt": "Le candidat veut recentrer l’argent public sur la culture traditionnelle. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-030",
+  "title": "Le SMIC sera revalorisé plus tôt que prévu, annonce le gouvernement",
+  "excerpt": "L’exécutif veut répondre à la colère sur le pouvoir d’achat.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-236",
+  "title": "Procès : l’ancien ministre comparaît pour corruption",
+  "excerpt": "Le tribunal doit examiner des faits de détournement de fonds publics.",
+  "election_related": false,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-176",
+  "title": "Les élus locaux veut renégocier les traités européens",
+  "excerpt": "Le rapport propose une Europe plus sociale et moins technocratique.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-123",
+  "title": "Éric Zemmour promet la gratuité des cantines scolaires",
+  "excerpt": "La mesure vise les familles modestes et les communes rurales. La candidate ou le candidat Reconquête veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "education",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-200",
+  "title": "Le Premier ministre engage sa responsabilité sur le budget",
+  "excerpt": "Les oppositions dénoncent un manque de débat parlementaire.",
+  "election_related": false,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-265",
+  "title": "Jean-Luc Mélenchon veut inscrire la défense du patrimoine dans la Constitution",
+  "excerpt": "Le programme prévoit un fonds pour les monuments locaux. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-335",
+  "title": "Éthiopie : un nouveau barrage pour renforcer l’indépendance énergétique",
+  "excerpt": "Le projet hydroélectrique doit exporter de l’électricité dans la région.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-023",
+  "title": "Le SMIC sera revalorisé plus tôt que prévu, annonce le gouvernement",
+  "excerpt": "L’exécutif veut répondre à la colère sur le pouvoir d’achat. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-061",
+  "title": "Insécurité : les maires demandent davantage de police de proximité",
+  "excerpt": "La délinquance et les trafics inquiètent les élus locaux. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-095",
+  "title": "Nicolas Dupont-Aignan veut encadrer les prix des médicaments",
+  "excerpt": "Le candidat cible les pénuries et le coût des traitements. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-235",
+  "title": "Fabien Roussel promet de réformer la justice des mineurs",
+  "excerpt": "Le candidat veut des peines plus rapides et un meilleur accompagnement éducatif. Le sujet devrait dominer le prochain débat entre les candidats.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-182",
+  "title": "Le Sénat veut conditionner l’aide au développement au respect des droits",
+  "excerpt": "Le rapport défend une diplomatie plus ferme et plus transparente.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "hard-neg-342",
+  "title": "Hôpital : les urgences de nuit ferment dans plusieurs villes",
+  "excerpt": "Le manque de médecins oblige les établissements à réorganiser leurs services.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template-hard-negative"
+ },
+ {
+  "id": "syn-152",
+  "title": "La Cour des comptes défend la construction de nouveaux réacteurs nucléaires",
+  "excerpt": "Le texte mise sur l’énergie décarbonée et l’indépendance énergétique.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-036",
+  "title": "Une étude propose un impôt sur les superprofits pour financer le budget",
+  "excerpt": "La mesure vise les grandes entreprises et la dette publique.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-273",
+  "title": "David Lisnard promet un plan pour les outre-mer",
+  "excerpt": "Le candidat veut rattraper les retards d’équipement et de logement. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "local_overseas",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-187",
+  "title": "François Hollande propose de sortir du commandement intégré de l’OTAN",
+  "excerpt": "Le candidat veut une politique étrangère plus indépendante. La candidate ou le candidat PS veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-146",
+  "title": "Éolien : le Sénat adopte une loi pour accélérer les projets",
+  "excerpt": "Le texte doit réduire les délais et mieux associer les territoires.",
+  "election_related": false,
+  "topic": "climate_energy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-195",
+  "title": "Marine Tondelier propose un référendum sur la réforme des institutions",
+  "excerpt": "Le candidat veut réduire le nombre de parlementaires et introduire la proportionnelle. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "institutions_democracy",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-079",
+  "title": "Gabriel Attal promet d’abroger la réforme des retraites",
+  "excerpt": "Le candidat veut revenir à 62 ans et ouvrir une concertation avec les syndicats. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-022",
+  "title": "La Cour des comptes propose un impôt sur les superprofits pour financer le budget",
+  "excerpt": "La mesure vise les grandes entreprises et la dette publique.",
+  "election_related": false,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-320",
+  "title": "Une étude annonce une grande convention sur les institutions",
+  "excerpt": "Le rapport veut rassembler au-delà de son parti.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-261",
+  "title": "Nicolas Dupont-Aignan promet un plan pour la langue française",
+  "excerpt": "Le candidat veut défendre la culture et l’identité dans les écoles. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-065",
+  "title": "Gabriel Attal promet d’abroger la réforme des retraites",
+  "excerpt": "Le candidat veut revenir à 62 ans et ouvrir une concertation avec les syndicats. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "pensions_social",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-313",
+  "title": "Xavier Bertrand annonce une grande convention sur les institutions",
+  "excerpt": "Le candidat veut rassembler au-delà de son parti. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-221",
+  "title": "Fabien Roussel promet de réformer la justice des mineurs",
+  "excerpt": "Le candidat veut des peines plus rapides et un meilleur accompagnement éducatif. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "justice",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-093",
+  "title": "François Ruffin propose la création d’un service public de la santé",
+  "excerpt": "Le programme prévoit de mieux rembourser les médicaments et les mutuelles. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-049",
+  "title": "Terrorisme : le gouvernement renforce le plan Vigipirate",
+  "excerpt": "Les forces de sécurité sont mobilisées après une attaque déjouée. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-092",
+  "title": "Hôpital : les soignants dénoncent le manque de lits et de personnel",
+  "excerpt": "Les urgences de plusieurs villes sont en tension cet hiver.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-104",
+  "title": "La Cour des comptes promet de revaloriser le salaire des infirmiers",
+  "excerpt": "Le rapport veut rendre les métiers du soin plus attractifs.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-264",
+  "title": "Musées : les tarifs augmentent pour les visiteurs étrangers",
+  "excerpt": "La mesure vise à financer l’entretien du patrimoine.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-059",
+  "title": "Édouard Philippe accuse son adversaire d’avoir favorisé l’immigration clandestine",
+  "excerpt": "Le débat sur les frontières et l’asile domine la campagne. La candidate ou le candidat Horizons veut convaincre avant le premier tour.",
+  "election_related": true,
+  "topic": "immigration_security",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-304",
+  "title": "Le prix du timbre augmentera en janvier",
+  "excerpt": "La Poste justifie la hausse par l’inflation et la baisse du courrier.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-other-356",
+  "title": "Météo : un épisode de froid attendu sur la moitié nord",
+  "excerpt": "Les températures vont chuter de plusieurs degrés cette semaine.",
+  "election_related": false,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-013",
+  "title": "Marine Le Pen promet une baisse de la TVA sur les produits de première nécessité",
+  "excerpt": "Le candidat veut agir sur le pouvoir d’achat et les prix du quotidien. Les équipes de campagne préparent la présentation du programme.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-311",
+  "title": "Le prix du timbre augmentera en janvier",
+  "excerpt": "La Poste justifie la hausse par l’inflation et la baisse du courrier. Les sondages montrent une attention croissante des électeurs.",
+  "election_related": true,
+  "topic": "other",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-114",
+  "title": "Une étude propose la création d’un service public de la santé",
+  "excerpt": "Le texte prévoit de mieux rembourser les médicaments et les mutuelles.",
+  "election_related": false,
+  "topic": "health",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-019",
+  "title": "Gabriel Attal présente son plan pour les petites entreprises",
+  "excerpt": "Le programme prévoit des exonérations de cotisations et un crédit d’impôt. Cette annonce s’inscrit dans la campagne présidentielle.",
+  "election_related": true,
+  "topic": "economy_purchasing_power",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-262",
+  "title": "Laïcité : le gouvernement présente une charte aux associations",
+  "excerpt": "Le texte doit préciser les règles du financement public et du cultuel.",
+  "election_related": false,
+  "topic": "culture_identity",
+  "synthetic": true,
+  "label_source": "template"
+ },
+ {
+  "id": "syn-172",
+  "title": "Moyen-Orient : la France appelle à un cessez-le-feu",
+  "excerpt": "La diplomatie française tente de peser sur les négociations régionales.",
+  "election_related": false,
+  "topic": "europe_foreign",
+  "synthetic": true,
+  "label_source": "template"
+ }
+]

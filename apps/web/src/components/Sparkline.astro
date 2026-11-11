@@ -1,0 +1,38 @@
+---
+interface Props {
+  values: number[];
+  color?: string;
+  width?: number;
+  height?: number;
+}
+
+const { values, color = '#0b3d91', width = 120, height = 32 } = Astro.props;
+const min = Math.min(...values);
+const max = Math.max(...values);
+const span = max - min || 1;
+const step = values.length > 1 ? width / (values.length - 1) : width;
+const points = values
+  .map((value, index) => {
+    const x = index * step;
+    const y = height - ((value - min) / span) * (height - 4) - 2;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  })
+  .join(' ');
+---
+
+<svg viewBox={`0 0 ${width} ${height}`} width={width} height={height} class="overflow-visible" aria-hidden="true">
+  <polyline
+    points={points}
+    fill="none"
+    stroke={color}
+    stroke-width="1.8"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+  <circle
+    cx={width}
+    cy={Number(points.split(' ').at(-1)?.split(',')[1] ?? height / 2)}
+    r="2.6"
+    fill={color}
+  />
+</svg>

@@ -1,0 +1,21 @@
+---
+import { env } from 'cloudflare:workers';
+import { readPollAverages } from '../../lib/api';
+import { buildLegislativeScenario } from '../../lib/legislative';
+import LegislativeWorkspace from '../../components/LegislativeWorkspace.svelte';
+import Base from '../../layouts/Base.astro';
+
+const db = (env as any).DB as D1Database | undefined;
+const pollAverages = await readPollAverages(db);
+const baselineParam = Astro.url.searchParams.get('baseline');
+const baselineYear = baselineParam === '2024' ? 2024 : 2022;
+const strategyParam = Astro.url.searchParams.get('strategy');
+const strategy = (['none', 'republican', 'left-unity', 'rn-alliance'] as const).includes(strategyParam as any)
+  ? (strategyParam as 'none' | 'republican' | 'left-unity' | 'rn-alliance')
+  : 'none';
+const scenario = buildLegislativeScenario(pollAverages.data as any, { baselineYear, strategy });
+---
+
+<Base lang="en" fullscreen active="legislative">
+  <LegislativeWorkspace {scenario} baselineYear={baselineYear} strategy={strategy} lang="en" client:load />
+</Base>

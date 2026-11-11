@@ -1,0 +1,130 @@
+[
+  {
+    "id": "rn",
+    "name": "Rassemblement national",
+    "short_name": "RN",
+    "color": "#0D1B4C",
+    "spectrum": "far-right",
+    "created_at": "1972-10-05"
+  },
+  {
+    "id": "renaissance",
+    "name": "Renaissance",
+    "short_name": "REN",
+    "color": "#FFD400",
+    "spectrum": "centre",
+    "created_at": "2016-04-06"
+  },
+  {
+    "id": "lfi",
+    "name": "La France insoumise",
+    "short_name": "LFI",
+    "color": "#C8102E",
+    "spectrum": "left",
+    "created_at": "2016-02-10"
+  },
+  {
+    "id": "ps",
+    "name": "Parti socialiste",
+    "short_name": "PS",
+    "color": "#E75480",
+    "spectrum": "centre-left",
+    "created_at": "1969-07-04"
+  },
+  {
+    "id": "lr",
+    "name": "Les Républicains",
+    "short_name": "LR",
+    "color": "#0066CC",
+    "spectrum": "right",
+    "created_at": "2015-05-30"
+  },
+  {
+    "id": "eelv",
+    "name": "Europe Écologie Les Verts",
+    "short_name": "EELV",
+    "color": "#2E8B57",
+    "spectrum": "green",
+    "created_at": "2010-11-13"
+  },
+  {
+    "id": "pcf",
+    "name": "Parti communiste français",
+    "short_name": "PCF",
+    "color": "#C00000",
+    "spectrum": "left",
+    "created_at": "1920-12-30"
+  },
+  {
+    "id": "horizons",
+    "name": "Horizons",
+    "short_name": "HOR",
+    "color": "#00A3E0",
+    "spectrum": "centre-right",
+    "created_at": "2021-10-09"
+  },
+  {
+    "id": "modem",
+    "name": "Mouvement démocrate",
+    "short_name": "MoDem",
+    "color": "#F28C28",
+    "spectrum": "centre",
+    "created_at": "2007-05-10"
+  },
+  {
+    "id": "reconquete",
+    "name": "Reconquête",
+    "short_name": "REC",
+    "color": "#1B1B1B",
+    "spectrum": "far-right",
+    "created_at": "2021-12-05"
+  },
+  {
+    "id": "dlf",
+    "name": "Debout la France",
+    "short_name": "DLF",
+    "color": "#6A0DAD",
+    "spectrum": "sovereignist",
+    "created_at": "2008-11-23"
+  },
+  {
+    "id": "nous-france",
+    "name": "Nous France",
+    "short_name": "NF",
+    "color": "#4B6CB7",
+    "spectrum": "right",
+    "created_at": "2022-10-01"
+  },
+  {
+    "id": "resistons",
+    "name": "Résistons !",
+    "short_name": "RES",
+    "color": "#6B8E23",
+    "spectrum": "ruralist",
+    "created_at": "2020-03-01"
+  },
+  {
+    "id": "lo",
+    "name": "Lutte ouvrière",
+    "short_name": "LO",
+    "color": "#8B0000",
+    "spectrum": "far-left",
+    "created_at": "1968-06-01"
+  },
+  {
+    "id": "npa",
+    "name": "Nouveau Parti anticapitaliste",
+    "short_name": "NPA",
+    "color": "#B22222",
+    "spectrum": "far-left",
+    "created_at": "2009-02-07"
+  },
+  {
+    "id": "divers",
+    "name": "Divers",
+    "short_name": "DIV",
+    "color": "#94a3b8",
+    "spectrum": "other",
+    "created_at": "2026-01-01"
+  }
+]

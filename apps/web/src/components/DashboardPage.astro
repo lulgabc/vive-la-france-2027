@@ -1,0 +1,155 @@
+---
+import {
+  candidates,
+  daysUntil,
+  demo,
+  ELECTION_DATES,
+  localizedBio,
+  localizedName,
+  parties,
+  results2022,
+} from '@vlf/domain';
+import { env } from 'cloudflare:workers';
+import { readFeed, readMarkets, readMomentum, readPollAverages, readScoreHistory, readScores, readSources } from '../lib/api';
+import { darkPartyColor } from '../lib/colors';
+import { buildProjection } from '../lib/projection';
+import { onlyMetropolitan } from '../lib/geo';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+import Dashboard from './Dashboard.svelte';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const db = (env as any).DB as D1Database | undefined;
+const pipelineBase = (import.meta.env.PUBLIC_PIPELINE_URL as string | undefined) ?? '';
+const liveUrl = pipelineBase ? `${pipelineBase.replace(/\/$/, '')}/live` : '';
+
+const [feed, momentum, markets, sources, pollAverages, scores, history] = await Promise.all([
+  readFeed(db, { limit: 60, electionOnly: true }),
+  readMomentum(db),
+  readMarkets(db),
+  readSources(db),
+  readPollAverages(db),
+  readScores(db),
+  readScoreHistory(db),
+]);
+
+const pollMap = new Map(pollAverages.data.map((row: any) => [row.candidate_id, row]));
+const scoreMap = new Map(scores.data.map((row: any) => [row.entity_id, row]));
+const projection = buildProjection(results2022.departments, pollAverages.data as any);
+const metropolitanDepartments = onlyMetropolitan(results2022.departments);
+const metropolitanProjection = onlyMetropolitan(projection.departments);
+const historyMap = new Map<string, number[]>();
+for (const row of history.data) {
+  const list = historyMap.get(row.entity_id) ?? [];
+  list.push(row.composite);
+  historyMap.set(row.entity_id, list);
+}
+
+const statusLabel = (status: string) =>
+  status === 'declared'
+    ? t('status.declared')
+    : status === 'likely'
+      ? t('status.likely')
+      : status === 'potential'
+        ? t('status.potential')
+        : t('status.withdrawn');
+
+const rows = demo.candidates
+  .map((score) => {
+    const candidate = candidates.find((item) => item.id === score.candidate_id);
+    const party = candidate ? parties.find((item) => item.id === candidate.party_id) : undefined;
+    if (!candidate || !party) return null;
+    const real = scoreMap.get(candidate.id);
+    let components: any = null;
+    if (real) {
+      try {
+        components = JSON.parse(real.components_json ?? '{}');
+      } catch {
+        components = null;
+      }
+    }
+    const isReal = Boolean(real && components && components.demo === false);
+    return {
+      id: candidate.id,
+      slug: candidate.slug,
+      name: localizedName(candidate, lang),
+      party: party.short_name,
+      partyName: party.name,
+      color: darkPartyColor(party.id),
+      avatar: candidate.avatar,
+      avatarCredit: candidate.avatar_credit,
+      avatarSource: candidate.avatar_source,
+      status: statusLabel(candidate.status),
+      bio: localizedBio(candidate, lang),
+      poll: pollMap.get(candidate.id)?.avg ?? score.poll_avg,
+      pollCount: pollMap.get(candidate.id)?.polls ?? 0,
+      pollLast: pollMap.get(candidate.id)?.last_poll_at ?? null,
+      market: isReal ? Number(real.market_prob ?? 0) : score.market_prob,
+      media: isReal ? Number(real.share_of_voice ?? 0) : score.share_of_voice,
+      social: isReal ? Number(real.social_attention ?? 0) : score.social_attention,
+      elite: isReal ? Number(components.elite ?? 0) : score.elite,
+      composite: isReal ? Number(real.composite) : score.composite,
+      isReal,
+      marketAvailable: isReal ? components?.market !== null && components?.market !== undefined : true,
+      socialAvailable: isReal ? components?.social !== null && components?.social !== undefined : true,
+      eliteAvailable: isReal ? components?.elite !== null && components?.elite !== undefined : true,
+      eliteSeat: isReal ? Number(components?.elite_seat ?? 0) : 0,
+      eliteParrainage: isReal ? Number(components?.elite_parrainage ?? 0) : 0,
+      eliteParrainageTotal: isReal ? Number(components?.elite_parrainage_total ?? 0) : 0,
+      eliteEndorsementCount: isReal ? Number(components?.elite_endorsement_count ?? 0) : 0,
+      confidence: isReal ? real.confidence : score.confidence,
+      trend: isReal ? historyMap.get(candidate.id) ?? [] : score.trend,
+      declaredAt: candidate.declared_at,
+    };
+  })
+  .filter((row): row is NonNullable<typeof row> => row !== null);
+
+const realRows = rows.filter((row) => row.isReal);
+const dashboardRows = realRows.length > 0 ? realRows : rows;
+
+const ticker =
+  feed.data[0]?.title ??
+  (lang === 'fr'
+    ? 'Observatoire indépendant de la présidentielle 2027'
+    : lang === 'en'
+      ? 'Independent observatory of the 2027 presidential election'
+      : '2027 法国总统选举独立观察站');
+
+const stats = {
+  articles: feed.total,
+  sources: sources.length,
+  x: 25,
+};
+---
+
+<Dashboard
+  {...({
+    candidates: dashboardRows,
+    mapData: metropolitanDepartments,
+    projection: metropolitanProjection,
+    projectionModel: projection.model,
+    projectionNational: projection.national,
+    projectionBacktest: projection.backtest,
+    projectionUncertainty: projection.uncertainty,
+    momentum: momentum.data,
+    feed: feed.data,
+    markets: markets.data,
+    lang,
+    days: daysUntil(ELECTION_DATES.firstRound),
+    stats,
+    ticker,
+    liveUrl,
+    srTitle:
+      lang === 'fr'
+        ? 'Vive la France 2027 — observatoire de la présidentielle'
+        : lang === 'en'
+          ? 'Vive la France 2027 — presidential observatory'
+          : 'Vive la France 2027 — 总统选举观察站',
+  } as any)}
+  client:load
+/>

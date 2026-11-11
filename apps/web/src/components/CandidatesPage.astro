@@ -1,0 +1,60 @@
+---
+import { candidates, demoScore, localizedName, partyById } from '@vlf/domain';
+import { env } from 'cloudflare:workers';
+import { readPollAverages } from '../lib/api';
+import { candidateRoute } from '../i18n/routes';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const pollData = await readPollAverages((env as any).DB as D1Database | undefined);
+const pollMap = new Map(pollData.data.map((row: any) => [row.candidate_id, row]));
+const order = { declared: 0, likely: 1, potential: 2, withdrawn: 3 } as const;
+const sorted = [...candidates].sort((a, b) => order[a.status] - order[b.status] || a.full_name.localeCompare(b.full_name));
+---
+
+<section class="border-b border-rule">
+  <div class="container-page py-8 md:py-12">
+    <div class="kicker">{t('nav.candidates')}</div>
+    <h1 class="mt-2 font-display text-4xl md:text-5xl tracking-tight">{t('nav.candidates')}</h1>
+    <p class="mt-3 text-sm text-muted max-w-2xl">{t('home.scoreboardNote')}</p>
+  </div>
+</section>
+
+<section class="container-page py-8 md:py-12">
+  <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    {sorted.map((candidate) => {
+      const party = partyById(candidate.party_id);
+      const score = demoScore(candidate.id);
+      const poll = pollMap.get(candidate.id);
+      const pollValue = poll?.avg ?? score?.poll_avg;
+      const statusKey = candidate.status === 'declared' ? 'status.declared' : candidate.status === 'likely' ? 'status.likely' : candidate.status === 'potential' ? 'status.potential' : 'status.withdrawn';
+      return (
+        <a href={candidateRoute(candidate.slug, lang)} class="border border-rule bg-white/40 p-4 hover:border-ink transition-colors">
+          <div class="flex items-start gap-3">
+            <img src={candidate.avatar} alt="" class="h-12 w-12 rounded-full border border-rule object-cover bg-paper-deep" loading="lazy" />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="inline-flex items-center gap-1.5 text-xs font-semibold" style={`color:${party?.color ?? '#6b6b6b'}`}>
+                  <span class="inline-block h-2.5 w-2.5 rounded-full" style={`background:${party?.color ?? '#9ca3af'}`}></span>
+                  {party?.short_name ?? candidate.party_id}
+                </span>
+                <span class="text-xs text-muted">{t(statusKey as any)}</span>
+              </div>
+              <div class="mt-1 font-display text-xl">{localizedName(candidate, lang)}</div>
+            </div>
+          </div>
+          <div class="mt-3 flex items-end justify-between">
+            <span class="text-xs text-muted">{t('score.poll')} {typeof pollValue === 'number' ? `${pollValue.toFixed(1).replace('.', ',')} %` : '—'}</span>
+            <span class="font-display text-2xl font-semibold">{score ? Math.round(score.composite) : '—'}</span>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</section>

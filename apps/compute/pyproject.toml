@@ -1,0 +1,19 @@
+[project]
+name = "vlf-compute"
+version = "0.1.0"
+description = "Heavy compute for Vive la France 2027: poll PDF parsing, Bayesian aggregation, Monte Carlo."
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.8",
+  "httpx>=0.27",
+  "pdfplumber>=0.11",
+  "pymc>=5.16",
+  "arviz>=0.19",
+  "polars>=1.8",
+  "numpy>=1.26",
+]
+
+[tool.uv]
+package = false

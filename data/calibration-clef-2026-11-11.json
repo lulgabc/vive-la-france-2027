@@ -1,0 +1,4643 @@
+{
+ "generated_at": "2026-11-11T09:16:51.690724+00:00",
+ "model_requested": "@cf/cloudflare/clef",
+ "model_returned": "clef",
+ "samples": 360,
+ "errors": 0,
+ "error_examples": [],
+ "metrics": {
+  "samples": 360,
+  "election_accuracy": 0.95,
+  "election_precision": 0.884,
+  "election_recall": 0.905,
+  "topic_accuracy": 0.489,
+  "topic_macro_accuracy": 0.5,
+  "per_topic": [
+   {
+    "topic": "economy_purchasing_power",
+    "samples": 34,
+    "accuracy": 0.588
+   },
+   {
+    "topic": "immigration_security",
+    "samples": 16,
+    "accuracy": 0.25
+   },
+   {
+    "topic": "pensions_social",
+    "samples": 26,
+    "accuracy": 0.115
+   },
+   {
+    "topic": "health",
+    "samples": 8,
+    "accuracy": 0.875
+   },
+   {
+    "topic": "education",
+    "samples": 20,
+    "accuracy": 0.55
+   },
+   {
+    "topic": "climate_energy",
+    "samples": 16,
+    "accuracy": 0.812
+   },
+   {
+    "topic": "europe_foreign",
+    "samples": 61,
+    "accuracy": 0.574
+   },
+   {
+    "topic": "institutions_democracy",
+    "samples": 71,
+    "accuracy": 0.761
+   },
+   {
+    "topic": "justice",
+    "samples": 12,
+    "accuracy": 0.417
+   },
+   {
+    "topic": "culture_identity",
+    "samples": 6,
+    "accuracy": 0.833
+   },
+   {
+    "topic": "local_overseas",
+    "samples": 6,
+    "accuracy": 0.0
+   },
+   {
+    "topic": "other",
+    "samples": 84,
+    "accuracy": 0.226
+   }
+  ],
+  "confusion": {
+   "europe_foreign": {
+    "economy_purchasing_power": 5,
+    "europe_foreign": 35,
+    "other": 4,
+    "justice": 2,
+    "institutions_democracy": 14,
+    "education": 1
+   },
+   "pensions_social": {
+    "education": 4,
+    "other": 3,
+    "pensions_social": 3,
+    "immigration_security": 1,
+    "economy_purchasing_power": 3,
+    "institutions_democracy": 8,
+    "health": 1,
+    "culture_identity": 2,
+    "justice": 1
+   },
+   "institutions_democracy": {
+    "institutions_democracy": 54,
+    "other": 1,
+    "economy_purchasing_power": 1,
+    "culture_identity": 7,
+    "europe_foreign": 5,
+    "climate_energy": 2,
+    "health": 1
+   },
+   "other": {
+    "institutions_democracy": 25,
+    "culture_identity": 18,
+    "climate_energy": 3,
+    "other": 19,
+    "immigration_security": 3,
+    "europe_foreign": 12,
+    "justice": 2,
+    "economy_purchasing_power": 2
+   },
+   "climate_energy": {
+    "climate_energy": 13,
+    "other": 2,
+    "institutions_democracy": 1
+   },
+   "education": {
+    "education": 11,
+    "other": 1,
+    "immigration_security": 5,
+    "climate_energy": 2,
+    "justice": 1
+   },
+   "economy_purchasing_power": {
+    "immigration_security": 1,
+    "pensions_social": 2,
+    "economy_purchasing_power": 20,
+    "other": 3,
+    "climate_energy": 3,
+    "health": 1,
+    "justice": 1,
+    "institutions_democracy": 1,
+    "culture_identity": 2
+   },
+   "health": {
+    "health": 7,
+    "education": 1
+   },
+   "justice": {
+    "institutions_democracy": 1,
+    "justice": 5,
+    "europe_foreign": 3,
+    "other": 2,
+    "climate_energy": 1
+   },
+   "local_overseas": {
+    "institutions_democracy": 2,
+    "other": 4
+   },
+   "immigration_security": {
+    "other": 2,
+    "europe_foreign": 4,
+    "immigration_security": 4,
+    "culture_identity": 2,
+    "climate_energy": 1,
+    "justice": 3
+   },
+   "culture_identity": {
+    "culture_identity": 5,
+    "europe_foreign": 1
+   }
+  },
+  "calibration": {
+   "samples": 360,
+   "brier": 0.038,
+   "ece": 0.041,
+   "bins": [
+    {
+     "bin": "0.0-0.1",
+     "count": 237,
+     "avg_probability": 0.027,
+     "accuracy": 0.008
+    },
+    {
+     "bin": "0.1-0.2",
+     "count": 15,
+     "avg_probability": 0.14,
+     "accuracy": 0.067
+    },
+    {
+     "bin": "0.2-0.3",
+     "count": 10,
+     "avg_probability": 0.244,
+     "accuracy": 0.0
+    },
+    {
+     "bin": "0.3-0.4",
+     "count": 6,
+     "avg_probability": 0.346,
+     "accuracy": 0.5
+    },
+    {
+     "bin": "0.4-0.5",
+     "count": 6,
+     "avg_probability": 0.456,
+     "accuracy": 0.333
+    },
+    {
+     "bin": "0.5-0.6",
+     "count": 3,
+     "avg_probability": 0.569,
+     "accuracy": 0.0
+    },
+    {
+     "bin": "0.6-0.7",
+     "count": 2,
+     "avg_probability": 0.641,
+     "accuracy": 0.5
+    },
+    {
+     "bin": "0.7-0.8",
+     "count": 6,
+     "avg_probability": 0.749,
+     "accuracy": 1.0
+    },
+    {
+     "bin": "0.8-0.9",
+     "count": 17,
+     "avg_probability": 0.866,
+     "accuracy": 0.882
+    },
+    {
+     "bin": "0.9-1.0",
+     "count": 58,
+     "avg_probability": 0.954,
+     "accuracy": 0.931
+    }
+   ]
+  },
+  "mismatches": [
+   {
+    "id": "art-art_6544133d385e5f3e6dfe5cee",
+    "title": "Excédent commercial chinois: la barre des 1000 milliards de dollars dépassée",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_50a6bf88ab9e3c065772edb3",
+    "title": "En direct, grève du 10 novembre : suivez la journée de mobilisation dans les facs et les lycées",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "education"
+   },
+   {
+    "id": "art-art_79ab38f256d25d128d10fca1",
+    "title": "«Plus jamais ils n’auront de cavalier sur le dos» : en Normandie, la retraite quatre étoiles des chevaux de la garde républicaine",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "bsky-soc_d6c0e201a2dd4799aaa49d69",
+    "title": "𝗘𝗹𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀 𝗽𝗿𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝗶𝗮𝗹𝗲𝘀 𝗱𝗲 𝟮𝟬𝟮𝟳 - lefigaro.fr (francés, Francia)",
+    "expected_election": false,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_c5d6c9100c0d150283f762e8",
+    "title": "L'Australie va imposer des garde-fous aux entreprises de l'IA opérant sur son sol",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_815997924a1b4925e9aa4b0a",
+    "title": "Sens Public — SENS PUBLIC 26/11/12 Je P1",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_6bea4050afa09441e8e5cd22",
+    "title": "Mobilisations en France : le Smic à 1 502 € net, \"des miettes\" selon la CGT",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_adb11d005c4310c3ee0185d8",
+    "title": "«George Michael : The Faith Tour» : ce que nous dévoile le documentaire musical sur le chanteur disparu",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "bsky-soc_1d7988db5ee4422fb0d6e92e",
+    "title": "𝗘𝗹𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀 𝗽𝗿𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝗶𝗮𝗹𝗲𝘀 𝗱𝗲 𝟮𝟬𝟮𝟳 - liberation.fr (francés, Francia)",
+    "expected_election": false,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_3e8c6ccd660262af3265df2a",
+    "title": "\"Le pôle emploi du crime\" : de jeunes Européens recrutés pour assassiner, ce phénomène qui inquiète les autorités",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "economy_purchasing_power",
+    "predicted_topic": "immigration_security"
+   },
+   {
+    "id": "art-art_065852a45d47390a24ebcfc3",
+    "title": "Amours, scandales et espionnage: quand la vie privée des patrons menace leur entreprise",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_e96f8cc1ce1b13e80f4aa5f7",
+    "title": "Peut-on être licencié pour sa double vie amoureuse ? L’étonnante affaire du manager volage",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "education",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_82f497a99800915f7f8f7779",
+    "title": "PER : trois critères pour choisir le meilleur contrat",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "economy_purchasing_power",
+    "predicted_topic": "pensions_social"
+   },
+   {
+    "id": "art-art_e413486bd779743d8cd9e3a0",
+    "title": "EN DIRECT - Élue aspergée d’essence à Chelles : Laurent Nuñez condamne l’agression commise par un élève",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "education",
+    "predicted_topic": "immigration_security"
+   },
+   {
+    "id": "art-art_de8c055c60467b6cb958ee8d",
+    "title": "Argentine: plus de deux millions de personnes réunies à Buenos Aires pour une messe du pape Léon XIV",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_9a050e8f540a29a3a9ec3a8c",
+    "title": "Réforme des heures creuses /heures pleines : la répartition sera désormais différente en hiver et en été",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "climate_energy"
+   },
+   {
+    "id": "art-art_3d9279cc0bcb7c8ad09ee3b0",
+    "title": "Savez-vous ce qui émet un peu ou beaucoup de CO₂ : prendre l’avion, manger de la viande ou utiliser un sèche-linge pendant un an ?",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "climate_energy"
+   },
+   {
+    "id": "art-art_2a588df9a2f35ea7337dfb33",
+    "title": "Les époux Macron déposent une nouvelle plainte aux Etats-Unis contre l’influenceuse Candace Owens",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "justice"
+   },
+   {
+    "id": "bsky-soc_b55a02ae4ebb4dbebf7b2be0",
+    "title": "Édouard Philippe a été détrôné par Jean-Luc Mélenchon dans les enquêtes d’opinion pour la qualification au second tour. Or, l’ancien juppéiste ne vantait-il pas il y a dix ans les mérites de la primaire, quand elle relev",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "justice",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_7bbe852a87bf48018d1c76bb",
+    "title": "m.youtube.com/watch?v=zaae...",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "immigration_security"
+   },
+   {
+    "id": "bsky-soc_0d834cc4a7f646e8b1c67df9",
+    "title": "Présidentielle 2027 : le candidat Horizons Édouard Philippe attendu à Toulouse ce samedi (ladepeche.fr)",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_b589cdd968aca33331c921b6",
+    "title": "Comment un incendie a ravivé les tensions entre nouveaux arrivants et anciens habitants dans la ville de Die",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "climate_energy"
+   },
+   {
+    "id": "art-art_7f126010802ff628e7a0fac9",
+    "title": "Avec l’attribution des cyberattaques contre les frigos à l’Iran, la France hausse d’un cran sa réplique",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "justice",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "bsky-soc_15dec19ae2f342baa9e3e499",
+    "title": "Prêt à voter pour Bruno Retailleau ou David Lisnard en cas de victoire à une primaire, Gabriel Attal abat ses cartes pour éviter un duel entre Marine Le Pen et Jean-Luc Mélenchon en 2027.",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "local_overseas",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_8a25efb53bf022a662118fda",
+    "title": "À Marseille, une vidéo montre un manifestant blessé se faire frapper par plusieurs CRS en marge d'une manifestation",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "immigration_security"
+   },
+   {
+    "id": "bsky-soc_f3fe4473be6f4b8b86124397",
+    "title": "L’augmentation du SMIC relève-t-elle d’une « discussion entre les partenaires sociaux » plutôt que de l’État, comme le dit Édouard Philippe ?",
+    "expected_election": true,
+    "predicted_election": false,
+    "expected_topic": "economy_purchasing_power",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "bsky-soc_81e7a0da171c478d97e35ef1",
+    "title": "Présidentielle 2027 : David Lisnard et les raisons d’une surprenante percée libérale",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_d366b7ebe2834bcbab2ca8ea",
+    "title": "𝗧𝗲𝗱𝗱𝘆 𝗥𝗶𝗻𝗲𝗿 - liberation.fr (francés, Francia)",
+    "expected_election": false,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_3164340038139dfed09d07f7",
+    "title": "Le Bleuet de France, épisode 2 - Ces militaires blessés au combat qui se reconstruisent à travers la pratique du tir à l'arc",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_4853430247088e955dbcf6b7",
+    "title": "Subventions suspendues et intimidation : des eurodéputés français ciblés par un réseau proche des Frères musulmans",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_37a38d998460931a9a9652c4",
+    "title": "Hausse du Smic : les syndicats jugent la réponse insuffisante et la CGT appelle à la grève le 17 novembre",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_9dad442115e9a39209927945",
+    "title": "Pétition pour \"supprimer CNews\" : \"Dans une démocratie, une décision de cette nature ne doit pas être politique\"",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_b4eab0908e5ce977ad0b04bf",
+    "title": "Love Actually : Keira Knightley avoue n'avoir vu le film qu'une seule fois dans sa vie",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_301f8d1e450c9a27814f30aa",
+    "title": "Un monde, un regard — Un monde, un regard",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_60c75a7bcf7c37f7a6e494cc",
+    "title": "Qui est Etienne Jarrier, le chef d’orchestre qui enchante les manifs et les réseaux sociaux ?",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_56504c88f5c06299aab6f6c4",
+    "title": "En Pologne, les démocrates ont besoin de l’unité de l’Europe",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "bsky-soc_74992c08d4e044008e76cbba",
+    "title": "c'est comme ça que tu \"défends\" \"ton\" pays?",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_725cf4ea34ce8dee02494fbb",
+    "title": "Répression des LGBTI+ en Turquie : « Cette opération fait passer par les tribunaux ce que le Parlement a renoncé à voter »",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_ed7bde4b13e4ecc53a643f9f",
+    "title": "L’ONU appelle l’Egypte à mettre fin au « harcèlement » des journalistes et médias nationaux",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_72187ca60e29e24a5b82a3e3",
+    "title": "Frigos connectés, banques piratées… L’Assemblée nationale se penche sur le renforcement de la cybersécurité",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "immigration_security",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_fb4b828b2197737806e74008",
+    "title": "Un incendie apparemment volontaire dans un lycée à Aix-en-Provence, une porte brûlée",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "education",
+    "predicted_topic": "immigration_security"
+   },
+   {
+    "id": "bsky-soc_d110768af85944a0bcf2e2b6",
+    "title": "x.com/JLMelenchon/...",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_a5ee5ea8ddbac6cbb5442cc9",
+    "title": "Nouvelles poursuites des époux Macron contre une influenceuse américaine",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "justice"
+   },
+   {
+    "id": "art-art_7bd7defa07887ab2300f1cc6",
+    "title": "Cyberattaques contre des frigos dans des supermarchés : la France «ne s'interdit rien» dans la riposte contre l'Iran, assure Jean-Noël Barrot",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_0f448ada44a16089955576fd",
+    "title": "«Les Années 80» : les stars de la décennie culte réunies pour une tournée événement dans toute la France",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_9d07f44534befecc8750082e",
+    "title": "Tempête Charles : écoles et services publics fermés mercredi au Portugal",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "education",
+    "predicted_topic": "climate_energy"
+   },
+   {
+    "id": "art-art_863229b1e3ce7b00b1eefba1",
+    "title": "Bonjour chez vous ! — BONJOUR CHEZ VOUS 26/11/12 Je P2",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_439506d3f21178c384ab7364",
+    "title": "Grève dans les lycées : à quoi s'attendre ce mardi, alors que les enseignants renforcent le mouvement ?",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "education"
+   },
+   {
+    "id": "art-art_ec6b7afd285ef34c1f851bcc",
+    "title": "Yvelines : une intervention policière pour des rodéos urbains tourne aux heurts",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "immigration_security"
+   },
+   {
+    "id": "bsky-soc_03f18b9045694e5f92ee254e",
+    "title": "Les instituts ont déjà modifié leurs baromètres. Désormais, la capacité d’un candidat à faire tomber ses adversaires dès le premier débat compte autant que ses intentions de vote.",
+    "expected_election": false,
+    "predicted_election": true,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_24870767dd00549b37cf9b90",
+    "title": "Au cœur de la tempête chez Nvidia, une liaison extraconjugale et l’ombre d'une espionne de Pékin",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "climate_energy",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_cf91461d9569c9928ca42ce1",
+    "title": "Smic, heures supplémentaires... : Ce qu’a annoncé le gouvernement pour répondre à la colère sociale",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_64ca8af2efd6684f8d8bb13b",
+    "title": "Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_45998be9cb9607af0f5ebb70",
+    "title": "Colère sociale : 8 Français sur 10 jugent que le gouvernement n’a pas été à la hauteur face aux émeutes",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_45fb4e55c56d16d9b4b2af47",
+    "title": "Au « Point », le sort d’Etienne Gernelle, son directeur, est scellé",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_74be47d4c6f4849f3e17f371",
+    "title": "\"Notre force, c'est la capacité à nous adapter grâce aux mélanges\" : le succès de l'espèce humaine vu par le biologiste Lluis Quintana-Murci",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "climate_energy",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_c516830ef5d9978ff0283df1",
+    "title": "Bonjour chez vous ! — Emmanuel Maurel : « Raphaël Glucksmann est à sa place dans les manifestations »",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_ad52326a9ae443468061206e",
+    "title": "𝗘𝗹𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀 𝗽𝗿𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝗶𝗮𝗹𝗲𝘀 𝗱𝗲 𝟮𝟬𝟮𝟳 - lemonde.fr (francés, Francia)",
+    "expected_election": false,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_9151ba4f74a829fb53491811",
+    "title": "Cyberattaque contre des supermarchés : \"La question est de savoir si la France va répliquer\", explique le chercheur Guy-Philippe Goldstein, après les accusations visant l'Iran",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "immigration_security",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "bsky-soc_b9e7e39423244d19b5ca47a2",
+    "title": "Oui mais les élections ont lieu après l'hiver et Je n'arrive pazs à imaginer que les Français soient devenus assez veules et bêtes pour élire Marine Le Pen ou Neuneu Bardella!",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_19e451db5bf947d5a6557d09",
+    "title": "À peine candidat à la présidentielle 2027, Teddy Riner fait face au retour d'une ancienne polémique : une photo de lui avec Dieudonné refait surface. ",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "climate_energy",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_06898af35e024770bc8169f8",
+    "title": "J'ai une pote qui a vomi dans les plantes aromatiques du balcon de Léa Salamé et Raphaël Glucksmann, and I think it's beautiful.",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_d784b61446b33124504000fd",
+    "title": "IA : l'ânesse, le renard et les guêpes jalouses, par Julia de Funès",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "economy_purchasing_power",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_21a5282250fb41e545a66119",
+    "title": "Prix de l'électricité : voici les 8 pays de l'UE où les tarifs sont les plus élevés",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "economy_purchasing_power",
+    "predicted_topic": "climate_energy"
+   },
+   {
+    "id": "bsky-soc_a8901dc7c52b4807b813866c",
+    "title": "❗️ [ 🇫🇷 FRANCE | 🇺🇦 UKRAINE ]",
+    "expected_election": true,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_dcae1085c95452381c70d542",
+    "title": "Marine Le Pen nie l'existence de discriminations en France dans une interview à la télévision américaine",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_faaa06fd07a017aa0556d28b",
+    "title": "Présidentielle 2027 : CNews, à la fois incontournable et infréquentable pour les candidats",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_94a77a1e6fe0a8e816be294c",
+    "title": "Cameroun: le président Paul Biya fixe les élections législatives et municipales au 7 février 2027",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_607dd4877264492c58e15a65",
+    "title": "« On est observés sous toutes les coutures, sans droit à l’erreur » : l’anxiété sociale grandit parmi les jeunes",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "health"
+   },
+   {
+    "id": "art-art_fc56e6004c8a7b6c4894add5",
+    "title": "États-Unis : une procédure de destitution lancée contre le ministre de la Défense",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_5d357cd3a5e2b241a68e5491",
+    "title": "Bonjour chez vous ! — BONJOUR CHEZ VOUS 26/11/10 Ma P3",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_921a1d63756dff2405a21785",
+    "title": "Présidentielle 2027 : « Monsieur Riner, méfiez-vous des macronistes qui tournent autour de vous », lance Jean-Philippe Tanguy",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_85ee188652c444549d034700",
+    "title": "Donc vous avez le droit de m’emmerder sur les positions Mélenchon, faire le jeu du Front National et de Marine Le Pen qui est pro russe ? Tu m’as pris pour un guignol et continuer à vendre des armes tranquillement. Ça c’",
+    "expected_election": true,
+    "predicted_election": false,
+    "expected_topic": "institutions_democracy",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_e8be45e39620f615b62d8e75",
+    "title": "Sens Public — Sens Public",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_a892b76a530269a3f2c76335",
+    "title": "La Chine franchit le cap des 1 000 milliards de dollars d’excédent commercial, un revers pour l’UE et les Etats-Unis",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_c98744985819f033502fbc0d",
+    "title": "Portugal : la tempête Charles entraîne la fermeture des écoles et des services publics mercredi",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "education",
+    "predicted_topic": "climate_energy"
+   },
+   {
+    "id": "art-art_c0523758a4c8eda0b8a1a32c",
+    "title": "Pourquoi les industriels européens pourraient renoncer à rivaliser avec la Chine d'ici à 2030",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_3b0cbd87b1a7c77ef0f8f356",
+    "title": "Cyberattaque contre des frigos : l’Iran mis en cause par la France, une enquête ouverte par le parquet",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "justice",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_b3c737ff040a0960e862fd1c",
+    "title": "Cameroun: ruée vers les guichets pour échanger les anciennes pièces démonétisées",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_e09007fd4b3b007d41ac504a",
+    "title": "Sens Public — Sens Public",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_6a07d61b6e9e4bcaa27ad7db",
+    "title": "Ukrainian FAM hits back at hard-left leader Jean-Luc Mélenchon over Donbas referendum. By Estelle Nilsson-Julien",
+    "expected_election": true,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "bsky-soc_8a5257dd8e0d4268b9fcc0ad",
+    "title": "¿Es casualidad que Alberto Núñez Feijóo haya bautizado su programa como \"Reconstrucción nacional\"? A mí me suena demasiado familiar. El eco con Rassemblement National (Agrupación Nacional), el partido de Marine Le Pen en",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_fa9e04bfa3461296dc571d50",
+    "title": "Soupçons d’espionnage : dans l’affaire Jensen Huang, patron de Nvidia, la Chine crie au complot",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "europe_foreign",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "art-art_c793e93e45ea7640a5a5a60f",
+    "title": "Bonjour chez vous ! — BONJOUR CHEZ VOUS 26/11/12 Je P3",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_c17b8d79f6b97e03b1f664d6",
+    "title": "« Si j’étais raciste, je ne pourrais pas être policier » : au premier jour du procès des trois policiers qui ont agressé Michel Zecler",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "education",
+    "predicted_topic": "justice"
+   },
+   {
+    "id": "art-art_273744f97f5896bbb0de22f3",
+    "title": "En Haïti, le président salvadorien Nayib Bukele promet de \"faire le ménage\", mais que peuvent faire ses 2 000 soldats face aux gangs ?",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "art-art_44ca826286858323a48e99d3",
+    "title": "Drogue, arnaques et menaces à l’acide : le scandale qui secoue les services secrets ukrainiens",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "justice",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "bsky-soc_0582702005bf4507b342d3cb",
+    "title": "www.sudouest.fr/politique/je...",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "bsky-soc_7655ff4ee0ae45cdab51129c",
+    "title": "Jean-Luc je suis ok avec toi !",
+    "expected_election": false,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_5e2f81f7d6c61d8401541fae",
+    "title": "« Le Fils de Saul » : le chef-d’œuvre de László Nemes sur l’enfer d’Auschwitz",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "immigration_security",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_52deae3adee9ab1d991cfaeb",
+    "title": "«Tout a été cassé, tout détruit»: le désespoir de ce gérant de boutique de smartphones pillée le 17 octobre",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "immigration_security"
+   },
+   {
+    "id": "art-art_84e73c2b60813b7fd603c49f",
+    "title": "Hy-Fen : quel est ce projet qui doit transporter l'hydrogène sur 800 km à travers la France et l'Europe ?",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "immigration_security",
+    "predicted_topic": "climate_energy"
+   },
+   {
+    "id": "art-art_36ac721cef25b7abd9d08c9f",
+    "title": "Frigos victimes de cyberattaques : la France \"ne s'interdit rien\" dans la riposte contre l'Iran",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "europe_foreign"
+   },
+   {
+    "id": "bsky-soc_ce866265500b4334b79f8090",
+    "title": "Le système circulatoire traversant la cuisine se présente à l'élection présidentielle française 2027.",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "pensions_social",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_a2d45be2115d3227fc5deac0",
+    "title": "Cyclisme. Le parcours 2027 du Région Pays de la Loire Tour dévoilé",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "local_overseas",
+    "predicted_topic": "other"
+   },
+   {
+    "id": "bsky-soc_9273bcfb155b409ebb23819f",
+    "title": "Teddy Riner à l’élection présidentielle 2027 : candidat macroniste n°397 !",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "other",
+    "predicted_topic": "institutions_democracy"
+   },
+   {
+    "id": "art-art_2098facfb54486d2a1416189",
+    "title": "« Le monde a (enfin) compris qu’on peut perdre de l’argent en investissant dans l’IA »",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "economy_purchasing_power"
+   },
+   {
+    "id": "art-art_cabe83c091a259e26bbe7eaa",
+    "title": "Une «rupture de confiance» : les industriels du médicament dénoncent un amendement qui pourrait alourdir la fiscalité du secteur",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "economy_purchasing_power",
+    "predicted_topic": "health"
+   },
+   {
+    "id": "art-art_2c2f7d3e8976cb62ab705521",
+    "title": "Dans «The Good Boy» de Jan Komasa, il y a de l’otage dans l’air",
+    "expected_election": false,
+    "predicted_election": false,
+    "expected_topic": "other",
+    "predicted_topic": "culture_identity"
+   },
+   {
+    "id": "art-art_47d8ea7b5cf8d8e5b3bc059a",
+    "title": "Taxe sur les superprofits, chèque énergie… Que contient le plan de «révolution écologique» à 200 milliards d’euros de Raphaël Glucksmann ?",
+    "expected_election": true,
+    "predicted_election": true,
+    "expected_topic": "economy_purchasing_power",
+    "predicted_topic": "climate_energy"
+   }
+  ]
+ },
+ "usage": {
+  "input_tokens": 261191,
+  "output_tokens": 0
+ },
+ "predictions": [
+  {
+   "id": "art-art_6544133d385e5f3e6dfe5cee",
+   "title": "Excédent commercial chinois: la barre des 1000 milliards de dollars dépassée",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0203,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.2988
+  },
+  {
+   "id": "art-art_50a6bf88ab9e3c065772edb3",
+   "title": "En direct, grève du 10 novembre : suivez la journée de mobilisation dans les facs et les lycées",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0146,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.6001
+  },
+  {
+   "id": "art-art_79ab38f256d25d128d10fca1",
+   "title": "«Plus jamais ils n’auront de cavalier sur le dos» : en Normandie, la retraite quatre étoiles des chevaux de la garde républicaine",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0225,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.441
+  },
+  {
+   "id": "bsky-soc_85cb3636a5d0489da5d452ae",
+   "title": "Le RN a obtenu un préaccord de 2 banques européennes non-françaises pour accorder au RN un prêt de 10,6 millions d’euros, qui financera la campagne présidentielle de Marine Le Pen.",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9555,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7401
+  },
+  {
+   "id": "art-art_0f2ccb5ed876789a62377bfd",
+   "title": "Cyberattaques attribuées à l’Iran : la France «ne s’interdit rien» dans sa riposte, prévient Jean-Noël Barrot",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0129,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.5513
+  },
+  {
+   "id": "bsky-soc_d6c0e201a2dd4799aaa49d69",
+   "title": "𝗘𝗹𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀 𝗽𝗿𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝗶𝗮𝗹𝗲𝘀 𝗱𝗲 𝟮𝟬𝟮𝟳 - lefigaro.fr (francés, Francia)",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.9619,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7069
+  },
+  {
+   "id": "art-art_c0b1079f5cecef556b14c053",
+   "title": "Quiz. COP31 : 12 questions sur le climat avant d’entamer les négociations",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0106,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.7443
+  },
+  {
+   "id": "art-art_c5d6c9100c0d150283f762e8",
+   "title": "L'Australie va imposer des garde-fous aux entreprises de l'IA opérant sur son sol",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0183,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.6878
+  },
+  {
+   "id": "art-art_815997924a1b4925e9aa4b0a",
+   "title": "Sens Public — SENS PUBLIC 26/11/12 Je P1",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1721,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.03
+  },
+  {
+   "id": "art-art_a6f4d57868f005f73102eadc",
+   "title": "Un feu se déclare à l'aube dans un lycée d'Aix-en-Provence, le président de Région dénonce un incendie volontaire",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0313,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.1664
+  },
+  {
+   "id": "art-art_428cae4c59f5959dff5a45e9",
+   "title": "Ni la guerre, ni une pandémie : en France, le dérèglement climatique perçue comme la première menace",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0733,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.6759
+  },
+  {
+   "id": "art-art_6bea4050afa09441e8e5cd22",
+   "title": "Mobilisations en France : le Smic à 1 502 € net, \"des miettes\" selon la CGT",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0757,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.8442
+  },
+  {
+   "id": "art-art_05914fcebc63c417ef00ee6a",
+   "title": "2027 : le camp Retailleau le pousse à faire une campagne «de pirate» et plus «dirty»",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9521,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7908
+  },
+  {
+   "id": "art-art_adb11d005c4310c3ee0185d8",
+   "title": "«George Michael : The Faith Tour» : ce que nous dévoile le documentaire musical sur le chanteur disparu",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0113,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.6395
+  },
+  {
+   "id": "bsky-soc_1d7988db5ee4422fb0d6e92e",
+   "title": "𝗘𝗹𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀 𝗽𝗿𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝗶𝗮𝗹𝗲𝘀 𝗱𝗲 𝟮𝟬𝟮𝟳 - liberation.fr (francés, Francia)",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.9556,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7502
+  },
+  {
+   "id": "art-art_2b324fd97c8f7bc25472a03a",
+   "title": "À l’Assemblée nationale, deux geeks macronistes ont développé un simulateur de majorité en temps réel",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.4439,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.735
+  },
+  {
+   "id": "bsky-soc_fdaf07569c214aa5aa13a39f",
+   "title": "𝗘𝘅𝘁𝗿𝗲𝗺𝗮 𝗱𝗲𝗿𝗲𝗰𝗵𝗮 - bfmtv.com (francés, Francia)",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.708,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3374
+  },
+  {
+   "id": "art-art_3e8c6ccd660262af3265df2a",
+   "title": "\"Le pôle emploi du crime\" : de jeunes Européens recrutés pour assassiner, ce phénomène qui inquiète les autorités",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0151,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.6075
+  },
+  {
+   "id": "art-art_45e6f2b144ad1e88d348748a",
+   "title": "Soutien de Glucksmann, Alexis Braud, un proche de Yannick Jadot, est suspendu par les Ecologistes",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9447,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.5845
+  },
+  {
+   "id": "art-art_e8b740c92eee7b86f4d8b701",
+   "title": "Candidature de Teddy Riner à la présidentielle : «C’est du Macron pur jus», dénonce le journaliste Yoann Usaï",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9783,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8144
+  },
+  {
+   "id": "art-art_065852a45d47390a24ebcfc3",
+   "title": "Amours, scandales et espionnage: quand la vie privée des patrons menace leur entreprise",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0175,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.3613
+  },
+  {
+   "id": "art-art_c58438070b25377116460051",
+   "title": "Vivre avec un micropénis : « J’avais l’impression de faillir à mon obligation d’homme »",
+   "expected_election": false,
+   "expected_topic": "health",
+   "election_probability": 0.0187,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.338
+  },
+  {
+   "id": "art-art_e96f8cc1ce1b13e80f4aa5f7",
+   "title": "Peut-on être licencié pour sa double vie amoureuse ? L’étonnante affaire du manager volage",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0305,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.2373
+  },
+  {
+   "id": "art-art_e5ad87cca62f90da1252ef40",
+   "title": "Présidentielle 2027 : Gabriel Attal prêt à voter pour Bruno Retailleau ou David Lisnard en cas de victoire à la primaire",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.971,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8739
+  },
+  {
+   "id": "art-art_82f497a99800915f7f8f7779",
+   "title": "PER : trois critères pour choisir le meilleur contrat",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0636,
+   "predicted_election": false,
+   "predicted_topic": "pensions_social",
+   "topic_confidence": 0.2767
+  },
+  {
+   "id": "art-art_e413486bd779743d8cd9e3a0",
+   "title": "EN DIRECT - Élue aspergée d’essence à Chelles : Laurent Nuñez condamne l’agression commise par un élève",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0487,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.38
+  },
+  {
+   "id": "art-art_de8c055c60467b6cb958ee8d",
+   "title": "Argentine: plus de deux millions de personnes réunies à Buenos Aires pour une messe du pape Léon XIV",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0164,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5106
+  },
+  {
+   "id": "art-art_d0e92fe8cff3e9668974f111",
+   "title": "Mobilisation sociale: pas de «division» du front syndical, dit Marylise Léon",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0414,
+   "predicted_election": false,
+   "predicted_topic": "pensions_social",
+   "topic_confidence": 0.3144
+  },
+  {
+   "id": "bsky-soc_741c578a98d04fb9be8e299e",
+   "title": "𝗧𝗲𝗱𝗱𝘆 𝗥𝗶𝗻𝗲𝗿 - bfmtv.com (francés, Francia)",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9232,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7925
+  },
+  {
+   "id": "art-art_6c5942b915e4f197f0ac55e9",
+   "title": "Comment le nombre dérogations pour l'utilisation de pesticides s'est envolé en France",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0125,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.5532
+  },
+  {
+   "id": "art-art_9a050e8f540a29a3a9ec3a8c",
+   "title": "Réforme des heures creuses /heures pleines : la répartition sera désormais différente en hiver et en été",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0102,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.8009
+  },
+  {
+   "id": "art-art_fe2cf94aec0d08eb2215eab6",
+   "title": "Teddy Riner candidat à la présidentielle de 2027 : cela «ne peut qu'apporter au pays», s'est félicité Emmanuel Macron",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.971,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8321
+  },
+  {
+   "id": "art-art_3d9279cc0bcb7c8ad09ee3b0",
+   "title": "Savez-vous ce qui émet un peu ou beaucoup de CO₂ : prendre l’avion, manger de la viande ou utiliser un sèche-linge pendant un an ?",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0113,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.6875
+  },
+  {
+   "id": "art-art_b73dab6ffa208414f655c0ef",
+   "title": "En Ukraine, l'IA au service des fausses victoires russes",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0084,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.7544
+  },
+  {
+   "id": "art-art_2a588df9a2f35ea7337dfb33",
+   "title": "Les époux Macron déposent une nouvelle plainte aux Etats-Unis contre l’influenceuse Candace Owens",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.062,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.4223
+  },
+  {
+   "id": "art-art_4dd078c59683b1ba3012d63b",
+   "title": "La désintégration extrêmement rare d’une particule suscite l’espoir de découvrir une nouvelle physique",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0135,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.8449
+  },
+  {
+   "id": "art-art_9bb4e1a45a116f626473ab52",
+   "title": "Teddy Riner candidat à la présidentielle 2027 : «C’est une blague ?», les Guadeloupéens entre incrédulité et espoir",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.968,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.5458
+  },
+  {
+   "id": "art-art_6be805ef88ffe796acd53ce6",
+   "title": "Laurent Panifous, ministre des Relations avec le Parlement : «Il faut remettre dans le débat la question de la probité publique»",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0572,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.5932
+  },
+  {
+   "id": "art-art_f2d0179f96cdd7b14d44ef04",
+   "title": "Mort de la résistante Solange Alexandre, ancienne cheffe de maquis et lieutenant FFI",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0211,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.4824
+  },
+  {
+   "id": "art-art_3c7f2104673f3b4405d6eae8",
+   "title": "Voitures électriques : vers une taxe au kilomètre ?",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0384,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.3287
+  },
+  {
+   "id": "bsky-soc_b55a02ae4ebb4dbebf7b2be0",
+   "title": "Édouard Philippe a été détrôné par Jean-Luc Mélenchon dans les enquêtes d’opinion pour la qualification au second tour. Or, l’ancien juppéiste ne vantait-il pas il y a dix ans les mérites de la primaire, quand elle relev",
+   "expected_election": true,
+   "expected_topic": "justice",
+   "election_probability": 0.916,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8533
+  },
+  {
+   "id": "art-art_ac021e6400acad56a0fc2baa",
+   "title": "Alexandre Ouizille, le jeune loup de Glucksmann aux commandes de sa campagne présidentielle",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9394,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.858
+  },
+  {
+   "id": "art-art_2fdef83d47ff3dcdba9d145d",
+   "title": "Un appel d’enseignants contre les violences : « Nous demandons un retour à l’ordre public républicain »",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0475,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.6788
+  },
+  {
+   "id": "bsky-soc_7bbe852a87bf48018d1c76bb",
+   "title": "m.youtube.com/watch?v=zaae...",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0929,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.357
+  },
+  {
+   "id": "art-art_0dc799c3760f98237ba7daaf",
+   "title": "Le couple présidentiel a déposé une nouvelle plainte en diffamation contre l'influenceuse complotiste Candace Owens",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0901,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.402
+  },
+  {
+   "id": "art-art_c977a3c50ea26a38230bdffa",
+   "title": "L’IA, une chance ou un obstacle à l’entrée des jeunes sur le marché du travail ?",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0333,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.2701
+  },
+  {
+   "id": "bsky-soc_0d834cc4a7f646e8b1c67df9",
+   "title": "Présidentielle 2027 : le candidat Horizons Édouard Philippe attendu à Toulouse ce samedi (ladepeche.fr)",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9804,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8786
+  },
+  {
+   "id": "art-art_50f752834b3ae7f351d84fa8",
+   "title": "Le calvaire de Pompidou, \"le petit télégraphiste\" de Mitterrand... L’histoire secrète des présidents et la Russie",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.013,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8198
+  },
+  {
+   "id": "art-art_b589cdd968aca33331c921b6",
+   "title": "Comment un incendie a ravivé les tensions entre nouveaux arrivants et anciens habitants dans la ville de Die",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0386,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.1431
+  },
+  {
+   "id": "art-art_7f126010802ff628e7a0fac9",
+   "title": "Avec l’attribution des cyberattaques contre les frigos à l’Iran, la France hausse d’un cran sa réplique",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0132,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.3511
+  },
+  {
+   "id": "bsky-soc_15dec19ae2f342baa9e3e499",
+   "title": "Prêt à voter pour Bruno Retailleau ou David Lisnard en cas de victoire à une primaire, Gabriel Attal abat ses cartes pour éviter un duel entre Marine Le Pen et Jean-Luc Mélenchon en 2027.",
+   "expected_election": true,
+   "expected_topic": "local_overseas",
+   "election_probability": 0.9581,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8392
+  },
+  {
+   "id": "art-art_8a25efb53bf022a662118fda",
+   "title": "À Marseille, une vidéo montre un manifestant blessé se faire frapper par plusieurs CRS en marge d'une manifestation",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0206,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.5177
+  },
+  {
+   "id": "art-art_ac12a1cfef942e9de08098ee",
+   "title": "Afrique du Sud: arrestation de personnes suspectées d’avoir été recrutées pour partir en Ukraine",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0136,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.5286
+  },
+  {
+   "id": "art-art_34ed70d8779caab4f79fac7f",
+   "title": "En direct du Sénat — En direct du Sénat",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0677,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6975
+  },
+  {
+   "id": "art-art_b5f4a6cdfee86e76d3d0e517",
+   "title": "Ils avaient nommé leur groupe « Attirer les millions » : quatre amis remportent une somme record à la loterie du Canada",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0132,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.7352
+  },
+  {
+   "id": "bsky-soc_41ec0b9fa939492eae074648",
+   "title": "𝗘𝗹𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀 𝗽𝗿𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝗶𝗮𝗹𝗲𝘀 𝗱𝗲 𝟮𝟬𝟮𝟳 - bfmtv.com (francés, Francia)",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9592,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8328
+  },
+  {
+   "id": "bsky-soc_274a085479d24b84baff5121",
+   "title": "Je suis actuellement au niveau \"Tortue en chocolat\" dans la campagne de parrainages de Mélenchon.",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8592,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8478
+  },
+  {
+   "id": "bsky-soc_42ccb11108014580a30a6d52",
+   "title": "www.lesoir.be/781915/artic...",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.2014,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.0248
+  },
+  {
+   "id": "bsky-soc_f3fe4473be6f4b8b86124397",
+   "title": "L’augmentation du SMIC relève-t-elle d’une « discussion entre les partenaires sociaux » plutôt que de l’État, comme le dit Édouard Philippe ?",
+   "expected_election": true,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0847,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7877
+  },
+  {
+   "id": "bsky-soc_81e7a0da171c478d97e35ef1",
+   "title": "Présidentielle 2027 : David Lisnard et les raisons d’une surprenante percée libérale",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.967,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6978
+  },
+  {
+   "id": "bsky-soc_d366b7ebe2834bcbab2ca8ea",
+   "title": "𝗧𝗲𝗱𝗱𝘆 𝗥𝗶𝗻𝗲𝗿 - liberation.fr (francés, Francia)",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.5853,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3226
+  },
+  {
+   "id": "art-art_3164340038139dfed09d07f7",
+   "title": "Le Bleuet de France, épisode 2 - Ces militaires blessés au combat qui se reconstruisent à travers la pratique du tir à l'arc",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0339,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.3547
+  },
+  {
+   "id": "art-art_4853430247088e955dbcf6b7",
+   "title": "Subventions suspendues et intimidation : des eurodéputés français ciblés par un réseau proche des Frères musulmans",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.049,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.2352
+  },
+  {
+   "id": "art-art_be95bedc485f18ec4ab555b0",
+   "title": "Les émissions de CO₂ en très légère baisse dans le monde, un signal encourageant mais insuffisant",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0104,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.8312
+  },
+  {
+   "id": "art-art_27357b4c96236de72e43d25b",
+   "title": "Salaires : parution du décret pour sanctionner les branches ayant des minima conventionnels sous le Smic",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0207,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7712
+  },
+  {
+   "id": "art-art_37a38d998460931a9a9652c4",
+   "title": "Hausse du Smic : les syndicats jugent la réponse insuffisante et la CGT appelle à la grève le 17 novembre",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0922,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.815
+  },
+  {
+   "id": "art-art_9dad442115e9a39209927945",
+   "title": "Pétition pour \"supprimer CNews\" : \"Dans une démocratie, une décision de cette nature ne doit pas être politique\"",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0349,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.4225
+  },
+  {
+   "id": "art-art_b4eab0908e5ce977ad0b04bf",
+   "title": "Love Actually : Keira Knightley avoue n'avoir vu le film qu'une seule fois dans sa vie",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0157,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.4054
+  },
+  {
+   "id": "art-art_e7da91c35bd342a7f2620012",
+   "title": "Israël: Eisenkot pour tourner la page Netanyahu ?",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0142,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.47
+  },
+  {
+   "id": "art-art_173755c2674836e79814f0a4",
+   "title": "« Si Marine Le Pen gagne, on entre en territoire inconnu » : comment les associations écolos se préparent au pire",
+   "expected_election": true,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.914,
+   "predicted_election": true,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.2981
+  },
+  {
+   "id": "art-art_3d306580ca5645912ede8b5e",
+   "title": "Gaz : nouvelle hausse de 5,8 % à venir pour les foyers français, dans le sillage du conflit au Moyen-Orient",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0196,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.46
+  },
+  {
+   "id": "art-art_03cc9c041a5008515887ae06",
+   "title": "Pouvoir d’achat : Sébastien Lecornu annonce une hausse anticipée du Smic à 1 502 euros par mois dès le 1er décembre",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0626,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.9315
+  },
+  {
+   "id": "bsky-soc_08c60d4204504c12b1d241a7",
+   "title": "« Il n’est pas plus illégitime qu’un autre » : la ministre des Sports défend la candidature de Teddy Riner à la présidentielle",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.831,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6909
+  },
+  {
+   "id": "art-art_301f8d1e450c9a27814f30aa",
+   "title": "Un monde, un regard — Un monde, un regard",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0332,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5321
+  },
+  {
+   "id": "art-art_a807cb0630841449c9676ff2",
+   "title": "«Ici vivait Novaïa Gazeta»: en Russie, le journal indépendant a fermé ses portes",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0158,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.2741
+  },
+  {
+   "id": "art-art_dcc23b71591c891b20b23491",
+   "title": "L'Ukraine et la Russie se retrouvent à Abou Dhabi pour de nouveaux pourparlers sous l'égide des États-Unis",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0083,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9118
+  },
+  {
+   "id": "art-art_60c75a7bcf7c37f7a6e494cc",
+   "title": "Qui est Etienne Jarrier, le chef d’orchestre qui enchante les manifs et les réseaux sociaux ?",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0397,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.2037
+  },
+  {
+   "id": "art-art_56504c88f5c06299aab6f6c4",
+   "title": "En Pologne, les démocrates ont besoin de l’unité de l’Europe",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0218,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.5004
+  },
+  {
+   "id": "bsky-soc_74992c08d4e044008e76cbba",
+   "title": "c'est comme ça que tu \"défends\" \"ton\" pays?",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1791,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.1096
+  },
+  {
+   "id": "art-art_725cf4ea34ce8dee02494fbb",
+   "title": "Répression des LGBTI+ en Turquie : « Cette opération fait passer par les tribunaux ce que le Parlement a renoncé à voter »",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0313,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.1725
+  },
+  {
+   "id": "art-art_880935ca06a1c814dfe9d3b7",
+   "title": "Après les agressions sexuelles à l'école Schoepflin de Strasbourg, l'académie remplace la directrice",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0095,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.6404
+  },
+  {
+   "id": "art-art_ed7bde4b13e4ecc53a643f9f",
+   "title": "L’ONU appelle l’Egypte à mettre fin au « harcèlement » des journalistes et médias nationaux",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.016,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.4487
+  },
+  {
+   "id": "art-art_72187ca60e29e24a5b82a3e3",
+   "title": "Frigos connectés, banques piratées… L’Assemblée nationale se penche sur le renforcement de la cybersécurité",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0244,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.3142
+  },
+  {
+   "id": "art-art_d2f3fa69e3eda5e8c29c4977",
+   "title": "«Il faudra qu’il règle ses histoires de voitures de luxe» : Daniel Riolo réagit à l’annonce de la candidature de Teddy Riner à la présidentielle",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8759,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3693
+  },
+  {
+   "id": "art-art_8aea4590baef7f9d2076b9fb",
+   "title": "COP31 : sur la ligne de front du réchauffement climatique, les Etats insulaires du Pacifique veulent se faire entendre",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0114,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.6835
+  },
+  {
+   "id": "art-art_fb4b828b2197737806e74008",
+   "title": "Un incendie apparemment volontaire dans un lycée à Aix-en-Provence, une porte brûlée",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0346,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.1893
+  },
+  {
+   "id": "bsky-soc_d110768af85944a0bcf2e2b6",
+   "title": "x.com/JLMelenchon/...",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.2733,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.1112
+  },
+  {
+   "id": "art-art_a5ee5ea8ddbac6cbb5442cc9",
+   "title": "Nouvelles poursuites des époux Macron contre une influenceuse américaine",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0638,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.5311
+  },
+  {
+   "id": "art-art_7bd7defa07887ab2300f1cc6",
+   "title": "Cyberattaques contre des frigos dans des supermarchés : la France «ne s'interdit rien» dans la riposte contre l'Iran, assure Jean-Noël Barrot",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0228,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.3522
+  },
+  {
+   "id": "art-art_0f448ada44a16089955576fd",
+   "title": "«Les Années 80» : les stars de la décennie culte réunies pour une tournée événement dans toute la France",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0139,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5562
+  },
+  {
+   "id": "art-art_13f5c4b844e82c2c5a569e8f",
+   "title": "Grâce à sa croissance, Dammann Frères se «tourne vers l'avenir» avec une «usine verte» en Eure-et-Loir",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.024,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.2265
+  },
+  {
+   "id": "art-art_9d07f44534befecc8750082e",
+   "title": "Tempête Charles : écoles et services publics fermés mercredi au Portugal",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.015,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.2024
+  },
+  {
+   "id": "art-art_863229b1e3ce7b00b1eefba1",
+   "title": "Bonjour chez vous ! — BONJOUR CHEZ VOUS 26/11/12 Je P2",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1276,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.0323
+  },
+  {
+   "id": "art-art_507c4f3138a7affd2a2fccad",
+   "title": "Les overdoses ont plus que doublé en 10 ans, les drogues de synthèse en plein essor, selon l'office antistupéfiants",
+   "expected_election": false,
+   "expected_topic": "health",
+   "election_probability": 0.0437,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.273
+  },
+  {
+   "id": "art-art_3cba73c129ca3ee20078bd13",
+   "title": "Le taux de chômage quasiment stable au troisième trimestre à 8,2 %, selon l'Insee",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0156,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7951
+  },
+  {
+   "id": "art-art_439506d3f21178c384ab7364",
+   "title": "Grève dans les lycées : à quoi s'attendre ce mardi, alors que les enseignants renforcent le mouvement ?",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.016,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.7011
+  },
+  {
+   "id": "art-art_a14dfcfda9a113144f54a164",
+   "title": "Négociations Ukraine-Russie : Européens et Américains affirment leur engagement commun en faveur d'une sécurité européenne \"forte\" pour l'après-guerre",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0131,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9136
+  },
+  {
+   "id": "art-art_d76be79a0cca723e0e27a2cb",
+   "title": "Le décret pour sanctionner les branches professionnelles dont les rémunérations planchers sont sous le smic a été publié au Journal officiel",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0287,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.704
+  },
+  {
+   "id": "art-art_daca4414c2bf64b1dbe5a2e0",
+   "title": "La Folle journée revient en janvier 2027 : le festival va investir de nombreux lieux de la scène culturelle nantaise",
+   "expected_election": false,
+   "expected_topic": "culture_identity",
+   "election_probability": 0.0118,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.8048
+  },
+  {
+   "id": "art-art_4b9b16697504e0dbd9d4c13f",
+   "title": "Vous êtes salarié payé au smic ? Racontez-nous votre quotidien",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.022,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.9001
+  },
+  {
+   "id": "art-art_098ed47f72693c9944fde1fb",
+   "title": "Dialogue citoyen — Dialogue Citoyen",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0598,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3524
+  },
+  {
+   "id": "art-art_ec6b7afd285ef34c1f851bcc",
+   "title": "Yvelines : une intervention policière pour des rodéos urbains tourne aux heurts",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0125,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.8391
+  },
+  {
+   "id": "art-art_968508bf40cbdf81f3c50aa5",
+   "title": "Cinq familles de harkis déposent plainte pour dénoncer le sort fait aux dépouilles de leurs proches dans les années 1960",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0303,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.2366
+  },
+  {
+   "id": "bsky-soc_03f18b9045694e5f92ee254e",
+   "title": "Les instituts ont déjà modifié leurs baromètres. Désormais, la capacité d’un candidat à faire tomber ses adversaires dès le premier débat compte autant que ses intentions de vote.",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.93,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.855
+  },
+  {
+   "id": "art-art_24870767dd00549b37cf9b90",
+   "title": "Au cœur de la tempête chez Nvidia, une liaison extraconjugale et l’ombre d'une espionne de Pékin",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0187,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.3476
+  },
+  {
+   "id": "art-art_5682bdd70f98d1d0a5975ccb",
+   "title": "Quiz. 12 questions sur Charles de Gaulle pour tester votre culture Général",
+   "expected_election": false,
+   "expected_topic": "culture_identity",
+   "election_probability": 0.0539,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.26
+  },
+  {
+   "id": "art-art_cf91461d9569c9928ca42ce1",
+   "title": "Smic, heures supplémentaires... : Ce qu’a annoncé le gouvernement pour répondre à la colère sociale",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0515,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7007
+  },
+  {
+   "id": "art-art_64ca8af2efd6684f8d8bb13b",
+   "title": "Qui sont les candidats (déjà) déclarés à l'élection présidentielle de 2027 ?",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9807,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.9024
+  },
+  {
+   "id": "art-art_fd97520e87fc21238c60a570",
+   "title": "Pourparlers Ukraine-Russie : l'Europe présente mais sans voix",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0093,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9072
+  },
+  {
+   "id": "art-art_45998be9cb9607af0f5ebb70",
+   "title": "Colère sociale : 8 Français sur 10 jugent que le gouvernement n’a pas été à la hauteur face aux émeutes",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.1332,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.2905
+  },
+  {
+   "id": "art-art_45fb4e55c56d16d9b4b2af47",
+   "title": "Au « Point », le sort d’Etienne Gernelle, son directeur, est scellé",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0212,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5221
+  },
+  {
+   "id": "art-art_74be47d4c6f4849f3e17f371",
+   "title": "\"Notre force, c'est la capacité à nous adapter grâce aux mélanges\" : le succès de l'espèce humaine vu par le biologiste Lluis Quintana-Murci",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0138,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.6568
+  },
+  {
+   "id": "art-art_c516830ef5d9978ff0283df1",
+   "title": "Bonjour chez vous ! — Emmanuel Maurel : « Raphaël Glucksmann est à sa place dans les manifestations »",
+   "expected_election": true,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.9156,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8048
+  },
+  {
+   "id": "bsky-soc_41b9fa8235f74d8fa5da05cf",
+   "title": "Inversion d'une tendance, un duo se détache... Les résultats des derniers sondages pour la présidentielle 2027",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9792,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8843
+  },
+  {
+   "id": "bsky-soc_ad52326a9ae443468061206e",
+   "title": "𝗘𝗹𝗲𝗰𝗰𝗶𝗼𝗻𝗲𝘀 𝗽𝗿𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝗶𝗮𝗹𝗲𝘀 𝗱𝗲 𝟮𝟬𝟮𝟳 - lemonde.fr (francés, Francia)",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.9692,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7786
+  },
+  {
+   "id": "art-art_13287d8684133f913965dfa1",
+   "title": "Crise du logement en Europe : comment nos voisins répondent à la tempête sociale",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.04,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.2723
+  },
+  {
+   "id": "art-art_af5cd8fc0cac3c624de05cc1",
+   "title": "Charlie Kirk : son assassin présumé sera jugé en juin 2028",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0215,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.568
+  },
+  {
+   "id": "art-art_9151ba4f74a829fb53491811",
+   "title": "Cyberattaque contre des supermarchés : \"La question est de savoir si la France va répliquer\", explique le chercheur Guy-Philippe Goldstein, après les accusations visant l'Iran",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0113,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.5799
+  },
+  {
+   "id": "bsky-soc_b9e7e39423244d19b5ca47a2",
+   "title": "Oui mais les élections ont lieu après l'hiver et Je n'arrive pazs à imaginer que les Français soient devenus assez veules et bêtes pour élire Marine Le Pen ou Neuneu Bardella!",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9287,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8373
+  },
+  {
+   "id": "bsky-soc_19e451db5bf947d5a6557d09",
+   "title": "À peine candidat à la présidentielle 2027, Teddy Riner fait face au retour d'une ancienne polémique : une photo de lui avec Dieudonné refait surface. ",
+   "expected_election": true,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.8889,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.462
+  },
+  {
+   "id": "bsky-soc_06898af35e024770bc8169f8",
+   "title": "J'ai une pote qui a vomi dans les plantes aromatiques du balcon de Léa Salamé et Raphaël Glucksmann, and I think it's beautiful.",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0688,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.1842
+  },
+  {
+   "id": "art-art_d784b61446b33124504000fd",
+   "title": "IA : l'ânesse, le renard et les guêpes jalouses, par Julia de Funès",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0233,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.5185
+  },
+  {
+   "id": "art-art_fc0e2e91322625412daf945b",
+   "title": "Mouvement lycéen : des cours de rattrapage possibles pendant les vacances en février ou à Pâques, annonce Edouard Geffray",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0233,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.8446
+  },
+  {
+   "id": "art-art_21a5282250fb41e545a66119",
+   "title": "Prix de l'électricité : voici les 8 pays de l'UE où les tarifs sont les plus élevés",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0136,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.4752
+  },
+  {
+   "id": "art-art_8e9acbe72bfd41c2ae258ca1",
+   "title": "Judo : Teddy Riner change d’entraîneur avant la campagne présidentielle 2027",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9307,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.5672
+  },
+  {
+   "id": "art-art_63e529a69f5d3d3a8a4c324e",
+   "title": "La victoire silencieuse de Vladimir Poutine : ce que les Européens doivent savoir de l'opinion publique russe",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.019,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8868
+  },
+  {
+   "id": "art-art_7503da20e7c23ca0fb4fe449",
+   "title": "Gel d’un an des promotions des fonctionnaires, non-revalorisation des prestations, baisse des dotations : la Cour des comptes avance ses idées d’économies",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.1095,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.6169
+  },
+  {
+   "id": "bsky-soc_a8901dc7c52b4807b813866c",
+   "title": "❗️ [ 🇫🇷 FRANCE | 🇺🇦 UKRAINE ]",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.3889,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9151
+  },
+  {
+   "id": "art-art_dcae1085c95452381c70d542",
+   "title": "Marine Le Pen nie l'existence de discriminations en France dans une interview à la télévision américaine",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9226,
+   "predicted_election": true,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5626
+  },
+  {
+   "id": "art-art_fd8966768a41b97a9a35a978",
+   "title": "Éthiopie : construction d'un nouveau barrage pour renforcer son indépendance énergétique",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0143,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.5917
+  },
+  {
+   "id": "art-art_78a2daefd0d47825a03171f4",
+   "title": "Qui sont les 26% de Français qui doutent de l'existence ou de l'origine humaine du réchauffement climatique ?",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0412,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.7929
+  },
+  {
+   "id": "art-art_b7afd85e03575bf283c90f42",
+   "title": "Auto-déclaration des arrêts de travail : le gouvernement scandalisé par cette idée de Mélenchon à laquelle il était favorable il y a deux ans",
+   "expected_election": true,
+   "expected_topic": "health",
+   "election_probability": 0.8816,
+   "predicted_election": true,
+   "predicted_topic": "health",
+   "topic_confidence": 0.4649
+  },
+  {
+   "id": "art-art_faaa06fd07a017aa0556d28b",
+   "title": "Présidentielle 2027 : CNews, à la fois incontournable et infréquentable pour les candidats",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9534,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6649
+  },
+  {
+   "id": "art-art_94a77a1e6fe0a8e816be294c",
+   "title": "Cameroun: le président Paul Biya fixe les élections législatives et municipales au 7 février 2027",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0125,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.4171
+  },
+  {
+   "id": "bsky-soc_55c9d7b5420846f3b6311d39",
+   "title": "LFI nuance sur la position de Mélenchon en Ukraine :",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.7137,
+   "predicted_election": true,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8671
+  },
+  {
+   "id": "art-art_607dd4877264492c58e15a65",
+   "title": "« On est observés sous toutes les coutures, sans droit à l’erreur » : l’anxiété sociale grandit parmi les jeunes",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0179,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.3124
+  },
+  {
+   "id": "art-art_fc56e6004c8a7b6c4894add5",
+   "title": "États-Unis : une procédure de destitution lancée contre le ministre de la Défense",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0167,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3062
+  },
+  {
+   "id": "art-art_5d357cd3a5e2b241a68e5491",
+   "title": "Bonjour chez vous ! — BONJOUR CHEZ VOUS 26/11/10 Ma P3",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1323,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.0403
+  },
+  {
+   "id": "art-art_921a1d63756dff2405a21785",
+   "title": "Présidentielle 2027 : « Monsieur Riner, méfiez-vous des macronistes qui tournent autour de vous », lance Jean-Philippe Tanguy",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.9629,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8476
+  },
+  {
+   "id": "bsky-soc_85ee188652c444549d034700",
+   "title": "Donc vous avez le droit de m’emmerder sur les positions Mélenchon, faire le jeu du Front National et de Marine Le Pen qui est pro russe ? Tu m’as pris pour un guignol et continuer à vendre des armes tranquillement. Ça c’",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.4766,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.4321
+  },
+  {
+   "id": "art-art_e8be45e39620f615b62d8e75",
+   "title": "Sens Public — Sens Public",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.2503,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.177
+  },
+  {
+   "id": "art-art_a7bce01f972ff733ebedf8d4",
+   "title": "Présidentielle 2027 : le judoka Teddy Riner se lance dans la course à l’Élysée, au milieu d’une multitude de candidats",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9777,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8288
+  },
+  {
+   "id": "art-art_c80d04f166eb5a861ed09dbe",
+   "title": "Israël en pleine crise morale, par Serge July",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.016,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.6255
+  },
+  {
+   "id": "art-art_a892b76a530269a3f2c76335",
+   "title": "La Chine franchit le cap des 1 000 milliards de dollars d’excédent commercial, un revers pour l’UE et les Etats-Unis",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0237,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.3506
+  },
+  {
+   "id": "art-art_f771babb6caa1096b2a307af",
+   "title": "«Ça va impacter nos résultats» : le casse-tête des patrons face à l'augmentation du Smic",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0215,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.9127
+  },
+  {
+   "id": "art-art_06802cf67adf65e054484f68",
+   "title": "Airbus bat un record historique avec un vol de plus de 24 heures entre l’Australie et Toulouse",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0126,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.7786
+  },
+  {
+   "id": "art-art_c98744985819f033502fbc0d",
+   "title": "Portugal : la tempête Charles entraîne la fermeture des écoles et des services publics mercredi",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0144,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.1979
+  },
+  {
+   "id": "art-art_98846fbb4991c5f3f126d17d",
+   "title": "« Il n’y a pas eu de miracle » : après la sécheresse estivale, la pousse de l’herbe est restée faible dans les champs",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0129,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.4967
+  },
+  {
+   "id": "art-art_d08e01029457b2ec22d2d2b2",
+   "title": "En France, 659 morts liées à la consommation de drogues ou de médicaments en 2024, une hausse de 171 % en dix ans",
+   "expected_election": false,
+   "expected_topic": "health",
+   "election_probability": 0.0244,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.4823
+  },
+  {
+   "id": "art-art_dcfd68be3244d2cf79b74584",
+   "title": "Présidentielle 2027 : qui est derrière la candidature de Teddy Riner ?",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9753,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.84
+  },
+  {
+   "id": "bsky-soc_e5f06f77482e47a8ad99b216",
+   "title": "Le candidat insoumis à la présidentielle doit passer la journée du 11 novembre en Creuse.",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8177,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6409
+  },
+  {
+   "id": "art-art_8c028fdb662a75b7d9fa96af",
+   "title": "Sens Public — Réchauffement : Nos océans brûlent, et on regarde ailleurs",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.0133,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.7842
+  },
+  {
+   "id": "art-art_c0523758a4c8eda0b8a1a32c",
+   "title": "Pourquoi les industriels européens pourraient renoncer à rivaliser avec la Chine d'ici à 2030",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0219,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.2757
+  },
+  {
+   "id": "art-art_a7574409a0084116033a19a2",
+   "title": "PIB : la croissance attendue «autour de 0,3%» plutôt que 0,4% en 2026, annonce le gouverneur de la Banque de France",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0142,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7885
+  },
+  {
+   "id": "art-art_0e39ad80de498e48741de139",
+   "title": "La fin du silence, comment vivre après avoir nommé l’inceste ?",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.028,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.2994
+  },
+  {
+   "id": "art-art_bb3c4dcb20bf944f71acf0b5",
+   "title": "EN DIRECT - Présidentielle 2027 : François Ruffin se dit «triste» après la candidature de Teddy Riner",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9705,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7894
+  },
+  {
+   "id": "art-art_3b0cbd87b1a7c77ef0f8f356",
+   "title": "Cyberattaque contre des frigos : l’Iran mis en cause par la France, une enquête ouverte par le parquet",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0193,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.2301
+  },
+  {
+   "id": "art-art_829fbec4a57b843beddf3356",
+   "title": "Quand Houellebecq répond à un journaliste espagnol sur l’IA, Marine Le Pen et sa réputation de « facho »",
+   "expected_election": false,
+   "expected_topic": "culture_identity",
+   "election_probability": 0.4287,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.2863
+  },
+  {
+   "id": "art-art_02d451b86f580bf25f097872",
+   "title": "Guerre en Ukraine : cinq choses à savoir sur les pourparlers d'Abu Dhabi",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0089,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9112
+  },
+  {
+   "id": "art-art_83ce4072cfd23cb3bed5b7b8",
+   "title": "Bonjour chez vous ! — Qui mettra de l’eau dans le vin de Jean-Luc Mélenchon ?",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8795,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7943
+  },
+  {
+   "id": "art-art_03e05858089f4bc86fa88a47",
+   "title": "DJ Snake : l'artiste lance sa marque de soda sans sucre",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0156,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.5156
+  },
+  {
+   "id": "art-art_b3c737ff040a0960e862fd1c",
+   "title": "Cameroun: ruée vers les guichets pour échanger les anciennes pièces démonétisées",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0212,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.2729
+  },
+  {
+   "id": "art-art_53f499ead40a65bcec955ffc",
+   "title": "Cours de soutien, allégement du programme, modification des épreuves… Le bac doit-il être adapté en raison de la mobilisation lycéenne ?",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0165,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.8901
+  },
+  {
+   "id": "art-art_e09007fd4b3b007d41ac504a",
+   "title": "Sens Public — Sens Public",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.2503,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.177
+  },
+  {
+   "id": "art-art_a5eb775ef8aa0f877b39195a",
+   "title": "Cyclisme. Une application pour encourager les mobilités vertes lancée par les organisateurs des « Super Mondiaux »",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.023,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.3759
+  },
+  {
+   "id": "art-art_ebf4ac478da3b9c64fd7bc41",
+   "title": "JOJ Dakar 2026: le Sénégal décroche sa quatrième médaille d'or grâce au basket à trois masculin",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0143,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.8408
+  },
+  {
+   "id": "bsky-soc_6a07d61b6e9e4bcaa27ad7db",
+   "title": "Ukrainian FAM hits back at hard-left leader Jean-Luc Mélenchon over Donbas referendum. By Estelle Nilsson-Julien",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.3781,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9199
+  },
+  {
+   "id": "art-art_270a29ba03da33901deca08a",
+   "title": "Les plus riches mis à contribution, un plan de 200 milliards, des éoliennes et du nucléaire… Que vaut la « révolution écologique » promise par Glucksmann ?",
+   "expected_election": true,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.8702,
+   "predicted_election": true,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.4701
+  },
+  {
+   "id": "bsky-soc_8a5257dd8e0d4268b9fcc0ad",
+   "title": "¿Es casualidad que Alberto Núñez Feijóo haya bautizado su programa como \"Reconstrucción nacional\"? A mí me suena demasiado familiar. El eco con Rassemblement National (Agrupación Nacional), el partido de Marine Le Pen en",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.43,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3778
+  },
+  {
+   "id": "art-art_57b552e871c72a7a4256ce1c",
+   "title": "Le Grand Jury — Le grand jury RTL – Public Sénat",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.2477,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3773
+  },
+  {
+   "id": "art-art_fa9e04bfa3461296dc571d50",
+   "title": "Soupçons d’espionnage : dans l’affaire Jensen Huang, patron de Nvidia, la Chine crie au complot",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0162,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.192
+  },
+  {
+   "id": "art-art_c793e93e45ea7640a5a5a60f",
+   "title": "Bonjour chez vous ! — BONJOUR CHEZ VOUS 26/11/12 Je P3",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1633,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.0313
+  },
+  {
+   "id": "art-art_c17b8d79f6b97e03b1f664d6",
+   "title": "« Si j’étais raciste, je ne pourrais pas être policier » : au premier jour du procès des trois policiers qui ont agressé Michel Zecler",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0172,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.5418
+  },
+  {
+   "id": "art-art_0d696bd398037b6c05e476c8",
+   "title": "Réunions à Abu Dhabi : la reprise des pourparlers entre la Russie et l'Ukraine",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0094,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9186
+  },
+  {
+   "id": "art-art_2a2a8c939f4ae48a9b91f9ba",
+   "title": "Présidentielle 2027 : Marine Le Pen guettée par le syndrome Balladur",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9457,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.753
+  },
+  {
+   "id": "art-art_b271de10b6a03de7f72d2e61",
+   "title": "«C'est un peu tôt pour se lancer en politique» : ce que pensent les Français de la candidature de Teddy Riner à l'élection présidentielle",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.974,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8471
+  },
+  {
+   "id": "art-art_f47f8430d8c8f02c14f51179",
+   "title": "« Nous ne sommes pas des Français issus de l’immigration. Nous sommes des Français, un point c’est tout »",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.2224,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.3882
+  },
+  {
+   "id": "art-art_9cdac4fac593f3b00491e4a9",
+   "title": "A Lyon, des virus-médicaments développés en alternative aux antibiotiques : «On allait me couper la jambe et grâce aux phages, je remarche»",
+   "expected_election": false,
+   "expected_topic": "health",
+   "election_probability": 0.0105,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.7767
+  },
+  {
+   "id": "art-art_273744f97f5896bbb0de22f3",
+   "title": "En Haïti, le président salvadorien Nayib Bukele promet de \"faire le ménage\", mais que peuvent faire ses 2 000 soldats face aux gangs ?",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0121,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.3452
+  },
+  {
+   "id": "art-art_44ca826286858323a48e99d3",
+   "title": "Drogue, arnaques et menaces à l’acide : le scandale qui secoue les services secrets ukrainiens",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0166,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.2909
+  },
+  {
+   "id": "art-art_6dea04d422f161fe1efcdb3b",
+   "title": "Parlement hebdo — Parlement hebdo",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0853,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7389
+  },
+  {
+   "id": "bsky-soc_0582702005bf4507b342d3cb",
+   "title": "www.sudouest.fr/politique/je...",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.2774,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.0647
+  },
+  {
+   "id": "bsky-soc_7655ff4ee0ae45cdab51129c",
+   "title": "Jean-Luc je suis ok avec toi !",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.8821,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.4569
+  },
+  {
+   "id": "art-art_5e2f81f7d6c61d8401541fae",
+   "title": "« Le Fils de Saul » : le chef-d’œuvre de László Nemes sur l’enfer d’Auschwitz",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.017,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.6403
+  },
+  {
+   "id": "art-art_52deae3adee9ab1d991cfaeb",
+   "title": "«Tout a été cassé, tout détruit»: le désespoir de ce gérant de boutique de smartphones pillée le 17 octobre",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0226,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.4137
+  },
+  {
+   "id": "art-art_84e73c2b60813b7fd603c49f",
+   "title": "Hy-Fen : quel est ce projet qui doit transporter l'hydrogène sur 800 km à travers la France et l'Europe ?",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0112,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.723
+  },
+  {
+   "id": "art-art_36ac721cef25b7abd9d08c9f",
+   "title": "Frigos victimes de cyberattaques : la France \"ne s'interdit rien\" dans la riposte contre l'Iran",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0113,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.6744
+  },
+  {
+   "id": "bsky-soc_e0a79820052b4c079634e56d",
+   "title": "Ces obstacles qui peuvent entraver la campagne de Teddy Riner à la présidentielle",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8623,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7904
+  },
+  {
+   "id": "bsky-soc_ce866265500b4334b79f8090",
+   "title": "Le système circulatoire traversant la cuisine se présente à l'élection présidentielle française 2027.",
+   "expected_election": true,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.9469,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.4989
+  },
+  {
+   "id": "art-art_a2d45be2115d3227fc5deac0",
+   "title": "Cyclisme. Le parcours 2027 du Région Pays de la Loire Tour dévoilé",
+   "expected_election": false,
+   "expected_topic": "local_overseas",
+   "election_probability": 0.0137,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.7477
+  },
+  {
+   "id": "art-art_3f2b69d7a77e1223882f4c73",
+   "title": "Le rapport du Global Carbon Project prévoit un record d'émissions de gaz à effet de serre, mais repère aussi des signes encourageants",
+   "expected_election": false,
+   "expected_topic": "climate_energy",
+   "election_probability": 0.012,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.8331
+  },
+  {
+   "id": "art-art_30cf3dff3b9085ae74d0574d",
+   "title": "EN DIRECT, guerre en Ukraine : Volodymyr Zelensky espère que la Russie sera elle aussi déterminée à parvenir à une « paix véritable »",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0089,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9165
+  },
+  {
+   "id": "art-art_57cc8ef75b15bd81b6f6c06b",
+   "title": "« Nous découvrons l’obstruction calendaire au Sénat » : le groupe RN-UDR dévoile les textes de sa niche parlementaire",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.3659,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.2262
+  },
+  {
+   "id": "bsky-soc_9273bcfb155b409ebb23819f",
+   "title": "Teddy Riner à l’élection présidentielle 2027 : candidat macroniste n°397 !",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9336,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8204
+  },
+  {
+   "id": "bsky-soc_e29e394d12c14fc7ac527666",
+   "title": "„Mélenchon has promised to launch an all-out war against Israel to “liberate Palestine” if elected president, saying he is even prepared to send warships.”",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.7782,
+   "predicted_election": true,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.6938
+  },
+  {
+   "id": "art-art_2098facfb54486d2a1416189",
+   "title": "« Le monde a (enfin) compris qu’on peut perdre de l’argent en investissant dans l’IA »",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0214,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.5706
+  },
+  {
+   "id": "art-art_74e7e030b6da878c2fd9302a",
+   "title": "Jensen Huang, PDG de Nvidia, pris dans un scandale d’adultère et d’espionnage : on vous explique l’affaire",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0163,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.3286
+  },
+  {
+   "id": "art-art_09b7c28a89ce945f3396df8c",
+   "title": "Teddy Riner candidat à la présidentielle : quand tout le monde a un avis sur tout",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9517,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6564
+  },
+  {
+   "id": "art-art_cabe83c091a259e26bbe7eaa",
+   "title": "Une «rupture de confiance» : les industriels du médicament dénoncent un amendement qui pourrait alourdir la fiscalité du secteur",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0435,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.3328
+  },
+  {
+   "id": "art-art_2c2f7d3e8976cb62ab705521",
+   "title": "Dans «The Good Boy» de Jan Komasa, il y a de l’otage dans l’air",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0138,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.4053
+  },
+  {
+   "id": "art-art_47d8ea7b5cf8d8e5b3bc059a",
+   "title": "Taxe sur les superprofits, chèque énergie… Que contient le plan de «révolution écologique» à 200 milliards d’euros de Raphaël Glucksmann ?",
+   "expected_election": true,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.9338,
+   "predicted_election": true,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.3544
+  },
+  {
+   "id": "art-art_e3ffd8bb991980c9d37fb08b",
+   "title": "Etienne Gernelle écarté de la direction du «Point»",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0359,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.532
+  },
+  {
+   "id": "art-art_33348e150f701c77091df876",
+   "title": "EN DIRECT – Mobilisation lycéenne : en Seine-et-Marne, une élue porte plainte après avoir été visée par une bouteille d’essence",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0881,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.2482
+  },
+  {
+   "id": "art-art_285395e8b9a2fea86a43b1c7",
+   "title": "Hausse du SMIC de 1,6% : un coup de pouce salué par les syndicats, mais qui inquiète le patronat",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0371,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.8601
+  },
+  {
+   "id": "art-art_54b1d7e245955c709b007ecd",
+   "title": "«L'augmentation du Smic va tasser les salaires», regrette Jean-Philippe Tanguy",
+   "expected_election": true,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.31,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.908
+  },
+  {
+   "id": "art-art_211ad72dad652d6fb44274cb",
+   "title": "Présidentielle 2027 : Raphaël Glucksmann met 200 milliards sur la table et invite le Sénat à voter en faveur d’une future « République écologique »",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9642,
+   "predicted_election": true,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.4396
+  },
+  {
+   "id": "art-art_68a08a0d9e9bdab539507747",
+   "title": "Guerre au Moyen-Orient : Donald Trump dit voir «un élan positif» vers un accord avec l'Iran après avoir rencontré le Premier ministre du Qatar",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0122,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9061
+  },
+  {
+   "id": "bsky-soc_c3c44efc44764a0184ae2ea5",
+   "title": "Zelenski se répond a lui-meme donc, puisque le vieux n'a fait que reprendre ses mots 🤡",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0472,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8509
+  },
+  {
+   "id": "art-art_3ac772a2bf460d8095e938b6",
+   "title": "Les députés votent en commission l’interdiction de l’importation des produits issus des colonies israéliennes",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1519,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.5913
+  },
+  {
+   "id": "art-art_fab18d76a8f2326e0e721a3f",
+   "title": "\"C’est la radicalité forever\" : Jean-Luc Mélenchon, radical pour rester central",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.8391,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.2994
+  },
+  {
+   "id": "art-art_c6b0fe869be531e352caa820",
+   "title": "Sahara occidental: l'épineux dossier de la Minurso à nouveau en discussion à l'ONU",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0086,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8138
+  },
+  {
+   "id": "bsky-soc_2d7ecbea76d74136b7bb19d0",
+   "title": "« Par ailleurs, et dans un but d’apaisement nous avons décidé d’êtres plus attentifs à nos choix d’invités, afin de prôner le vivre ensemble. C’était le journal de la rédaction, ne manquez pas à 21h le grand entretien qu",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.176,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5578
+  },
+  {
+   "id": "art-art_2eee81874c0359c4d1e84229",
+   "title": "Faisons de la lutte contre l'hypertension artérielle une \"Grande cause nationale\", par le Pr Antoine Flahault",
+   "expected_election": false,
+   "expected_topic": "health",
+   "election_probability": 0.0151,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.7656
+  },
+  {
+   "id": "art-art_b0fba245c1af9441267094d9",
+   "title": "\"L’évolution ne nous a pas conçus pour être heureux\" : ce que les livres de développement personnel oublient de vous dire",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0146,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.545
+  },
+  {
+   "id": "art-art_cf11ca7a8bf9a0a776e687d0",
+   "title": "Ils baladent gratuitement vos toutous : «Pour eux, le gain n’est pas financier mais émotionnel»",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0129,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.6832
+  },
+  {
+   "id": "art-art_2f082704bc6274691efefb09",
+   "title": "Le taux de chômage en France reste quasiment stable au troisième trimestre, à 8,2%",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0153,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7698
+  },
+  {
+   "id": "art-art_f96dca249a38e2c5fa3c1843",
+   "title": "Sens Public — Sens Public",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.2503,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.177
+  },
+  {
+   "id": "art-art_4154160c70466c7ffd756e66",
+   "title": "Teddy Riner entre dans la présidentielle avec toute la panoplie du parfait petit macroniste",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8896,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6308
+  },
+  {
+   "id": "art-art_fd987e4d2149ac077374d34e",
+   "title": "Après les pillages à Lyon, les commerçants autorisés à ouvrir exceptionnellement trois dimanches supplémentaires",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0436,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.1123
+  },
+  {
+   "id": "bsky-soc_49ac591132074ba68f839bee",
+   "title": "🗳️ Teddy Riner en campagne présidentielle : un outsider qui divise l'Assemblée",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8737,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8735
+  },
+  {
+   "id": "art-art_24ba0ee04218d98c792d9eff",
+   "title": "«Deux minutes de panique absolue» : un pêcheur devient millionnaire après avoir capturé le barramundi que tout le monde cherchait",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0108,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.7297
+  },
+  {
+   "id": "art-art_59df69863dedf7b161b02eb8",
+   "title": "\"Il en avait parlé\" : pourquoi la candidature de Teddy Riner à l'élection présidentielle n'est pas une si grande surprise",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8963,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6721
+  },
+  {
+   "id": "art-art_9377cfdd520a4a6c47fc1e9d",
+   "title": "Smic : le gouvernement annonce une hausse de 1,6 %, les syndicats dénoncent des \"miettes\"",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0853,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.8759
+  },
+  {
+   "id": "art-art_86249dd4c375eb579fd47584",
+   "title": "\"Il n’évite aucun sujet\" : Grzegorz Braun, le sulfureux négationniste qui veut faire basculer la Pologne",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0754,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.1147
+  },
+  {
+   "id": "art-art_a0b3aa0d50fae7e90edb36b8",
+   "title": "«Ce système n'est pas tenable» : Emmanuel Macron souhaite «interdire» l'intelligence artificielle quand elle représente un «risque» pour les enfants",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0621,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.4726
+  },
+  {
+   "id": "art-art_59d6b3109a3964d8b615ee37",
+   "title": "Présidentielle 2027 : Florian Philippot veut remplacer les parrainages des élus par un «parrainage citoyen»",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9699,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8412
+  },
+  {
+   "id": "art-art_6c35d2caf7ffc32013f8850f",
+   "title": "Niger: des propos de l'UE sur l'envoi de militaires algériens dans le pays suscitent la polémique",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0086,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8671
+  },
+  {
+   "id": "art-art_9e7582ee58f534f4aa96c81f",
+   "title": "Changement climatique : une légère baisse des émissions CO2 \"encourageante\"",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.01,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.8279
+  },
+  {
+   "id": "art-art_cc002f95f045c6b599e0262b",
+   "title": "Quand Trotski éclipse les Lumières, par Jean-François Copé",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.7202,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7021
+  },
+  {
+   "id": "art-art_44c70e2fd0b8927d2bb284c0",
+   "title": "Ligue 1. Yannick Cahuzac limogé, le RC Lens se sépare déjà de son deuxième entraîneur cette saison",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.014,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.8675
+  },
+  {
+   "id": "art-art_a1dbcc97f95432e1f91d4dfb",
+   "title": "Emmanuel Macron est «un charmeur de puissants», estime Catherine Nay",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.5719,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.4885
+  },
+  {
+   "id": "art-art_39806a6171b8ccd2051ef56f",
+   "title": "Le Sénat pérennise la réduction de cotisations sociales pour les entreprises qui emploient des sapeurs-pompiers volontaires",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0401,
+   "predicted_election": false,
+   "predicted_topic": "pensions_social",
+   "topic_confidence": 0.2898
+  },
+  {
+   "id": "art-art_79754a97d8cdc82344be35d4",
+   "title": "DC Studios : pourquoi les départs de James Gunn et Peter Safran sont-ils une (très) mauvaise nouvelle pour les fans ?",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0125,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.4348
+  },
+  {
+   "id": "art-art_8b297b61ea15380b7b156963",
+   "title": "La Corée du Nord teste une torpille à grande vitesse d'un nouveau type, et compte la déployer en 2027",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0117,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.485
+  },
+  {
+   "id": "art-art_af33879e0213e020c7b87e08",
+   "title": "Crise dans l'éducation: nouvelle journée d'action prévue ce mardi, les discussions dans l'impasse",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0196,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.7779
+  },
+  {
+   "id": "bsky-soc_1e49c50d95c44071bfbb6bfb",
+   "title": "Présidentielle 2027 : face au duel annoncé Marine Le Pen-Jean-Luc Mélenchon, \"il y a la possibilité d'éviter le pire\", affirment les élus toulousains et régionaux qui soutiennent Raphaël Glucksmann - ladepeche.fr share.g",
+   "expected_election": true,
+   "expected_topic": "local_overseas",
+   "election_probability": 0.9725,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8386
+  },
+  {
+   "id": "art-art_fe4ebd2084c0e8391e3af886",
+   "title": "Russell Brand : un ancien détenu assure que la vie du comédien est menacée en prison",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0141,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.418
+  },
+  {
+   "id": "art-art_f333a68fa8b2bcef30da25e6",
+   "title": "A Brest, la police a saisi des trombinoscopes dans plusieurs lycées, des parents, élèves et syndicats dénoncent un \"fichage\"",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0302,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.2687
+  },
+  {
+   "id": "art-art_4dde9c9419657ac788d2422f",
+   "title": "Augmentation du smic, allègements de charges pour les entreprises... Ce qu'il faut retenir des annonces du gouvernement à l'issue de la conférence sociale",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0831,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7825
+  },
+  {
+   "id": "art-art_4d2cf09d81c9b214e831313e",
+   "title": "\"La Hongrie peut enfin affronter ses crimes\" : Péter Magyar déballe les archives des espions communistes",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0294,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.3622
+  },
+  {
+   "id": "art-art_b7b9658e5801e0e1b072ed52",
+   "title": "Interpol annonce plus de 260 arrestations en lien avec des réseaux criminels de passeurs de migrants",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0101,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.8039
+  },
+  {
+   "id": "art-art_3955271a10a73a196b006f3a",
+   "title": "Ici l'Europe — Ici l’Europe",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.039,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.6104
+  },
+  {
+   "id": "art-art_409364a79f837862c8480f3f",
+   "title": "Ukraine - Russie : l'Union Européenne impose sa présence à Abu Dhabi",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0119,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9249
+  },
+  {
+   "id": "art-art_2817d32528e1819e5a8f3bb2",
+   "title": "Paul McCartney est officiellement milliardaire et devient le troisième musicien le plus riche au monde",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0128,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.6089
+  },
+  {
+   "id": "art-art_8b25db321f3dd6045140650a",
+   "title": "Prix des carburants : le pétrole sous les 90 dollars sur fond d’optimisme relatif entre Washington et Téhéran",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0303,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.2035
+  },
+  {
+   "id": "art-art_d0d62249a76870023b0149a5",
+   "title": "Pourparlers Ukraine-Russie en direct : Washington appelle à un \"nouveau\" cadre de sécurité avec l'Europe",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0088,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.911
+  },
+  {
+   "id": "art-art_678bac586891e5a06f186acc",
+   "title": "Cinq adresses parisiennes pour les fondus de mochis, cette petite pâtisserie japonaise",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0225,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.5677
+  },
+  {
+   "id": "art-art_d995ee992d79122316896fc6",
+   "title": "Débattue à l’Assemblée ou classée sans suite ? Le sort de la pétition pour supprimer CNews décidé ce mardi",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0322,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.3579
+  },
+  {
+   "id": "art-art_cecf844322fba0ad415ecd66",
+   "title": "«Nous avons eu six catastrophes en six ans»: à la COP31, le Népal demande justice",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0111,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.6323
+  },
+  {
+   "id": "art-art_96a9b8718cfeef93ef84bcff",
+   "title": "Espagne : Alberto Nuñez Feijoo, un aspirant premier ministre prêt à s’allier à l’extrême droite",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0183,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6669
+  },
+  {
+   "id": "art-art_882bbb3e621bc4159f6095bb",
+   "title": "Le taux de chômage en France quasiment stable au troisième trimestre, à 8,2 %",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0147,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.7792
+  },
+  {
+   "id": "art-art_478ed6d9522b179d6fed7a02",
+   "title": "Bonjour chez vous ! — Bonjour chez vous !",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0906,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3612
+  },
+  {
+   "id": "art-art_ba1a8d9b52573829c56cec1f",
+   "title": "Stephen Miller, le coup de poker de Trump : \"Il voit là sa meilleure chance de transformer en profondeur l'Amérique\"",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0199,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.6947
+  },
+  {
+   "id": "art-art_4805475dd73fbbb97a8e19be",
+   "title": "« Merci », « un admirable exemple » : des hommages, dont celui d’Emmanuel Macron, à la résistante Solange Alexandre",
+   "expected_election": false,
+   "expected_topic": "local_overseas",
+   "election_probability": 0.0343,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.2343
+  },
+  {
+   "id": "bsky-soc_5a868fe79efb4e9e87fff48b",
+   "title": "Teddy Riner — Teddy Riner, judoka légendaire, lance sa campagne pour l'Élysée en 2027 #TeddyRiner #Élysée #News",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9554,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8242
+  },
+  {
+   "id": "art-art_3918e6f4f987297c633c4357",
+   "title": "Présidentielle 2027 : Glucksmann assure qu’il va «mettre fin» à l’«hégémonie culturelle, idéologique et politique» de Mélenchon sur la gauche",
+   "expected_election": true,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.9694,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7394
+  },
+  {
+   "id": "bsky-soc_0a4e5207c4984bc39b279b12",
+   "title": "Présidentielle 2027 : CNews, à la fois incontournable et infréquentable pour les candidats",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9532,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7908
+  },
+  {
+   "id": "art-art_39219b9c0d23c335bf20e6b5",
+   "title": "La Chine passe la marque des 1.000 milliards de dollars d'excédent commercial dès octobre",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0256,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.3418
+  },
+  {
+   "id": "art-art_13d53623f338d5f3aa22c8e1",
+   "title": "Teddy Riner candidat à l’élection présidentielle : la folie des grandeurs",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9418,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7123
+  },
+  {
+   "id": "bsky-soc_a10844c06f0345ae9666e710",
+   "title": "🎭 Mélenchon et l'Ukraine : la gauche divisée sur le référendum dans le Donbass",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.7796,
+   "predicted_election": true,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.7086
+  },
+  {
+   "id": "art-art_731e62487fb666d463c0738d",
+   "title": "La trajectoire d’Emmanuel Macron, «c’est la solitude», affirme Catherine Ney",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.3234,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3385
+  },
+  {
+   "id": "art-art_8aa2ca9fc3fdc1b28bcbe29a",
+   "title": "« Lio » : pop, insoumise et résistante",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0191,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5102
+  },
+  {
+   "id": "art-art_311073ed622aed7e27e882aa",
+   "title": "Guerre en Ukraine : les États-Unis apellent à \"un nouveau\" cadre de sécurité avec l'Europe",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0094,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9106
+  },
+  {
+   "id": "art-art_a6cd7750d4b501be1fc37a96",
+   "title": "En Espagne, la chute des prix de l'huile d'olive fait réagir le gouvernement",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0186,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.3103
+  },
+  {
+   "id": "art-art_5e0231568b2331f75b78c126",
+   "title": "Pourparlers entre la Russie et l'Ukraine : quelles sont les exigences de chaque partie ?",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0083,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9159
+  },
+  {
+   "id": "art-art_606c74e7b9d07d234c077d95",
+   "title": "\"Ça ne représente pas mes valeurs\" : les trois policiers jugés pour l'agression de Michel Zecler rejettent tout racisme au premier jour de leur procès",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0174,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.583
+  },
+  {
+   "id": "art-art_c6626cf436b4392fa203eadc",
+   "title": "Le RN a obtenu un pré-accord de deux banques européennes pour financer sa campagne pour la présidentielle",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9353,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.801
+  },
+  {
+   "id": "art-art_71ccc39d037ac95e592d5415",
+   "title": "«Ueno Bank»: retour sur le scandale qui a provoqué la chute éclair du président paraguayen",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0188,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.2173
+  },
+  {
+   "id": "bsky-soc_fdabe04ad88a44228a482063",
+   "title": "Fiche de Jean-Luc Mélenchon mise à jour : 29 mesures ajoutées ou précisées.\r",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8873,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3504
+  },
+  {
+   "id": "art-art_4c81671631dde039fcb3bf3f",
+   "title": "Crise bancaire au Paraguay : près de la moitié de la population privée de son argent",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0186,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.1303
+  },
+  {
+   "id": "bsky-soc_2d9c423f67bd4dc6ad69faf4",
+   "title": "France: Dozens of former Grasset authors have accused Vincent Bolloré of acting like a \"destroyer\" of their former publishing house following the appointment of Lise Boëll to lead the company.",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0258,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.6617
+  },
+  {
+   "id": "art-art_deb90e20e2acbc9110a7f598",
+   "title": "L’écrivain Michel Houellebecq mis en examen après des propos sur les musulmans et le «grand remplacement»",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0576,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.3337
+  },
+  {
+   "id": "art-art_27f3cfb22e7783746455486f",
+   "title": "Sens Public — Sens Public",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.2503,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.177
+  },
+  {
+   "id": "art-art_af196cc7b7dc9bf5d640ed1f",
+   "title": "En direct - Mobilisation des lycéens : une élue de Chelles visée par un jet de bouteille d'essence, Laurent Nuñez dénonce des «violences urbaines»",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0686,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.2914
+  },
+  {
+   "id": "art-art_e98a501f83001f0b1c16a303",
+   "title": "Teddy Riner candidat à l’élection présidentielle : une candidature «légitime» pour la ministre des Sports",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.8678,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7748
+  },
+  {
+   "id": "art-art_de037540c5df4c44e3675c9f",
+   "title": "«Quand vous entendez Sophie Binet parler de démocratie…» : Joseph Macé-Scaron tacle la CGT",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0904,
+   "predicted_election": false,
+   "predicted_topic": "pensions_social",
+   "topic_confidence": 0.1805
+  },
+  {
+   "id": "art-art_9f75e6be01a09ac660d36d1e",
+   "title": "Italie-France, Ligue des nations : à quelle heure et sur quelle chaîne ?",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0157,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.8203
+  },
+  {
+   "id": "art-art_98c153394599028dd77c2222",
+   "title": "Retraite : ce qu’un bilan peut vous faire gagner",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0358,
+   "predicted_election": false,
+   "predicted_topic": "pensions_social",
+   "topic_confidence": 0.7339
+  },
+  {
+   "id": "bsky-soc_e42b1de625f44d74a0e2eccf",
+   "title": "Notez le \"tout être plus nuancé que soi\" : la Fourest, qui n'a jamais été avare de termes insultants, de diffamations hyperboliques, d'expressions de mépris et d'arrogance, se permet d'en rajouter une couche en traitant ",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1188,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.2076
+  },
+  {
+   "id": "art-art_85bc4878a5db9379e12ce8c4",
+   "title": "Afrique du Sud : la déroute de l'ANC, parti de Nelson Mandela, aux municipales",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0116,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.2658
+  },
+  {
+   "id": "art-art_2e84714b8e1c05b9e43c2583",
+   "title": "Un syndicat des eaux en Corrèze condamné à 2 000 euros d'indemnisation pour la présence d'un gaz cancérigène dans l'eau du robinet",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0243,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.3303
+  },
+  {
+   "id": "art-art_b2b0301af23093cc1a2da991",
+   "title": "Parcoursup : des organisations lycéennes de gauche écourtent la première réunion en raison de la présence de représentants du RN, du patronat et de l'UNI",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.2206,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.6025
+  },
+  {
+   "id": "art-art_6b44b035621060511d7c0709",
+   "title": "Manifestations du 10 novembre : \"On n'est plus sur des revendications lycéennes, on est sur des comportements criminels\", réagit Edouard Geffray, après l'agression d'une élue locale LR à Chelles",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.1194,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.2196
+  },
+  {
+   "id": "art-art_cb9d4669b847f28a6b6027c5",
+   "title": "Allemagne : Ilse Aigner va devenir la première femme présidente, après un choix tardif de Merz qui peine à imposer ses vues",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0215,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6116
+  },
+  {
+   "id": "art-art_f4f6146bfa9ae7346d5de5db",
+   "title": "Algérie : Kamel Daoud et son épouse condamnés par contumace à cinq ans de prison ferme",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0118,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.7237
+  },
+  {
+   "id": "art-art_be6c87753b11e9bce8a79b5e",
+   "title": "Grippe aviaire : un foyer «hautement pathogène» détecté en Seine-Maritime",
+   "expected_election": false,
+   "expected_topic": "local_overseas",
+   "election_probability": 0.0223,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.2984
+  },
+  {
+   "id": "art-art_04c395f9f0cc3bde2c0b7409",
+   "title": "\"Une cinquantaine\" de chefs d'établissement \"traumatisés\" ont demandé leur mutation après la mobilisation des lycéens, selon un syndicat",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0171,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.7166
+  },
+  {
+   "id": "art-art_e0979fa346b3c1d98fe4a5c8",
+   "title": "Cyberattaque contre des frigos de supermarchés : la France pointe du doigt l'Iran",
+   "expected_election": false,
+   "expected_topic": "culture_identity",
+   "election_probability": 0.0206,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.1849
+  },
+  {
+   "id": "art-art_2d6d5c6d5d36f5f050a23056",
+   "title": "Teddy Riner : avant sa candidature, combien valait le judoka dans les sondages pour la présidentielle ?",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9694,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8449
+  },
+  {
+   "id": "art-art_2b1a4df8dff22cfb3c8ede27",
+   "title": "Marine Le Pen crée la polémique en assurant qu' «il n'y a pas de discriminations» en France",
+   "expected_election": true,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.9099,
+   "predicted_election": true,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.4564
+  },
+  {
+   "id": "art-art_52e84a725b1d170ecdec9714",
+   "title": "Midterms : la défaite des républicains complique les ambitions présidentielles de J.D. Vance",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0286,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7071
+  },
+  {
+   "id": "art-art_e0997dd8fe96ea5a781b07a9",
+   "title": "Teddy Riner à la présidentielle de 2027, un candidat macroniste de plus ?",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9807,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8149
+  },
+  {
+   "id": "art-art_4d95c195ddba32cb8d2a12e0",
+   "title": "Moyen-Orient : le pétrole sous les 90 dollars sur fond d'optimisme entre Washington et Téhéran",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0226,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.3298
+  },
+  {
+   "id": "art-art_af96880cf4f69ef002e75b3b",
+   "title": "En Guadeloupe, une juge chargée de l'enquête sur l'accident d'un homme renversé par une voiture de gendarmerie",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.015,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.4848
+  },
+  {
+   "id": "art-art_bc937e067e4ea0300df3586b",
+   "title": "« Quelques voyous » : un incendie dégrade un lycée d’Aix-en-Provence, la piste volontaire envisagée",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0252,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.2532
+  },
+  {
+   "id": "art-art_a99fd3ab33091182b3508c2c",
+   "title": "États-Unis: le ministre de la Défense Pete Hegseth visé par une procédure de destitution au Congrès",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.02,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.282
+  },
+  {
+   "id": "art-art_b66e5a89dfd9931cdf5a9d2f",
+   "title": "Afrique du Sud : l'ANC subit le pire score de son histoire électoral depuis plus de 30 ans",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0158,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.3107
+  },
+  {
+   "id": "art-art_2d5b25506bc1a4af34422056",
+   "title": "Guerre en Ukraine : les chiffres cachés du Kremlin sur les morts russes",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0108,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8807
+  },
+  {
+   "id": "art-art_ac7a557acca6376de4a53163",
+   "title": "«Affaiblissement cognitif», «dépendance émotionnelle» : des experts pointent les risques de l’IA générative et appellent Emmanuel Macron à mieux protéger les utilisateurs",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.054,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.6908
+  },
+  {
+   "id": "bsky-soc_47cc5a96cf20489c83dbe337",
+   "title": "Dominique de Villepin, fondateur de La France Humaniste, était l'invité du Face-à-Face BFMTV-RMC. L'ancien Premier ministre a notamment abordé les ingérences étrangères et la candidature de Teddy Riner à la présidentiell",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9324,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6774
+  },
+  {
+   "id": "art-art_3c6300d2d7d7a1e159b0d11a",
+   "title": "Une mère de 34 ans, dont les 16 enfants avaient été retrouvés enfermés dans une maison insalubre, est de nouveau enceinte pour son procès",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0124,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.5118
+  },
+  {
+   "id": "art-art_4654bcb8b897f5fd31ac8dd4",
+   "title": "Pétition pour supprimer CNews : Mathieu Bock-Côté dénonce une «passion de la censure»",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.058,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.413
+  },
+  {
+   "id": "art-art_b41f7e7f07c4daca7f627865",
+   "title": "Journée de mobilisation dans l’Education, pétition contre CNews, reprise des pourparlers Ukraine-Russie… L’actu de ce mardi 10 novembre au matin",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0783,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.252
+  },
+  {
+   "id": "bsky-soc_19953a54753c4ca896d7f1c1",
+   "title": "Présidentielle 2027 : David Lisnard et les raisons d’une surprenante percée libérale",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.967,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6978
+  },
+  {
+   "id": "art-art_413128f8431933b87f4ee81d",
+   "title": "Israël: nouvellement élu à la Knesset, Hassan Nassasra veut faire entendre la voix des Palestiniens",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.015,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.2921
+  },
+  {
+   "id": "art-art_bdab848f55c3d3564b82e92b",
+   "title": "Derrière la cyberattaque contre les frigos de supermarchés, l’Iran et l’unité cyber Shahid Kaveh des gardiens de la révolution",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0157,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.4949
+  },
+  {
+   "id": "art-art_1f36a281e38200462975a87c",
+   "title": "«C’est 50-50 !» : après le scandale d’espionnage chez Nvidia, son PDG, Jensen Huang, peut-il rester ?",
+   "expected_election": false,
+   "expected_topic": "justice",
+   "election_probability": 0.0191,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.5032
+  },
+  {
+   "id": "art-art_d5d8d01fd8c5db87864fc391",
+   "title": "Donald Trump dit voir \"un élan positif\" vers un accord avec l'Iran, après sa rencontre avec le Premier ministre qatarien",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0097,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8813
+  },
+  {
+   "id": "bsky-soc_936cd04c6df04026820d4a45",
+   "title": "𝗟𝗮 𝗙𝗿𝗮𝗻𝗰𝗲 𝗶𝗻𝘀𝗼𝘂𝗺𝗶𝘀𝗲 - handelsblatt.com (German, Germany)",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.8231,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.4058
+  },
+  {
+   "id": "art-art_43f4df6ae6c8498759206053",
+   "title": "Guerre en Ukraine : la stratégie russe derrière l'évacuation d'Olechky",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0084,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.9054
+  },
+  {
+   "id": "art-art_961e63cf64cb5fefe6094e86",
+   "title": "Lise Boëll, ancienne éditrice d'Eric Zemmour, nommée directrice générale déléguée des Editions Grasset",
+   "expected_election": false,
+   "expected_topic": "culture_identity",
+   "election_probability": 0.1097,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5548
+  },
+  {
+   "id": "art-art_550e610a242c54eb32b71e08",
+   "title": "Recrutement : avec l’essor de l’IA, le risque de voir le \"ghosting\" devenir la norme, par Delphine Minchella",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0214,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.3102
+  },
+  {
+   "id": "art-art_7aa76a9cefeb9d83afc26505",
+   "title": "Le pape Léon XIV a rencontré en Argentine 5 victimes de violences sexuelles par des membres du clergé",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0196,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.6433
+  },
+  {
+   "id": "art-art_1d72ac0476db1352f52cb98d",
+   "title": "Iran, Ukraine, Etats-Unis… Pourquoi Trump risque d’être encore plus dangereux après sa défaite aux « midterms »",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0201,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.7461
+  },
+  {
+   "id": "bsky-soc_018f40a68eec4f468c0aed41",
+   "title": "Teddy Riner candidat à la présidentielle 2027 : «C’est une blague ?», les Guadeloupéens entre incrédulité et espoirs",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9354,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.5519
+  },
+  {
+   "id": "art-art_362adfa7ad8636c679286a0d",
+   "title": "Cyberattaques contre les supermarchés : pourquoi l'Iran mène-t-il une guerre économique en France ?",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0262,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.2219
+  },
+  {
+   "id": "art-art_d99654c701a6e67bdb037087",
+   "title": "«Restez confinés» : des mortiers d’artifice tirés dans les couloirs d’un lycée à Chelles",
+   "expected_election": false,
+   "expected_topic": "education",
+   "election_probability": 0.0283,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.2973
+  },
+  {
+   "id": "bsky-soc_9b3af308c2d542f487c223e2",
+   "title": "Jean-Luc Mélenchon rappelle également que Volodymyr Zelensky avait lui-même évoqué, en décembre 2025, la nécessité d'un référendum ou d'élections pour valider d'éventuelles concessions territoriales.",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.4738,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8611
+  },
+  {
+   "id": "art-art_d1d4b872753167ff6a10a314",
+   "title": "« Un singe en hiver » : Gabin, Belmondo et les dialogues inoubliables d’Audiard",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.01,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.7684
+  },
+  {
+   "id": "art-art_7db5d8617c7b3b4cf9912b10",
+   "title": "À la Une: pléthore de candidats à l’élection présidentielle en France…",
+   "expected_election": true,
+   "expected_topic": "other",
+   "election_probability": 0.9019,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8228
+  },
+  {
+   "id": "art-art_52df69dadf245b4cd372df13",
+   "title": "RDC: offensive des combattants du FRN au Sud-Kivu, plusieurs localités tombent sous leur contrôle",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0119,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.6671
+  },
+  {
+   "id": "art-art_a0e0ee0bb52bd232c04715a3",
+   "title": "Le judoka Teddy Riner annonce sa candidature à l'élection présidentielle 2027",
+   "expected_election": true,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.9762,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6439
+  },
+  {
+   "id": "art-art_ef069d95779f4240e831d428",
+   "title": "RENCONTRE. « On conçoit le métier de la graine à la récolte » : en Bretagne, ils cultivent des légumes bons et originaux",
+   "expected_election": false,
+   "expected_topic": "local_overseas",
+   "election_probability": 0.0227,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.4181
+  },
+  {
+   "id": "art-art_2b94c210e2e0092c0a2a546f",
+   "title": "Plus de 24 heures dans les airs : Airbus bat le record du plus long vol de l’histoire pour un avion de ligne",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0134,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.7793
+  },
+  {
+   "id": "art-art_d38c78297fececab233a39c5",
+   "title": "Isabelle Chenu, journaliste et cheffe du service Culture de RFI, nous a quittés",
+   "expected_election": false,
+   "expected_topic": "culture_identity",
+   "election_probability": 0.0149,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.4917
+  },
+  {
+   "id": "art-art_6915e2c65037be5198dfda09",
+   "title": "« Midterms » : après leur victoire face à Trump, les démocrates face au défi de l’unité pour 2028",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0488,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7092
+  },
+  {
+   "id": "art-art_5617389d2286d98402e387b9",
+   "title": "Affaire Huang : soupçons d'espionnage chez Nvidia, roi des puces d'IA",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0205,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.4049
+  },
+  {
+   "id": "art-art_d669c27104a5595e13203e19",
+   "title": "« Ça ne vaut même pas 20 € » : le calendrier de l’Avent de Kim Kardashian tourne au fiasco, il est retiré de la vente",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.015,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.58
+  },
+  {
+   "id": "art-art_cb8584c63ff065ed230f496f",
+   "title": "Infox sur Brigitte Macron : nouvelle manœuvre judiciaire du couple présidentiel contre Candace Owens",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0441,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.5363
+  },
+  {
+   "id": "bsky-soc_d84f5590541a40b79c65e565",
+   "title": "glucks2027.fr/revolution-e...",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.6063,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.2065
+  },
+  {
+   "id": "art-art_4f43dfb9ac1f8fbe9b0cf0e1",
+   "title": "John Harrison remporte le Booker Prize 2026 avec «The End of Everything»",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0151,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.6093
+  },
+  {
+   "id": "art-art_aa0d9f3dcfa35b52eb5a4577",
+   "title": "Meghan Markle : après l’arrestation de son père, la duchesse n'a pas pris la parole lors de sa venue à Bruxelles avec le prince Harry",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0165,
+   "predicted_election": false,
+   "predicted_topic": "other",
+   "topic_confidence": 0.2615
+  },
+  {
+   "id": "art-art_523b9174de60274ebe4ba9e7",
+   "title": "Stature présidentielle : Marine Le Pen creuse l’écart avec ses concurrents, Jean-Luc Mélenchon en dernière position",
+   "expected_election": true,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.9391,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8512
+  },
+  {
+   "id": "art-art_feaa236336951b3af486ef5f",
+   "title": "Sens Public — SENS PUBLIC 26/11/10 Ma P2",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1354,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.0254
+  },
+  {
+   "id": "art-art_2a0290067b9fb639308160be",
+   "title": "Présidentielle 2027 : quels sont les 31 candidats actuellement déclarés ?",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9788,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.9055
+  },
+  {
+   "id": "bsky-soc_e84411dd6d1e4aa8bba7a313",
+   "title": "Faute de soutien des banques françaises, le Rassemblement national espère obtenir 10,6 millions d'euros auprès de deux banques européennes pour financer la candidature de Marine Le Pen à la présidentielle de 2027.",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9707,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7591
+  },
+  {
+   "id": "bsky-soc_4bec3433c389466ba76f6036",
+   "title": "Présidentielle 2027 : David Lisnard et les raisons d’une percée libérale inattendue",
+   "expected_election": true,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.9779,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8282
+  },
+  {
+   "id": "art-art_70ab867f51211eb4ec55f869",
+   "title": "Teddy Riner, une candidature inattendue qui vient bousculer un peu plus la campagne présidentielle pour 2027",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9756,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8339
+  },
+  {
+   "id": "art-art_a1d042299557f844c36b29d7",
+   "title": "France : nouvelle journée d'action à l'appel des étudiants, lycéens et enseignants",
+   "expected_election": false,
+   "expected_topic": "pensions_social",
+   "election_probability": 0.0315,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.7509
+  },
+  {
+   "id": "art-art_da279cae0414c059a7e28cb4",
+   "title": "Gironde : un proviseur touché à la tête par un projectile, une enquête ouverte",
+   "expected_election": false,
+   "expected_topic": "health",
+   "election_probability": 0.0235,
+   "predicted_election": false,
+   "predicted_topic": "education",
+   "topic_confidence": 0.3003
+  },
+  {
+   "id": "bsky-soc_d0f04ca7821344e1b2ab8635",
+   "title": "📊 DÉCRYPTAGE | Présidentielle 2027 : Lisnard défie LR et séduit les sondages",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.9745,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.8587
+  },
+  {
+   "id": "art-art_a9c571f50c3d870cf8ff2cd2",
+   "title": "«Je suis complet jusqu'au 11 décembre» : à Chartres, l'installation d'un médecin junior soulage les patients",
+   "expected_election": false,
+   "expected_topic": "health",
+   "election_probability": 0.0154,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.8514
+  },
+  {
+   "id": "art-art_a1fa802854e99015b0ca189c",
+   "title": "«La Mort du môme» de Sébastien Kheroufi : nuit de boue au théâtre de la Colline",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0136,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.5824
+  },
+  {
+   "id": "art-art_545bcbbccc5c61fd71778252",
+   "title": "Sens Public — SENS PUBLIC 26/11/12 Je P2",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1461,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.0332
+  },
+  {
+   "id": "art-art_6a2d37e2ce954c69984ca365",
+   "title": "Pologne: l'abortomat, un casier pour récupérer la pilule abortive en toute discrétion",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0243,
+   "predicted_election": false,
+   "predicted_topic": "health",
+   "topic_confidence": 0.3041
+  },
+  {
+   "id": "art-art_4dac7d5d55eef906a4ac1596",
+   "title": "Bonjour chez vous ! — BONJOUR CHEZ VOUS 26/11/10 Ma P2",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.1271,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.0329
+  },
+  {
+   "id": "art-art_4388f42624760911f7f515eb",
+   "title": "« De Gaulle a montré que la France n’est pas irréformable » : l’historien Pierre Manenti a analysé les 200 premiers jours de son retour au pouvoir en 1958",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.3072,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6131
+  },
+  {
+   "id": "bsky-soc_6d7591990f0245e99a2f3f72",
+   "title": "Ginette Kolinka, rescapée d’Auschwitz-Birkenau, ne votera pas Marine Le Pen.",
+   "expected_election": true,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.7936,
+   "predicted_election": true,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.6332
+  },
+  {
+   "id": "art-art_a07c8631de31cadf6e138711",
+   "title": "Guerre en Iran : des avions américains évacués d’une deuxième base britannique face à la menace de Téhéran",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0087,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8123
+  },
+  {
+   "id": "art-art_5c333671b1b207acc66e6309",
+   "title": "Guerre en Ukraine : les sympathisants RN et Reconquête majoritairement opposés à la poursuite du soutien financier à Kiev, selon une étude",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.5489,
+   "predicted_election": true,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8737
+  },
+  {
+   "id": "art-art_58fdf202a3435686b72c3fb0",
+   "title": "Pologne : six morts, des corps retrouvés chez le tireur, fascination pour l'extrême droite... Ce que l'on sait de la fusillade à Cracovie",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0148,
+   "predicted_election": false,
+   "predicted_topic": "immigration_security",
+   "topic_confidence": 0.4365
+  },
+  {
+   "id": "art-art_59280106bcf61a1d707c93fd",
+   "title": "Derrière le tsunami démocrate, la percée prometteuse de la «working class»",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0531,
+   "predicted_election": false,
+   "predicted_topic": "institutions_democracy",
+   "topic_confidence": 0.7048
+  },
+  {
+   "id": "art-art_7005055351161d8752c3ad0e",
+   "title": "«Une difficulté avec les limites» : deux ans de prison avec sursis requis contre le navigateur Kevin Escoffier pour agressions sexuelles",
+   "expected_election": false,
+   "expected_topic": "immigration_security",
+   "election_probability": 0.0095,
+   "predicted_election": false,
+   "predicted_topic": "justice",
+   "topic_confidence": 0.7475
+  },
+  {
+   "id": "art-art_11e32cb3d6ee3e3720d7d70a",
+   "title": "Placements : l’immobilier, un marché sous tension",
+   "expected_election": false,
+   "expected_topic": "other",
+   "election_probability": 0.0185,
+   "predicted_election": false,
+   "predicted_topic": "economy_purchasing_power",
+   "topic_confidence": 0.4903
+  },
+  {
+   "id": "bsky-soc_a1db7d91650b4807a7c15905",
+   "title": "That reminds me Mélenchon is bizarrely hostile against Lithuania and ranted multiple times against it.",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.4805,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.5976
+  },
+  {
+   "id": "art-art_4efb5072b88d4ed38d1da749",
+   "title": "Le bloc-notes de Jérôme Garcin : Michel Winock paie sa dette à Sartre et Angie David, à Beauvoir",
+   "expected_election": false,
+   "expected_topic": "economy_purchasing_power",
+   "election_probability": 0.0131,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.7084
+  },
+  {
+   "id": "art-art_5d39f3f5d4a636968a1a9f52",
+   "title": "Un monde en doc — Un monde en doc",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.067,
+   "predicted_election": false,
+   "predicted_topic": "culture_identity",
+   "topic_confidence": 0.1544
+  },
+  {
+   "id": "art-art_c7ff9e1f140a485ce8ec8560",
+   "title": "\"Ce soir, on est en mission pour qu'ils passent une mauvaise nuit\" : en immersion avec une brigade de dronistes ukrainiens qui vise les raffineries russes",
+   "expected_election": false,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.0101,
+   "predicted_election": false,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8689
+  },
+  {
+   "id": "bsky-soc_450e157b84034211bc09a483",
+   "title": "Résumé de la position géopolitique de LFI pour l'Ukraine :",
+   "expected_election": true,
+   "expected_topic": "europe_foreign",
+   "election_probability": 0.6748,
+   "predicted_election": true,
+   "predicted_topic": "europe_foreign",
+   "topic_confidence": 0.8924
+  },
+  {
+   "id": "art-art_3603e34f5256bbb3728e06e9",
+   "title": "La Norvège impose un moratoire sur la connexion au réseau électrique de nouveaux centres de données",
+   "expected_election": false,
+   "expected_topic": "institutions_democracy",
+   "election_probability": 0.0186,
+   "predicted_election": false,
+   "predicted_topic": "climate_energy",
+   "topic_confidence": 0.4238
+  }
+ ]
+}

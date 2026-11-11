@@ -1,0 +1,198 @@
+---
+import Clock from '../components/Clock.svelte';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import type { Lang } from '../i18n/ui';
+import { route, switchLangUrl } from '../i18n/routes';
+import { useTranslations } from '../i18n/utils';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  active?: 'home' | 'map' | 'legislative' | 'forecasts' | 'polls' | 'markets' | 'candidates' | 'feed' | 'methodology' | 'about';
+  fullscreen?: boolean;
+}
+
+const { lang, title, description, active, fullscreen = false } = Astro.props;
+const t = useTranslations(lang);
+const pageTitle = title ? `${title} — ${t('site.name')}` : `${t('site.name')} — ${t('site.tagline')}`;
+const pageDescription =
+  description ??
+  (lang === 'fr'
+    ? 'Observatoire indépendant de la présidentielle 2027 : sondages, marchés, médias, carte et méthodologie.'
+    : lang === 'en'
+      ? 'Independent observatory of the 2027 French presidential election: polls, markets, media, map and methodology.'
+      : '2027 法国总统选举独立观察站：民调、预测市场、媒体、地图与方法论。');
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).toString();
+const htmlLang = lang === 'zh' ? 'zh-CN' : lang;
+const chrome = {
+  fr: {
+    section: 'Observatoire / Présidentielle',
+    demo: 'Provisoire',
+    live: 'Live',
+    system: 'System online',
+    d1: 'D1 connected',
+    feeds: 'RSS / GDELT / X',
+    footer: 'VLF // observatoire // données ouvertes',
+    demoData: 'Données provisoires',
+  },
+  en: {
+    section: 'Observatory / Presidential',
+    demo: 'Provisional',
+    live: 'Live',
+    system: 'System online',
+    d1: 'D1 connected',
+    feeds: 'RSS / GDELT / X',
+    footer: 'VLF // observatory // open data',
+    demoData: 'Provisional data',
+  },
+  zh: {
+    section: '观察站 / 总统选举',
+    demo: '临时',
+    live: '实时',
+    system: '系统在线',
+    d1: 'D1 已连接',
+    feeds: 'RSS / GDELT / X',
+    footer: 'VLF // 观察站 // 开放数据',
+    demoData: '临时数据',
+  },
+}[lang];
+const nav = [
+  { key: 'home' as const, label: t('nav.home'), icon: '⌂' },
+  { key: 'map' as const, label: t('nav.map'), icon: '▦' },
+  { key: 'legislative' as const, label: t('nav.legislative'), icon: '▧' },
+  { key: 'forecasts' as const, label: t('nav.forecasts'), icon: '◈' },
+  { key: 'polls' as const, label: t('nav.polls'), icon: '▥' },
+  { key: 'markets' as const, label: t('nav.markets'), icon: '◇' },
+  { key: 'candidates' as const, label: t('nav.candidates'), icon: '◉' },
+  { key: 'feed' as const, label: t('nav.feed'), icon: '≋' },
+  { key: 'methodology' as const, label: t('nav.methodology'), icon: '⌘' },
+];
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    {
+      (['fr', 'en', 'zh'] as Lang[]).map((code) => (
+        <link rel="alternate" hreflang={code === 'zh' ? 'zh-CN' : code} href={switchLangUrl(Astro.url, code)} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={switchLangUrl(Astro.url, 'fr')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#060a11" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <slot name="head" />
+  </head>
+  <body class="h-[100dvh] overflow-hidden bg-screen text-fg font-sans">
+    <div class="h-full flex flex-col">
+      <header class="h-12 shrink-0 border-b border-line bg-panel2 flex items-center gap-3 px-3">
+        <a href={route('home', lang)} class="flex items-baseline gap-2 shrink-0" aria-label={t('site.name')}>
+          <span class="font-display text-base md:text-lg font-semibold tracking-tight text-fg">VIVE LA FRANCE</span>
+          <span class="font-mono text-xs font-bold text-cyan tracking-[0.18em]">2027</span>
+        </a>
+        <span class="hidden lg:inline font-mono text-[9px] uppercase tracking-[0.18em] text-dim border-l border-line pl-3">
+          {chrome.section}
+        </span>
+
+        <div class="ml-auto flex items-center gap-3 md:gap-4">
+          <span class="hidden sm:flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-dim">
+            <span class="live-dot"></span> {chrome.live}
+          </span>
+          <div class="hidden md:block">
+            <Clock client:load lang={lang} />
+          </div>
+          <LanguageSwitcher lang={lang} />
+          <span class="hidden sm:inline-flex items-center border border-amber/40 bg-amber/10 px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-amber">
+            {chrome.demo}
+          </span>
+        </div>
+      </header>
+
+      <nav class="md:hidden h-8 shrink-0 border-b border-line bg-panel flex items-center gap-3 px-3 overflow-x-auto font-mono text-[9px] uppercase tracking-[0.1em]">
+        {
+          nav.map((item) => (
+            <a
+              href={route(item.key, lang)}
+              class:list={['whitespace-nowrap', active === item.key ? 'text-cyan' : 'text-dim']}
+              aria-current={active === item.key ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="flex-1 min-h-0 flex">
+        <aside class="hidden md:flex w-[72px] shrink-0 border-r border-line bg-panel flex-col items-center py-2 gap-0.5">
+          {
+            nav.map((item) => (
+              <a
+                href={route(item.key, lang)}
+                class:list={[
+                  'relative w-full flex flex-col items-center justify-center gap-0.5 py-2 text-[8px] font-mono uppercase tracking-[0.08em] transition-colors',
+                  active === item.key ? 'text-cyan bg-cyan/5' : 'text-dim hover:text-fg hover:bg-white/[0.03]',
+                ]}
+                aria-current={active === item.key ? 'page' : undefined}
+                aria-label={item.label}
+              >
+                {active === item.key && <span class="absolute left-0 top-1 bottom-1 w-0.5 bg-cyan"></span>}
+                <span class="text-[15px] leading-none" aria-hidden="true">{item.icon}</span>
+                <span>{item.label}</span>
+              </a>
+            ))
+          }
+          <div class="mt-auto w-full flex flex-col items-center gap-2 pt-2 border-t border-line">
+            <a
+              href={route('about', lang)}
+              class:list={[
+                'w-full flex flex-col items-center gap-0.5 py-2 text-[8px] font-mono uppercase tracking-[0.08em]',
+                active === 'about' ? 'text-cyan bg-cyan/5' : 'text-dim hover:text-fg',
+              ]}
+              aria-label={t('nav.about')}
+            >
+              <span class="text-[15px] leading-none" aria-hidden="true">◎</span>
+              <span>{t('nav.about')}</span>
+            </a>
+            <span class="font-mono text-[8px] text-dim/70">v0.1</span>
+          </div>
+        </aside>
+
+        <main class:list={['flex-1 min-w-0 min-h-0', fullscreen ? 'overflow-hidden bg-screen' : 'overflow-y-auto bg-screen']}>
+          {
+            fullscreen ? (
+              <slot />
+            ) : (
+              <div class="min-h-full bg-paper text-ink">
+                <slot />
+              </div>
+            )
+          }
+        </main>
+      </div>
+
+      <footer class="h-7 shrink-0 border-t border-line bg-panel2 flex items-center justify-between gap-4 px-3 font-mono text-[9px] uppercase tracking-[0.12em] text-dim">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1.5"><span class="live-dot"></span> {chrome.system}</span>
+          <span class="hidden sm:inline text-dim/60">{chrome.d1}</span>
+          <span class="hidden lg:inline text-dim/60">{chrome.feeds}</span>
+        </div>
+        <div class="hidden md:inline text-dim/60">{chrome.footer}</div>
+        <div class="flex items-center gap-3">
+          <span class="text-amber/80">{chrome.demoData}</span>
+          <span>UTC+1</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

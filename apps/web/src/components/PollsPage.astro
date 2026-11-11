@@ -1,0 +1,91 @@
+---
+import { env } from 'cloudflare:workers';
+import { readPolls } from '../lib/api';
+import { route } from '../i18n/routes';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const db = (env as any).DB as D1Database | undefined;
+const polls = await readPolls(db);
+
+const locale = lang === 'zh' ? 'zh-CN' : lang === 'en' ? 'en-GB' : 'fr-FR';
+const dateFmt = new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'short', year: 'numeric' });
+
+function name(row: any, prefix: 'top' | 'second'): string {
+  if (!row) return '—';
+  return row[`${prefix}_${lang === 'zh' ? 'zh' : lang === 'en' ? 'en' : 'fr'}`] ?? row[`${prefix}_fr`] ?? '—';
+}
+
+function pct(value: unknown): string {
+  return typeof value === 'number' ? `${value.toFixed(1).replace('.', ',')} %` : '—';
+}
+
+function date(value: string | null): string {
+  if (!value) return '—';
+  const parsed = new Date(`${value}T12:00:00Z`);
+  return Number.isNaN(parsed.getTime()) ? value : dateFmt.format(parsed);
+}
+---
+
+<section class="border-b border-rule">
+  <div class="container-page py-8 md:py-12">
+    <div class="kicker">{t('nav.polls')}</div>
+    <h1 class="mt-2 font-display text-4xl md:text-5xl tracking-tight">{t('polls.title')}</h1>
+    <p class="mt-3 text-sm text-muted max-w-2xl">{t('polls.subtitle')}</p>
+    <p class="mt-2 text-xs text-muted">
+      {polls.source === 'd1' ? `${polls.data.length} sondages · configuration principale` : t('common.comingSoon')}
+      · Sondax / Wikipédia, CC BY-SA 4.0
+    </p>
+  </div>
+</section>
+
+<section class="container-page py-8 md:py-12">
+  <div class="border border-rule bg-white/30 overflow-x-auto">
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="text-left text-xs uppercase tracking-wider text-muted border-b border-rule">
+          <th class="p-3 font-semibold">{t('polls.institute')}</th>
+          <th class="p-3 font-semibold">{t('polls.date')}</th>
+          <th class="p-3 font-semibold text-right">{t('polls.sample')}</th>
+          <th class="p-3 font-semibold">1er</th>
+          <th class="p-3 font-semibold text-right">%</th>
+          <th class="p-3 font-semibold hidden sm:table-cell">2e</th>
+          <th class="p-3 font-semibold text-right hidden sm:table-cell">%</th>
+          <th class="p-3 font-semibold text-right">Notice</th>
+        </tr>
+      </thead>
+      <tbody>
+        {polls.data.map((poll: any) => (
+          <tr class="border-b border-rule last:border-b-0">
+            <td class="p-3 font-semibold">{poll.pollster}</td>
+            <td class="p-3 text-muted">{date(poll.fieldwork_end)}</td>
+            <td class="p-3 text-right tabular-nums">{poll.sample_size ? Number(poll.sample_size).toLocaleString(locale) : '—'}</td>
+            <td class="p-3">{name(poll, 'top')}</td>
+            <td class="p-3 text-right tabular-nums font-semibold">{pct(poll.top_pct)}</td>
+            <td class="p-3 hidden sm:table-cell">{name(poll, 'second')}</td>
+            <td class="p-3 text-right tabular-nums hidden sm:table-cell">{pct(poll.second_pct)}</td>
+            <td class="p-3 text-right">
+              <a href={poll.source_url} target="_blank" rel="noopener noreferrer" class="text-xs font-semibold underline hover:text-accent">↗</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-3 text-xs text-muted">
+    {lang === 'fr'
+      ? 'Chaque ligne correspond à la configuration principale d’un sondage. Les scores sont des intentions de vote, pas des résultats. La notice officielle est liée quand elle existe.'
+      : lang === 'en'
+        ? 'Each row is the main configuration of one poll. Scores are voting intentions, not results. The official notice is linked when available.'
+        : '每行对应一项民调的主要情景。数字是投票意向，不是选举结果。有官方公告时会附链接。'}
+  </p>
+  <a href={route('methodology', lang)} class="mt-4 inline-flex border border-ink px-4 py-2 text-sm font-semibold hover:bg-ink hover:text-paper transition-colors">
+    {t('nav.methodology')}
+  </a>
+</section>

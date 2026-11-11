@@ -1,0 +1,143 @@
+---
+import { env } from 'cloudflare:workers';
+import { readForecastRuns } from '../lib/api';
+import { route } from '../i18n/routes';
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const db = (env as any).DB as D1Database | undefined;
+const forecastRuns = await readForecastRuns(db);
+const runDate = (value: string) => new Intl.DateTimeFormat(lang === 'zh' ? 'zh-CN' : lang === 'en' ? 'en-GB' : 'fr-FR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(value));
+---
+
+<section class="border-b border-rule">
+  <div class="container-page py-8 md:py-12">
+    <div class="kicker">{t('nav.methodology')}</div>
+    <h1 class="mt-2 font-display text-4xl md:text-5xl tracking-tight">{t('methodology.title')}</h1>
+    <p class="mt-3 text-sm text-muted max-w-2xl">{t('methodology.subtitle')}</p>
+  </div>
+</section>
+
+<section class="container-page py-8 md:py-12 grid gap-10 lg:grid-cols-[1.5fr_0.7fr]">
+  <div class="prose-vlf max-w-3xl">
+    {lang === 'fr' ? (
+      <>
+        <h2>1. Ce que nous mesurons</h2>
+        <p>Nous combinons cinq familles de signaux : les intentions de vote (sondages), les probabilités de marché, la couverture média, l’attention sociale et les signaux politiques (endorsements, parrainages, unité de camp). Le score composite est un indice de <strong>force électorale perçue</strong>, pas une prévision de résultat.</p>
+        <h2>2. Score composite</h2>
+        <p>Formule par défaut : 40 % sondages, 20 % marchés, 15 % médias, 10 % social, 15 % signaux politiques. Chaque composante est normalisée entre 0 et 100, puis pondérée. Les poids sont affichés et ajustables dans l’interface ; les poids par défaut sont versionnés.</p>
+        <p>Le score composite ne doit pas être confondu avec la probabilité de victoire. Cette dernière est produite séparément par le modèle bayésien.</p>
+        <h2>3. Modèle de prévision</h2>
+        <p>Le modèle agrège les sondages avec des effets d’institut, une décroissance temporelle et une pondération par taille d’échantillon. Il simule ensuite le premier tour, les reports de voix et le second tour par Monte Carlo. Chaque exécution est datée, versionnée et reproductible.</p>
+        <h2>3 bis. Cartes et scénarios</h2>
+        <p>Les cartes 2027 sont des scénarios mécaniques, pas des prévisions. Le modèle départemental applique un swing national hétérogène par région à la base 2022, puis 500 tirages Monte Carlo pour estimer une probabilité de finir en tête et un intervalle à 80 %. Un backtest laisse une circonscription de côté et compare le gagnant prédit au gagnant 2022. Le modèle législatif applique le même principe aux 577 circonscriptions, avec un second tour simulé par affinités de bloc ; il est explicitement étiqueté « scénario ».</p>
+        <h2>4. Texte, médias et réseaux</h2>
+        <p>La pertinence, le thème et la position (soutien/opposition/neutre) sont extraits par un modèle de décision (TypeSafe Jev) sur des questions typées, avec des seuils de confiance. Les cas incertains sont revus par un modèle génératif ou un humain. Les étiquettes ne sont pas des vérités : elles sont agrégées avec leur sample size et leur taux d’erreur. Le banc d’évaluation Jev contient 360 items français : 12 exemples humains et 348 items générés par gabarits, marqués comme synthétiques. Ce n’est pas un benchmark humain de production. Les PDF de la Commission des sondages passent par une file de brouillons et une validation humaine avant publication.</p>
+        <h2>5. Sources et fraîcheur</h2>
+        <p>RSS de médias français et internationaux, GDELT, Bluesky, Mastodon, X (25 comptes), notices de la Commission des sondages, PDF d’instituts, Polymarket, Kalshi, Metaculus, data.gouv.fr et Ministère de l’Intérieur. Les délais cibles vont de 5 minutes (RSS) à 1 heure (sondages avec revue).</p>
+        <h2>6. Limites</h2>
+        <ul>
+          <li>Les sondages nationaux ne sont pas des sondages par département : toute carte 2027 par département sera un modèle, pas une mesure.</li>
+          <li>L’attention sociale est un indicateur de visibilité, pas une mesure de l’opinion.</li>
+          <li>Les scores peuvent bouger pour des raisons méthodologiques ; chaque changement est documenté.</li>
+          <li>Nous ne publions pas de sondages la veille et le jour du scrutin.</li>
+        </ul>
+        <h2>7. Corrections</h2>
+        <p>Toute correction substantielle est datée et publique. Les versions de modèle et les jeux d’entrée sont conservés pour audit.</p>
+      </>
+    ) : lang === 'en' ? (
+      <>
+        <h2>1. What we measure</h2>
+        <p>We combine five signal families: voting intentions (polls), market probabilities, media coverage, social attention and political signals (endorsements, parrainages, camp unity). The composite score is an index of <strong>perceived electoral strength</strong>, not a result forecast.</p>
+        <h2>2. Composite score</h2>
+        <p>Default formula: 40% polls, 20% markets, 15% media, 10% social, 15% political signals. Each component is normalised to 0–100, then weighted. Weights are shown and adjustable in the UI; default weights are versioned.</p>
+        <p>The composite score must not be confused with win probability. The latter is produced separately by the Bayesian model.</p>
+        <h2>3. Forecast model</h2>
+        <p>The model aggregates polls with pollster effects, time decay and sample-size weighting. It then simulates the first round, vote transfers and the runoff with Monte Carlo. Every run is dated, versioned and reproducible.</p>
+        <h2>3 bis. Maps and scenarios</h2>
+        <p>2027 maps are mechanical scenarios, not forecasts. The departmental model applies a regionally heterogeneous national swing to the 2022 baseline, then 500 Monte Carlo draws to estimate a probability of leading and an 80% interval. A leave-one-constituency-out backtest compares the predicted winner with the 2022 winner. The legislative model applies the same logic to the 577 constituencies, with a runoff simulated by bloc affinity; it is explicitly labelled a scenario.</p>
+        <h2>4. Text, media and social</h2>
+        <p>Relevance, topic and stance (support/oppose/neutral) are extracted by a decision model (TypeSafe Jev) on typed questions, with confidence thresholds. Uncertain cases go to a generative model or a human. Labels are not truth: they are aggregated with sample size and error rates. The Jev evaluation set has 360 French items: 12 human-written examples and 348 template-generated items marked synthetic. It is not a production human benchmark. Commission des sondages PDFs go through a draft queue and human approval before publication.</p>
+        <h2>5. Sources and freshness</h2>
+        <p>French and international media RSS, GDELT, Bluesky, Mastodon, X (25 accounts), Commission des sondages notices, pollster PDFs, Polymarket, Kalshi, Metaculus, data.gouv.fr and the Ministry of the Interior. Target latencies range from 5 minutes (RSS) to 1 hour (polls with review).</p>
+        <h2>6. Limitations</h2>
+        <ul>
+          <li>National polls are not departmental polls: any 2027 department map will be a model, not a measurement.</li>
+          <li>Social attention is a visibility indicator, not a measure of opinion.</li>
+          <li>Scores can move for methodological reasons; every change is documented.</li>
+          <li>We do not publish polls on the eve or the day of the vote.</li>
+        </ul>
+        <h2>7. Corrections</h2>
+        <p>Every substantive correction is dated and public. Model versions and input sets are retained for audit.</p>
+      </>
+    ) : (
+      <>
+        <h2>1. 我们测量什么</h2>
+        <p>我们组合五类信号：投票意向（民调）、市场概率、媒体报道、社交关注度、政治信号（背书、parrainages、阵营团结）。综合评分是“被感知的选举强度”指数，不是结果预测。</p>
+        <h2>2. 综合评分</h2>
+        <p>默认公式：40% 民调、20% 市场、15% 媒体、10% 社交、15% 政治信号。每个分量归一化到 0–100 后加权。权重在界面中展示并可调整；默认权重有版本记录。</p>
+        <p>综合评分不等于胜率。胜率由贝叶斯模型单独给出。</p>
+        <h2>3. 预测模型</h2>
+        <p>模型对民调做机构效应、时间衰减和样本量加权，然后用蒙特卡洛模拟首轮、票源转移和次轮。每次运行都有日期、版本和可复现的输入。</p>
+        <h2>3 bis. 地图与情景</h2>
+        <p>2027 地图是机械情景，不是预测。省级模型把区域异质的全国摆动应用到 2022 基线，再用 500 次蒙特卡洛抽样估计领先概率和 80% 区间。回测会留出一个选区，比较预测赢家与 2022 实际赢家。立法模型把同样逻辑应用到 577 个选区，并按阵营亲和度模拟第二轮；它明确标注为“情景”。</p>
+        <h2>4. 文本、媒体与社交</h2>
+        <p>相关性、议题和立场（支持/反对/中性）由判断模型（TypeSafe Jev）通过类型化问题提取，并设置置信度阈值。不确定的样本转给生成模型或人工复核。标签不是事实：聚合时必须附样本量和错误率。Jev 评测集包含 360 条法语样本：12 条人工示例和 348 条模板生成并标注为合成的样本；它不是生产级人工基准。法国舆情委员会 PDF 先进入草稿队列，经人工批准后才发布。</p>
+        <h2>5. 来源与新鲜度</h2>
+        <p>法国及国际媒体 RSS、GDELT、Bluesky、Mastodon、X（25 个账号）、法国舆情委员会公告、民调机构 PDF、Polymarket、Kalshi、Metaculus、data.gouv.fr 与内政部。目标延迟从 5 分钟（RSS）到 1 小时（含人工复核的民调）。</p>
+        <h2>6. 局限</h2>
+        <ul>
+          <li>全国民调不是省级民调：任何 2027 省级地图都是模型，不是测量。</li>
+          <li>社交关注度是可见度指标，不是民意测量。</li>
+          <li>评分可能因方法调整而变化；每次变化都会记录。</li>
+          <li>投票前一天与投票日不发布民调。</li>
+        </ul>
+        <h2>7. 更正</h2>
+        <p>任何实质性更正都会注明日期并公开。模型版本与输入数据保留用于审计。</p>
+      </>
+    )}
+  </div>
+
+  <aside class="space-y-4">
+    <div class="border border-rule bg-white/40 p-4">
+      <div class="kicker">{lang === 'fr' ? 'Scénarios enregistrés' : lang === 'en' ? 'Stored scenarios' : '已保存情景'}</div>
+      {forecastRuns.data.length > 0 ? (
+        <ul class="mt-2 space-y-2 text-xs text-muted">
+          {forecastRuns.data.slice(0, 6).map((run: any) => (
+            <li class="border-b border-rule/60 pb-2 last:border-0 last:pb-0">
+              <div class="font-mono text-[10px] text-ink">{run.election_id} · {run.outcomes} outcomes</div>
+              <div class="mt-0.5 line-clamp-2">{run.model_version}</div>
+              <div class="mt-0.5 font-mono text-[9px]">{runDate(run.created_at)} · seed {run.seed}</div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="mt-2 text-xs text-muted">{lang === 'fr' ? 'Aucun scénario enregistré.' : lang === 'en' ? 'No stored scenario.' : '暂无已保存情景。'}</p>
+      )}
+      <a href={route('forecasts', lang)} class="mt-3 inline-block text-xs font-semibold underline hover:text-accent">
+        {lang === 'fr' ? 'Voir les scénarios' : lang === 'en' ? 'View stored scenarios' : '查看已保存情景'} ↗
+      </a>
+    </div>
+    <div class="border border-rule bg-white/40 p-4">
+      <div class="kicker">{t('home.dataFreshness')}</div>
+      <ul class="mt-2 text-sm space-y-1.5 text-muted">
+        <li>RSS : 5–15 min</li>
+        <li>GDELT : 15–30 min</li>
+        <li>X : 60 min</li>
+        <li>Sondages : 1 h + revue</li>
+        <li>Marchés : 5–15 min</li>
+        <li>Modèle : 1×/jour</li>
+      </ul>
+    </div>
+    <div class="border border-rule bg-white/40 p-4 text-sm text-muted">
+      <div class="kicker">{t('common.source')}</div>
+      <p class="mt-2">Ministère de l’Intérieur, Commission des sondages, data.gouv.fr, instituts, plateformes de marché, médias listés.</p>
+    </div>
+  </aside>
+</section>

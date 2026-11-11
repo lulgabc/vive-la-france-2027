@@ -1,0 +1,109 @@
+---
+import type { Lang } from '../i18n/ui';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="border-b border-rule">
+  <div class="container-page py-8 md:py-12">
+    <div class="kicker">{t('nav.about')}</div>
+    <h1 class="mt-2 font-display text-4xl md:text-5xl tracking-tight">{t('site.name')}</h1>
+    <p class="mt-3 text-sm text-muted max-w-2xl">{t('site.tagline')}</p>
+  </div>
+</section>
+
+<section class="container-page py-8 md:py-12 grid gap-10 lg:grid-cols-[1.5fr_0.7fr]">
+  <div class="prose-vlf max-w-3xl">
+    {lang === 'fr' ? (
+      <>
+        <h2>Un observatoire, pas un camp</h2>
+        <p>Vive la France 2027 est un projet indépendant qui rassemble des données publiques sur la présidentielle de 2027 : sondages, marchés de prédiction, couverture média, attention sociale et signaux politiques. Le projet n’est affilié à aucun parti, aucun institut de sondage, aucune plateforme de marché et aucun média.</p>
+        <h2>Ce que nous publions</h2>
+        <ul>
+          <li>Un classement provisoire par score composite, avec décomposition et poids ajustables.</li>
+          <li>Une carte des résultats 2022 par département, puis une projection 2027 clairement étiquetée.</li>
+          <li>Les sondages avec leur source, leur notice et leur méthodologie.</li>
+          <li>Les probabilités de marché, après retrait de la marge.</li>
+          <li>Un fil de contenus, avec filtres par source, thème et entité.</li>
+        </ul>
+        <h2>Ce que nous ne faisons pas</h2>
+        <ul>
+          <li>Nous ne publions pas de sondages la veille et le jour du scrutin.</li>
+          <li>Nous ne présentons pas un score comme un résultat électoral.</li>
+          <li>Nous ne revendons pas de données sociales ni ne construisons de profils individuels.</li>
+          <li>Nous ne prétendons pas que l’attention sociale représente l’opinion.</li>
+        </ul>
+        <h2>Contact</h2>
+        <p>Pour une correction, une source ou un partenariat : <a href="mailto:contact@vivelafrance2027.example">contact@vivelafrance2027.example</a>.</p>
+      </>
+    ) : lang === 'en' ? (
+      <>
+        <h2>An observatory, not a camp</h2>
+        <p>Vive la France 2027 is an independent project collecting public data on the 2027 presidential election: polls, prediction markets, media coverage, social attention and political signals. It is not affiliated with any party, polling institute, market platform or media outlet.</p>
+        <h2>What we publish</h2>
+        <ul>
+          <li>A provisional ranking by composite score, with a breakdown and adjustable weights.</li>
+          <li>A map of 2022 results by department, then a clearly labelled 2027 projection.</li>
+          <li>Polls with their source, notice and methodology.</li>
+          <li>Market probabilities, after removing the vig.</li>
+          <li>A content feed with filters by source, topic and entity.</li>
+        </ul>
+        <h2>What we do not do</h2>
+        <ul>
+          <li>We do not publish polls on the eve or the day of the vote.</li>
+          <li>We do not present a score as an election result.</li>
+          <li>We do not resell social data or build individual profiles.</li>
+          <li>We do not claim that social attention represents opinion.</li>
+        </ul>
+        <h2>Contact</h2>
+        <p>For a correction, a source or a partnership: <a href="mailto:contact@vivelafrance2027.example">contact@vivelafrance2027.example</a>.</p>
+      </>
+    ) : (
+      <>
+        <h2>观察站，不是阵营</h2>
+        <p>Vive la France 2027 是一个独立项目，汇集 2027 年法国总统选举的公开数据：民调、预测市场、媒体报道、社交关注度与政治信号。项目不隶属于任何政党、民调机构、预测平台或媒体。</p>
+        <h2>我们发布什么</h2>
+        <ul>
+          <li>按综合评分排列的临时榜单，附拆解与可调权重。</li>
+          <li>2022 年各省结果地图，以及明确标注的 2027 投影。</li>
+          <li>民调及其来源、公告与方法论。</li>
+          <li>去除抽水后的市场概率。</li>
+          <li>可按来源、议题、实体筛选的信息流。</li>
+        </ul>
+        <h2>我们不做什么</h2>
+        <ul>
+          <li>投票前一天与投票日不发布民调。</li>
+          <li>不把评分当作选举结果。</li>
+          <li>不转售社交数据，不建立个人画像。</li>
+          <li>不声称社交关注度代表民意。</li>
+        </ul>
+        <h2>联系</h2>
+        <p>更正、来源或合作：<a href="mailto:contact@vivelafrance2027.example">contact@vivelafrance2027.example</a>。</p>
+      </>
+    )}
+  </div>
+
+  <aside class="space-y-4">
+    <div class="border border-rule bg-white/40 p-4 text-sm">
+      <div class="kicker">{t('footer.sources')}</div>
+      <ul class="mt-2 space-y-1.5 text-muted">
+        <li>Ministère de l’Intérieur</li>
+        <li>Commission des sondages</li>
+        <li>data.gouv.fr / INSEE</li>
+        <li>Ifop, Ipsos, Elabe, Odoxa, Cluster17</li>
+        <li>Polymarket, Kalshi, Metaculus</li>
+        <li>Le Monde, Le Figaro, Libération, Les Échos, franceinfo, France 24, RFI, BFMTV, CNews, Public Sénat, LCP</li>
+      </ul>
+    </div>
+    <div class="border border-rule bg-white/40 p-4 text-sm">
+      <div class="kicker">{t('common.updated')}</div>
+      <p class="mt-2 text-muted">2026-11-10 · v0.1.0</p>
+    </div>
+  </aside>
+</section>

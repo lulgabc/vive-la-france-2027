@@ -1,0 +1,25 @@
+---
+import { results2022 } from '@vlf/domain';
+import { env } from 'cloudflare:workers';
+import { readPollAverages } from '../lib/api';
+import { buildProjection } from '../lib/projection';
+import { onlyMetropolitan } from '../lib/geo';
+import MapWorkspace from '../components/MapWorkspace.svelte';
+import Base from '../layouts/Base.astro';
+
+const db = (env as any).DB as D1Database | undefined;
+const pollAverages = await readPollAverages(db);
+const projection = buildProjection(results2022.departments, pollAverages.data as any);
+const mapData = onlyMetropolitan(results2022.departments);
+const projectionData = onlyMetropolitan(projection.departments);
+---
+
+<Base lang="fr" fullscreen active="map">
+  <MapWorkspace
+    mapData={mapData}
+    projection={projectionData}
+    projectionBacktest={projection.backtest}
+    lang="fr"
+    client:load
+  />
+</Base>

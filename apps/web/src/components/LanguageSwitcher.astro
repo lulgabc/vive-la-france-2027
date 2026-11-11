@@ -1,0 +1,34 @@
+---
+import type { Lang } from '../i18n/ui';
+import { switchLangUrl } from '../i18n/routes';
+import { localeLabel } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const current = Astro.url;
+const languages: Lang[] = ['fr', 'en', 'zh'];
+---
+
+<div class="flex items-center gap-1 font-mono text-[10px] font-bold" aria-label="Language">
+  {
+    languages.map((code, index) => (
+      <span class="flex items-center gap-1">
+        {index > 0 && <span class="text-line">/</span>}
+        <a
+          href={switchLangUrl(current, code)}
+          class:list={[
+            'px-1.5 py-1 transition-colors',
+            code === lang ? 'bg-cyan text-screen' : 'text-dim hover:text-fg',
+          ]}
+          hreflang={code}
+          aria-current={code === lang ? 'true' : undefined}
+        >
+          {localeLabel(code)}
+        </a>
+      </span>
+    ))
+  }
+</div>
