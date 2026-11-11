@@ -6,6 +6,7 @@
   --color-ink: #141414;
   --color-muted: #6b6b6b;
   --color-rule: #d9d5cc;
+  --color-rule-strong: #8f897d;
   --color-accent: #0b3d91;
   --color-accent-soft: #e6ecf7;
   --color-red: #c8102e;
@@ -13,7 +14,8 @@
   --color-screen: #060a11;
   --color-panel: #0b1320;
   --color-panel2: #0f1a29;
-  --color-line: #1c2a3a;
+  --color-line: #4a6078;
+  --color-line-strong: #4a6078;
   --color-fg: #d9e6f7;
   --color-dim: #7e92a9;
   --color-cyan: #35d6ff;
@@ -26,6 +28,11 @@
 }
 
 :root {
+  color-scheme: dark;
+}
+
+.bg-paper,
+.bg-paper-deep {
   color-scheme: light;
 }
 
@@ -273,4 +280,15 @@ body {
     linear-gradient(to right, rgba(53, 214, 255, 0.045) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(53, 214, 255, 0.045) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.62);
+  backdrop-filter: blur(2px);
+}
+
+.map-path:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 2px;
 }

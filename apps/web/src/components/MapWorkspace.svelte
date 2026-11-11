@@ -49,8 +49,8 @@
         <span class="font-mono text-[9px] text-dim">/ {Object.keys(mapData).length} {L.departments}</span>
       </div>
       <div class="flex items-center gap-1 font-mono text-[9px]">
-        <button type="button" class={['border px-1.5 py-0.5', mode === 'baseline' ? 'border-cyan/50 bg-cyan/10 text-cyan' : 'border-line text-dim/60 hover:text-fg'].join(' ')} on:click={() => (mode = 'baseline')}>{L.baseline}</button>
-        <button type="button" class={['border px-1.5 py-0.5', mode === 'projection' ? 'border-amber/50 bg-amber/10 text-amber' : 'border-line text-dim/60 hover:text-fg'].join(' ')} on:click={() => (mode = 'projection')}>{L.projection}</button>
+        <button type="button" class={['border px-1.5 py-0.5', mode === 'baseline' ? 'border-cyan/50 bg-cyan/10 text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} on:click={() => (mode = 'baseline')}>{L.baseline}</button>
+        <button type="button" class={['border px-1.5 py-0.5', mode === 'projection' ? 'border-amber/50 bg-amber/10 text-amber' : 'border-line text-dim hover:text-fg'].join(' ')} on:click={() => (mode = 'projection')}>{L.projection}</button>
       </div>
     </div>
     <div class="flex-1 min-h-0">

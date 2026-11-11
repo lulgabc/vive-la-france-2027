@@ -12,7 +12,7 @@ const current = Astro.url;
 const languages: Lang[] = ['fr', 'en', 'zh'];
 ---
 
-<div class="flex items-center gap-1 font-mono text-[10px] font-bold" aria-label="Language">
+<nav class="flex items-center gap-1 font-mono text-[10px] font-bold" aria-label="Language">
   {
     languages.map((code, index) => (
       <span class="flex items-center gap-1">
@@ -31,4 +31,4 @@ const languages: Lang[] = ['fr', 'en', 'zh'];
       </span>
     ))
   }
-</div>
+</nav>

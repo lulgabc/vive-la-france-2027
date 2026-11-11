@@ -11,6 +11,7 @@ import {
 import { env } from 'cloudflare:workers';
 import { readPollAverages } from '../lib/api';
 import { candidateRoute, route } from '../i18n/routes';
+import { avatarSrcSet } from '../lib/avatars';
 import type { Lang } from '../i18n/ui';
 import { useTranslations } from '../i18n/utils';
 import Sparkline from './Sparkline.astro';
@@ -61,7 +62,7 @@ const components = score
     <div class="mt-4 grid gap-8 lg:grid-cols-[1.5fr_0.8fr] items-start">
       <div>
         <div class="flex items-center gap-4">
-          <img src={candidate.avatar} alt="" class="h-20 w-20 md:h-24 md:w-24 rounded-full border border-rule object-cover bg-paper-deep" />
+          <img src={candidate.avatar} srcset={avatarSrcSet(candidate.avatar)} sizes="(min-width: 768px) 96px, 80px" width="96" height="96" alt="" class="h-20 w-20 md:h-24 md:w-24 rounded-full border border-rule object-cover bg-paper-deep" decoding="async" />
           <div>
             <div class="flex items-center gap-2 text-sm">
               <span class="inline-block h-3 w-3 rounded-full" style={`background:${party?.color ?? '#9ca3af'}`}></span>

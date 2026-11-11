@@ -240,12 +240,13 @@ function modelLabel(model: string): string {
 
       <div class="mt-6 border border-rule bg-white/30 overflow-x-auto">
         <table class="w-full text-sm">
+          <caption class="sr-only">Journal des scénarios enregistrés</caption>
           <thead>
             <tr class="border-b border-rule text-left text-xs uppercase tracking-wider text-muted">
-              <th class="p-3 font-semibold">{copy.date}</th>
-              <th class="p-3 font-semibold">{copy.model}</th>
-              <th class="p-3 font-semibold text-right">{copy.seed}</th>
-              <th class="p-3 font-semibold text-right">{copy.outcomes}</th>
+              <th scope="col" class="p-3 font-semibold">{copy.date}</th>
+              <th scope="col" class="p-3 font-semibold">{copy.model}</th>
+              <th scope="col" class="p-3 font-semibold text-right">{copy.seed}</th>
+              <th scope="col" class="p-3 font-semibold text-right">{copy.outcomes}</th>
             </tr>
           </thead>
           <tbody>

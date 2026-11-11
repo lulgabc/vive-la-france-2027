@@ -1,7 +1,7 @@
 <script lang="ts">
   import { partyById } from '@vlf/domain';
   import { geoConicConformal, geoPath } from 'd3-geo';
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { darkPartyColor } from '../lib/colors';
 
   type Dept = {
@@ -34,12 +34,51 @@
   let legend: Array<{ id: string; name: string; color: string }> = [];
   let error = '';
   let zoom = 1;
+  let activeCode = selectedCode ?? '';
+  let previousSelected = selectedCode;
 
   const width = 640;
   const height = 620;
 
   function colorFor(partyId: string | null | undefined): string {
     return darkPartyColor(partyId);
+  }
+
+  $: if (selectedCode !== previousSelected) {
+    previousSelected = selectedCode;
+    if (selectedCode) activeCode = selectedCode;
+  }
+
+  async function focusPath(code: string) {
+    activeCode = code;
+    await tick();
+    document.getElementById(`map-path-${code}`)?.focus();
+  }
+
+  function movePath(code: string, delta: number) {
+    const index = paths.findIndex((item) => item.code === code);
+    if (index < 0 || paths.length === 0) return;
+    const next = (index + delta + paths.length) % paths.length;
+    void focusPath(paths[next].code);
+  }
+
+  function onPathKeydown(event: KeyboardEvent, code: string) {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      movePath(code, 1);
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      movePath(code, -1);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      if (paths[0]) void focusPath(paths[0].code);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      if (paths.at(-1)) void focusPath(paths.at(-1)!.code);
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onSelect?.(code);
+    }
   }
 
   function zoomBy(delta: number) {
@@ -83,6 +122,7 @@
         });
       }
       legend = [...seen.values()].sort((a, b) => a.name.localeCompare(b.name));
+      activeCode = selectedCode ?? paths[0]?.code ?? '';
     } catch (err) {
       error = err instanceof Error ? err.message : 'map error';
     }
@@ -95,7 +135,7 @@
   {:else if paths.length === 0}
     <div class="absolute inset-0 flex items-center justify-center text-sm text-dim">Chargement…</div>
   {:else}
-    <svg viewBox={`0 0 ${width} ${height}`} class="h-full w-full" role="img" aria-label="Carte des départements français">
+    <svg viewBox={`0 0 ${width} ${height}`} class="h-full w-full" role="group" aria-label="Carte des départements français">
       <g transform={`translate(${width * (1 - zoom) * 0.5} ${height * (1 - zoom) * 0.5}) scale(${zoom})`}>
         {#each paths as p (p.code)}
           <path
@@ -104,18 +144,24 @@
             fill-opacity={mode === 'projection' ? 0.25 + Math.min(0.75, p.winProb) : 1}
             stroke={p.code === selectedCode ? '#35d6ff' : '#060a11'}
             stroke-width={p.code === selectedCode ? 2 : 0.8}
-            class="cursor-pointer transition-opacity hover:opacity-80 focus:opacity-80 outline-none"
-            tabindex="0"
+            id={`map-path-${p.code}`}
+            class="map-path cursor-pointer transition-opacity hover:opacity-80"
+            tabindex={p.code === activeCode ? 0 : -1}
             role="button"
+            aria-pressed={p.code === selectedCode}
             aria-label={`${p.name}${p.dept?.winner_candidate ? ` — ${p.dept.winner_candidate}` : ''}`}
             onmouseenter={() => (hovered = p)}
             onmouseleave={() => (hovered = null)}
-            onfocus={() => (hovered = p)}
-            onblur={() => (hovered = null)}
-            onclick={() => onSelect?.(p.code)}
-            onkeydown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') onSelect?.(p.code);
+            onfocus={() => {
+              hovered = p;
+              activeCode = p.code;
             }}
+            onblur={() => (hovered = null)}
+            onclick={() => {
+              activeCode = p.code;
+              onSelect?.(p.code);
+            }}
+            onkeydown={(event) => onPathKeydown(event, p.code)}
           />
         {/each}
       </g>

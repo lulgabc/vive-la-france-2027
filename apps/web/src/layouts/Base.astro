@@ -76,6 +76,7 @@ const nav = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
@@ -95,6 +96,12 @@ const nav = [
     <slot name="head" />
   </head>
   <body class="h-[100dvh] overflow-hidden bg-screen text-fg font-sans">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:border focus:border-cyan focus:bg-panel focus:px-3 focus:py-2 focus:text-sm focus:text-fg"
+    >
+      {lang === 'fr' ? 'Aller au contenu' : lang === 'en' ? 'Skip to content' : '跳到主要内容'}
+    </a>
     <div class="h-full flex flex-col">
       <header class="h-12 shrink-0 border-b border-line bg-panel2 flex items-center gap-3 px-3">
         <a href={route('home', lang)} class="flex items-baseline gap-2 shrink-0" aria-label={t('site.name')}>
@@ -164,16 +171,16 @@ const nav = [
               <span class="text-[15px] leading-none" aria-hidden="true">◎</span>
               <span>{t('nav.about')}</span>
             </a>
-            <span class="font-mono text-[8px] text-dim/70">v0.1</span>
+            <span class="font-mono text-[10px] text-dim">v0.1</span>
           </div>
         </aside>
 
-        <main class:list={['flex-1 min-w-0 min-h-0', fullscreen ? 'overflow-hidden bg-screen' : 'overflow-y-auto bg-screen']}>
+        <main id="main" tabindex="-1" class:list={['flex-1 min-w-0 min-h-0', fullscreen ? 'overflow-hidden bg-screen' : 'overflow-y-auto bg-paper text-ink']}>
           {
             fullscreen ? (
               <slot />
             ) : (
-              <div class="min-h-full bg-paper text-ink">
+              <div class="min-h-full">
                 <slot />
               </div>
             )
@@ -184,10 +191,10 @@ const nav = [
       <footer class="h-7 shrink-0 border-t border-line bg-panel2 flex items-center justify-between gap-4 px-3 font-mono text-[9px] uppercase tracking-[0.12em] text-dim">
         <div class="flex items-center gap-3">
           <span class="flex items-center gap-1.5"><span class="live-dot"></span> {chrome.system}</span>
-          <span class="hidden sm:inline text-dim/60">{chrome.d1}</span>
-          <span class="hidden lg:inline text-dim/60">{chrome.feeds}</span>
+          <span class="hidden sm:inline text-dim">{chrome.d1}</span>
+          <span class="hidden lg:inline text-dim">{chrome.feeds}</span>
         </div>
-        <div class="hidden md:inline text-dim/60">{chrome.footer}</div>
+        <div class="hidden md:inline text-dim">{chrome.footer}</div>
         <div class="flex items-center gap-3">
           <span class="text-amber/80">{chrome.demoData}</span>
           <span>UTC+1</span>

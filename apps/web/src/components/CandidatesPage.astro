@@ -3,6 +3,7 @@ import { candidates, demoScore, localizedName, partyById } from '@vlf/domain';
 import { env } from 'cloudflare:workers';
 import { readPollAverages } from '../lib/api';
 import { candidateRoute } from '../i18n/routes';
+import { avatarSrcSet } from '../lib/avatars';
 import type { Lang } from '../i18n/ui';
 import { useTranslations } from '../i18n/utils';
 
@@ -28,16 +29,16 @@ const sorted = [...candidates].sort((a, b) => order[a.status] - order[b.status] 
 
 <section class="container-page py-8 md:py-12">
   <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-    {sorted.map((candidate) => {
+    {sorted.map((candidate, index) => {
       const party = partyById(candidate.party_id);
       const score = demoScore(candidate.id);
       const poll = pollMap.get(candidate.id);
       const pollValue = poll?.avg ?? score?.poll_avg;
       const statusKey = candidate.status === 'declared' ? 'status.declared' : candidate.status === 'likely' ? 'status.likely' : candidate.status === 'potential' ? 'status.potential' : 'status.withdrawn';
       return (
-        <a href={candidateRoute(candidate.slug, lang)} class="border border-rule bg-white/40 p-4 hover:border-ink transition-colors">
+        <a href={candidateRoute(candidate.slug, lang)} class="border border-rule-strong bg-white/40 p-4 hover:border-ink transition-colors">
           <div class="flex items-start gap-3">
-            <img src={candidate.avatar} alt="" class="h-12 w-12 rounded-full border border-rule object-cover bg-paper-deep" loading="lazy" />
+            <img src={candidate.avatar} srcset={avatarSrcSet(candidate.avatar)} sizes="48px" width="48" height="48" alt="" class="h-12 w-12 rounded-full border border-rule object-cover bg-paper-deep" loading={index < 6 ? 'eager' : 'lazy'} decoding="async" />
             <div class="min-w-0 flex-1">
               <div class="flex items-center justify-between gap-2">
                 <span class="inline-flex items-center gap-1.5 text-xs font-semibold" style={`color:${party?.color ?? '#6b6b6b'}`}>

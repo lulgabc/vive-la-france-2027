@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { geoConicConformal, geoPath } from 'd3-geo';
   import { BLOC_META, type Bloc } from '../lib/legislative';
 
@@ -20,6 +20,8 @@
   let height = 620;
   let paths: Array<{ code: string; name: string; d: string; color: string; winProb: number; margin: number }> = [];
   let loading = true;
+  let activeCode = selectedCode;
+  let previousSelected = selectedCode;
 
   const labels = {
     fr: { loading: 'Chargement des 577 circonscriptions…', map: 'Carte des circonscriptions législatives' },
@@ -60,6 +62,7 @@
           };
         })
         .filter((item: any): item is NonNullable<typeof item> => item !== null);
+      activeCode = selectedCode || paths[0]?.code || '';
     } catch (error) {
       console.error('legislative geojson failed', error);
     } finally {
@@ -67,8 +70,46 @@
     }
   });
 
+  $: if (selectedCode !== previousSelected) {
+    previousSelected = selectedCode;
+    if (selectedCode) activeCode = selectedCode;
+  }
+
+  async function focusPath(code: string) {
+    activeCode = code;
+    await tick();
+    document.getElementById(`legis-path-${code}`)?.focus();
+  }
+
+  function movePath(code: string, delta: number) {
+    const index = paths.findIndex((item) => item.code === code);
+    if (index < 0 || paths.length === 0) return;
+    const next = (index + delta + paths.length) % paths.length;
+    void focusPath(paths[next].code);
+  }
+
+  function onPathKeydown(event: KeyboardEvent, code: string) {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      movePath(code, 1);
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      movePath(code, -1);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      if (paths[0]) void focusPath(paths[0].code);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      if (paths.at(-1)) void focusPath(paths.at(-1)!.code);
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      select(code);
+    }
+  }
+
   function select(code: string) {
     selectedCode = code;
+    activeCode = code;
     onSelect(code);
   }
 </script>
@@ -77,19 +118,22 @@
   {#if loading}
     <div class="absolute inset-0 flex items-center justify-center font-mono text-[10px] text-dim">{labels.loading}</div>
   {/if}
-  <svg viewBox={`0 0 ${width} ${height}`} class="h-full w-full" role="img" aria-label={labels.map}>
+  <svg viewBox={`0 0 ${width} ${height}`} class="h-full w-full" role="group" aria-label={labels.map}>
     {#each paths as item (item.code)}
       <path
+        id={`legis-path-${item.code}`}
         d={item.d}
         fill={item.color}
         fill-opacity={0.28 + Math.min(0.72, item.winProb)}
         stroke={selectedCode === item.code ? '#f5f5f5' : '#0a0f17'}
         stroke-width={selectedCode === item.code ? 1.6 : 0.25}
-        class="cursor-pointer transition-[fill-opacity] hover:fill-opacity-90"
+        class="map-path cursor-pointer transition-[fill-opacity]"
         on:click={() => select(item.code)}
-        on:keydown={(event) => event.key === 'Enter' && select(item.code)}
+        on:focus={() => (activeCode = item.code)}
+        on:keydown={(event) => onPathKeydown(event, item.code)}
         role="button"
-        tabindex="0"
+        tabindex={item.code === activeCode ? 0 : -1}
+        aria-pressed={selectedCode === item.code}
         aria-label={`${item.name} — ${Math.round(item.winProb * 100)}%`}
       >
         <title>{item.name} · {Math.round(item.winProb * 100)} %</title>

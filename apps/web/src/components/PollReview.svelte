@@ -28,6 +28,9 @@
   let message = '';
   let error = '';
   let hydrated = false;
+  let rejectDialog: HTMLDialogElement;
+  let rejectId = '';
+  let rejectNote = '';
 
   onMount(() => {
     token = sessionStorage.getItem('vlf:admin-token') ?? '';
@@ -81,9 +84,25 @@
     }
   }
 
-  async function reject(id: string) {
-    const note = window.prompt('Motif du rejet (facultatif)');
-    if (note === null) return;
+  function openReject(id: string) {
+    rejectId = id;
+    rejectNote = '';
+    rejectDialog?.showModal();
+  }
+
+  function closeReject() {
+    rejectDialog?.close();
+  }
+
+  async function confirmReject() {
+    const id = rejectId;
+    const note = rejectNote;
+    rejectDialog?.close();
+    if (!id) return;
+    await reject(id, note);
+  }
+
+  async function reject(id: string, note: string) {
     loading = true;
     error = '';
     message = '';
@@ -113,7 +132,7 @@
         type="password"
         bind:value={token}
         on:keydown={(event) => event.key === 'Enter' && load()}
-        class="mt-1 w-full border border-line bg-panel2 px-2 py-1.5 font-mono text-[11px] text-fg focus:border-cyan/60 focus:outline-none"
+        class="mt-1 w-full border border-line-strong bg-panel2 px-2 py-1.5 font-mono text-[11px] text-fg focus:border-cyan/60 focus:outline-none"
         placeholder="ADMIN_TOKEN"
       />
     </label>
@@ -152,7 +171,7 @@
             >Approuver</button>
             <button
               type="button"
-              on:click={() => reject(draft.id)}
+              on:click={() => openReject(draft.id)}
               disabled={loading}
               class="border border-danger/50 bg-danger/10 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.1em] text-danger disabled:opacity-40"
             >Rejeter</button>
@@ -169,4 +188,30 @@
       {#if hydrated && !loading}<p class="font-mono text-[10px] text-dim">Aucun brouillon en attente.</p>{/if}
     {/each}
   </div>
+
+<dialog
+  bind:this={rejectDialog}
+  aria-labelledby="reject-title"
+  class="w-[min(92vw,34rem)] border border-line-strong bg-panel p-4 text-fg shadow-2xl"
+>
+  <form method="dialog" on:submit|preventDefault={confirmReject} class="space-y-3">
+    <div>
+      <h2 id="reject-title" class="font-display text-xl">Rejeter le brouillon</h2>
+      <p class="mt-1 text-xs text-dim">Le PDF ne sera pas publié. Le motif est facultatif mais utile pour l’audit.</p>
+    </div>
+    <label for="reject-note" class="block font-mono text-[9px] uppercase tracking-[0.1em] text-dim">Motif</label>
+    <textarea
+      id="reject-note"
+      bind:value={rejectNote}
+      rows="3"
+      aria-describedby="reject-help"
+      class="w-full border border-line-strong bg-panel2 px-2 py-1.5 text-sm text-fg focus:border-cyan/60 focus:outline-none"
+    ></textarea>
+    <p id="reject-help" class="text-[11px] text-dim">Exemple : notice sans intentions de vote 2027, doublon, PDF illisible.</p>
+    <div class="flex justify-end gap-2">
+      <button type="button" autofocus on:click={closeReject} class="border border-line-strong px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-dim hover:text-fg">Annuler</button>
+      <button type="submit" class="border border-danger/50 bg-danger/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-danger">Rejeter</button>
+    </div>
+  </form>
+</dialog>
 </div>

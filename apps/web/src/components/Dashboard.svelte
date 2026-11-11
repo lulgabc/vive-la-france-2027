@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
   import MapCanvas from './MapCanvas.svelte';
   import { darkPartyColor } from '../lib/colors';
+import { avatarSrcSet } from '../lib/avatars';
 
   type CandidateRow = {
     id: string;
@@ -410,7 +411,6 @@
         timeZone: 'Europe/Paris',
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit',
       }).format(new Date());
     } catch {
       // Keep the last rendered values if the network is temporarily unavailable.
@@ -603,23 +603,29 @@
         <div class="flex items-center gap-2">
           <div class="panel-title">{L.ranking}</div>
           <span
-            class:list={['font-mono text-[8px] uppercase tracking-[0.08em]', liveMode === 'sse' ? 'text-ok' : 'text-amber/80']}
+            class:list={['shrink-0 whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.06em]', liveMode === 'sse' ? 'text-ok' : 'text-amber/80']}
             title={`${liveMode === 'sse' ? L.sse : L.polling} · ${L.sync} ${syncedAt || '—'} · ${liveEvents}`}
-          >● {syncedAt || '—'}</span>
+          >●</span>
         </div>
         <div class="flex items-center gap-1 font-mono text-[9px]">
-          <button type="button" class={['px-1.5 py-0.5 border', sort === 'composite' ? 'border-cyan text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} on:click={() => (sort = 'composite')}>{L.sortScore}</button>
-          <button type="button" class={['px-1.5 py-0.5 border', sort === 'poll' ? 'border-cyan text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} on:click={() => (sort = 'poll')}>{L.sortPoll}</button>
-          <button type="button" class={['px-1.5 py-0.5 border', sort === 'market' ? 'border-cyan text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} on:click={() => (sort = 'market')}>{L.sortMarket}</button>
+          <button type="button" class={['px-1.5 py-0.5 border', sort === 'composite' ? 'border-cyan text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} aria-pressed={sort === 'composite'} on:click={() => (sort = 'composite')}>{L.sortScore}</button>
+          <button type="button" class={['px-1.5 py-0.5 border', sort === 'poll' ? 'border-cyan text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} aria-pressed={sort === 'poll'} on:click={() => (sort = 'poll')}>{L.sortPoll}</button>
+          <button type="button" class={['px-1.5 py-0.5 border', sort === 'market' ? 'border-cyan text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} aria-pressed={sort === 'market'} on:click={() => (sort = 'market')}>{L.sortMarket}</button>
           <button type="button" class={['px-1.5 py-0.5 border', showWeights ? 'border-amber text-amber' : 'border-line text-dim hover:text-fg'].join(' ')} on:click={() => (showWeights = !showWeights)} title={L.weights}>⚙</button>
         </div>
       </div>
       <div class="px-2 py-1.5 border-b border-line">
+        <label for="candidate-filter" class="sr-only">{L.search}</label>
         <input
+          id="candidate-filter"
           bind:value={query}
           placeholder={L.search}
-          class="w-full bg-panel2 border border-line px-2 py-1 font-mono text-[10px] text-fg placeholder:text-dim/70 focus:outline-none focus:border-cyan/60"
+          class="w-full bg-panel2 border border-line-strong px-2 py-1 font-mono text-[10px] text-fg placeholder:text-dim focus:outline-none focus:border-cyan/60"
         />
+        <div class="mt-1 flex items-center justify-between font-mono text-[8px] text-dim">
+          <span>{L.sync} · {liveMode === 'sse' ? L.sse : L.polling}</span>
+          <span>{syncedAt || '—'}</span>
+        </div>
       </div>
       {#if showWeights}
         <div class="px-2 py-1.5 border-b border-line bg-panel2/50">
@@ -635,21 +641,21 @@
             { label: L.elite, bind: 'elite' },
           ] as item}
             <div class="mt-1.5 flex items-center gap-2 font-mono text-[9px] text-dim">
-              <span class="w-14 shrink-0 truncate">{item.label}</span>
+              <label for={`weight-${item.bind}`} class="w-14 shrink-0 truncate">{item.label}</label>
               {#if item.bind === 'poll'}
-                <input class="w-full accent-[#4f7cff]" type="range" min="0" max="100" step="1" bind:value={wPoll} on:input={() => (useCustomWeights = true)} />
+                <input id="weight-poll" aria-label={item.label} class="w-full accent-[#4f7cff]" type="range" min="0" max="100" step="1" bind:value={wPoll} on:input={() => (useCustomWeights = true)} />
                 <span class="w-6 text-right text-fg">{wPoll}</span>
               {:else if item.bind === 'market'}
-                <input class="w-full accent-[#39d98a]" type="range" min="0" max="100" step="1" bind:value={wMarket} on:input={() => (useCustomWeights = true)} />
+                <input id="weight-market" aria-label={item.label} class="w-full accent-[#39d98a]" type="range" min="0" max="100" step="1" bind:value={wMarket} on:input={() => (useCustomWeights = true)} />
                 <span class="w-6 text-right text-fg">{wMarket}</span>
               {:else if item.bind === 'media'}
-                <input class="w-full accent-[#ff4d6d]" type="range" min="0" max="100" step="1" bind:value={wMedia} on:input={() => (useCustomWeights = true)} />
+                <input id="weight-media" aria-label={item.label} class="w-full accent-[#ff4d6d]" type="range" min="0" max="100" step="1" bind:value={wMedia} on:input={() => (useCustomWeights = true)} />
                 <span class="w-6 text-right text-fg">{wMedia}</span>
               {:else if item.bind === 'social'}
-                <input class="w-full accent-[#b388ff]" type="range" min="0" max="100" step="1" bind:value={wSocial} on:input={() => (useCustomWeights = true)} />
+                <input id="weight-social" aria-label={item.label} class="w-full accent-[#b388ff]" type="range" min="0" max="100" step="1" bind:value={wSocial} on:input={() => (useCustomWeights = true)} />
                 <span class="w-6 text-right text-fg">{wSocial}</span>
               {:else}
-                <input class="w-full accent-[#ffb020]" type="range" min="0" max="100" step="1" bind:value={wElite} on:input={() => (useCustomWeights = true)} />
+                <input id="weight-elite" aria-label={item.label} class="w-full accent-[#ffb020]" type="range" min="0" max="100" step="1" bind:value={wElite} on:input={() => (useCustomWeights = true)} />
                 <span class="w-6 text-right text-fg">{wElite}</span>
               {/if}
             </div>
@@ -668,7 +674,7 @@
           >
             <div class="flex items-center gap-2">
               <span class="w-4 text-right font-mono text-[9px] text-dim">{index + 1}</span>
-              <img src={candidate.avatar} alt="" class="h-7 w-7 rounded-full shrink-0 border border-line object-cover" loading="lazy" />
+              <img src={candidate.avatar} srcset={avatarSrcSet(candidate.avatar)} sizes="28px" width="28" height="28" alt="" class="h-7 w-7 rounded-full shrink-0 border border-line object-cover" loading={index < 8 ? 'eager' : 'lazy'} decoding="async" />
               <span class="flex-1 min-w-0">
                 <span class="block truncate text-[12px] text-fg">{candidate.name}</span>
                 <span class="block font-mono text-[9px] uppercase tracking-[0.08em] text-dim">{candidate.party}</span>
@@ -698,8 +704,8 @@
           <span class="font-mono text-[9px] text-dim">/ {Object.keys(mapData).length} {L.departments}</span>
         </div>
         <div class="flex items-center gap-1 font-mono text-[9px]">
-          <button type="button" class={['border px-1.5 py-0.5', mapMode === 'baseline' ? 'border-cyan/50 bg-cyan/10 text-cyan' : 'border-line text-dim/60 hover:text-fg'].join(' ')} on:click={() => (mapMode = 'baseline')}>{L.baseline}</button>
-          <button type="button" class={['border px-1.5 py-0.5', mapMode === 'projection' ? 'border-amber/50 bg-amber/10 text-amber' : 'border-line text-dim/60 hover:text-fg'].join(' ')} on:click={() => { mapMode = 'projection'; detailMode = 'department'; }}>{L.projection}</button>
+          <button type="button" class={['border px-1.5 py-0.5', mapMode === 'baseline' ? 'border-cyan/50 bg-cyan/10 text-cyan' : 'border-line text-dim hover:text-fg'].join(' ')} aria-pressed={mapMode === 'baseline'} on:click={() => (mapMode = 'baseline')}>{L.baseline}</button>
+          <button type="button" class={['border px-1.5 py-0.5', mapMode === 'projection' ? 'border-amber/50 bg-amber/10 text-amber' : 'border-line text-dim hover:text-fg'].join(' ')} aria-pressed={mapMode === 'projection'} on:click={() => { mapMode = 'projection'; detailMode = 'department'; }}>{L.projection}</button>
           <span class="ml-2 text-dim">J-{days}</span>
         </div>
       </div>
@@ -729,15 +735,15 @@
       <div class="panel-head">
         <div class="panel-title">{L.detail}</div>
         <div class="flex items-center gap-1 font-mono text-[9px]">
-          <button type="button" class={['px-1.5 py-0.5 border', detailMode === 'candidate' ? 'border-cyan text-cyan' : 'border-line text-dim'].join(' ')} on:click={() => (detailMode = 'candidate')}>{L.candidate}</button>
-          <button type="button" class={['px-1.5 py-0.5 border', detailMode === 'department' ? 'border-cyan text-cyan' : 'border-line text-dim'].join(' ')} on:click={() => (detailMode = 'department')}>{L.department}</button>
+          <button type="button" class={['px-1.5 py-0.5 border', detailMode === 'candidate' ? 'border-cyan text-cyan' : 'border-line text-dim'].join(' ')} aria-pressed={detailMode === 'candidate'} on:click={() => (detailMode = 'candidate')}>{L.candidate}</button>
+          <button type="button" class={['px-1.5 py-0.5 border', detailMode === 'department' ? 'border-cyan text-cyan' : 'border-line text-dim'].join(' ')} aria-pressed={detailMode === 'department'} on:click={() => (detailMode = 'department')}>{L.department}</button>
         </div>
       </div>
       <div class="panel-body scroll-thin">
         {#if detailMode === 'candidate' && selected}
           <div class="p-3">
             <div class="flex items-center gap-3">
-              <img src={selected.avatar} alt="" class="h-12 w-12 rounded-full border border-line object-cover" />
+              <img src={selected.avatar} srcset={avatarSrcSet(selected.avatar)} sizes="48px" width="48" height="48" alt="" class="h-12 w-12 rounded-full border border-line object-cover" decoding="async" />
               <div class="min-w-0">
                 <div class="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.08em]">
                   <span class="h-2 w-2 rounded-full" style={`background:${selected.color}`}></span>
@@ -753,7 +759,7 @@
                 <div class="font-mono text-5xl leading-none font-bold text-cyan">{Math.round(selected.display)}</div>
                 {#if selected.isReal}<div class="mt-1 font-mono text-[8px] uppercase tracking-[0.12em] text-dim">{L.basis}</div>{/if}
               </div>
-              <div class="shrink-0 pl-2 text-right font-mono text-[8px] text-dim">
+              <div class="shrink-0 pl-2 text-right font-mono text-[10px] text-dim">
                 <div>{L.confidence}</div>
                 <div class="mt-1 text-fg uppercase">{selected.confidence}</div>
               </div>
@@ -777,7 +783,7 @@
                 </div>
               {/each}
               {#if selected.isReal && selected.eliteParrainageTotal > 0}
-                <div class="flex justify-between font-mono text-[8px] text-dim/80">
+                <div class="flex justify-between font-mono text-[10px] text-dim">
                   <span>{L.parrainage2022}</span>
                   <span>{selected.eliteParrainageTotal} · {Math.round(selected.eliteParrainage * 100)} %</span>
                 </div>
@@ -798,7 +804,7 @@
             {/if}
             <p class="mt-3 text-[11px] leading-relaxed text-dim">{selected.bio}</p>
             {#if selected.avatarSource}
-              <a href={selected.avatarSource} target="_blank" rel="noopener noreferrer" class="mt-2 block font-mono text-[8px] text-dim/70 hover:text-cyan">
+              <a href={selected.avatarSource} target="_blank" rel="noopener noreferrer" class="mt-2 block font-mono text-[10px] text-dim hover:text-cyan">
                 Photo : {selected.avatarCredit} · Wikimedia Commons
               </a>
             {/if}
@@ -929,13 +935,13 @@
           <span class="font-mono text-[9px] text-dim">/ {filteredFeed.length}</span>
         </div>
         <div class="flex items-center gap-1">
-          <select bind:value={feedSource} class="bg-panel2 border border-line px-1.5 py-0.5 font-mono text-[9px] text-dim focus:outline-none">
+          <select bind:value={feedSource} aria-label={L.allSources} class="bg-panel2 border border-line px-1.5 py-0.5 font-mono text-[9px] text-dim focus:outline-none">
             <option value="">{L.allSources}</option>
             {#each feedSources as source}
               <option value={source}>{source}</option>
             {/each}
           </select>
-          <select bind:value={feedTopic} class="bg-panel2 border border-line px-1.5 py-0.5 font-mono text-[9px] text-dim focus:outline-none">
+          <select bind:value={feedTopic} aria-label={L.allTopics} class="bg-panel2 border border-line px-1.5 py-0.5 font-mono text-[9px] text-dim focus:outline-none">
             <option value="">{L.allTopics}</option>
             {#each feedTopics as topic}
               <option value={topic}>{topicLabel(topic)}</option>
@@ -995,7 +1001,7 @@
                 {/if}
               </div>
               {#if typeof market.change_7d === 'number'}
-                <div class="mt-0.5 font-mono text-[8px] text-dim">7j {market.change_7d > 0 ? '+' : ''}{(market.change_7d * 100).toFixed(1)} pts</div>
+                <div class="mt-0.5 font-mono text-[10px] text-dim">7j {market.change_7d > 0 ? '+' : ''}{(market.change_7d * 100).toFixed(1)} pts</div>
               {/if}
             </a>
           {/each}

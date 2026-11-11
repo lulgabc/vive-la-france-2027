@@ -85,7 +85,7 @@ function formatDate(value: string | null): string {
     <form method="get" action={url.pathname} class="border border-rule bg-white/30 p-3 md:p-4 grid gap-3 md:grid-cols-[1fr_1fr_1.2fr_auto]">
       <label class="block text-xs">
         <span class="kicker">{t('feed.source')}</span>
-        <select name="source" class="mt-1 w-full border border-rule bg-paper px-2 py-2 text-sm">
+        <select name="source" class="mt-1 w-full border border-rule-strong bg-paper px-2 py-2 text-sm">
           <option value="">{t('feed.allSources')}</option>
           {sources.map((item: any) => (
             <option value={item.id} selected={source === item.id}>{item.name}</option>
@@ -94,7 +94,7 @@ function formatDate(value: string | null): string {
       </label>
       <label class="block text-xs">
         <span class="kicker">{t('feed.topic')}</span>
-        <select name="topic" class="mt-1 w-full border border-rule bg-paper px-2 py-2 text-sm">
+        <select name="topic" class="mt-1 w-full border border-rule-strong bg-paper px-2 py-2 text-sm">
           <option value="">{t('feed.allTopics')}</option>
           {TOPICS.map((item) => (
             <option value={item.id} selected={topic === item.id}>{item[lang]}</option>
@@ -103,11 +103,11 @@ function formatDate(value: string | null): string {
       </label>
       <label class="block text-xs">
         <span class="kicker">{t('feed.search')}</span>
-        <input name="q" value={q} class="mt-1 w-full border border-rule bg-paper px-2 py-2 text-sm" placeholder="Marine Le Pen, retraites…" />
+        <input name="q" value={q} class="mt-1 w-full border border-rule-strong bg-paper px-2 py-2 text-sm" placeholder="Marine Le Pen, retraites…" />
       </label>
       <div class="flex items-end gap-2">
         <button type="submit" class="bg-ink text-paper px-4 py-2 text-sm font-semibold hover:bg-accent transition-colors">{t('feed.apply')}</button>
-        <a href={url.pathname} class="border border-rule px-3 py-2 text-sm text-muted hover:border-ink">{t('feed.reset')}</a>
+        <a href={url.pathname} class="border border-rule-strong px-3 py-2 text-sm text-muted hover:border-ink">{t('feed.reset')}</a>
       </div>
       <label class="flex items-center gap-2 text-xs text-muted md:col-span-4">
         <input type="checkbox" name="all" value="1" checked={all} />
