@@ -5,11 +5,14 @@
   "observability": {
     "enabled": true
   },
+  "kv_namespaces": [
+    { "binding": "SESSION", "id": "77e84a25467040228a25247f29c8ebec" }
+  ],
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "vlf-main",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "database_id": "57a6f4fb-e5a6-4b8a-b3e4-b372d7568713",
       "migrations_dir": "../../packages/db/migrations"
     }
   ]

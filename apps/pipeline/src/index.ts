@@ -249,7 +249,12 @@ app.post('/admin/forecast/store', adminAuth, async (c) => {
 
 app.post('/admin/forecast/snapshot', adminAuth, async (c) => {
   try {
-    const result = await snapshotForecasts(c.env);
+    const kinds = (c.req.query('kinds') ?? '')
+      .split(',')
+      .map((kind) => kind.trim())
+      .filter(Boolean);
+    const limit = c.req.query('limit') ? Number(c.req.query('limit')) : undefined;
+    const result = await snapshotForecasts(c.env, { kinds, limit });
     return c.json({ ok: true, ...result });
   } catch (error) {
     return c.json({ error: error instanceof Error ? error.message : String(error) }, 500);
@@ -330,7 +335,7 @@ async function scheduled(controller: ScheduledController, env: Env, ctx: Executi
     );
     return;
   }
-  if (cron === '0 7 * * *') {
+  if (cron === '0 */2 * * *') {
     ctx.waitUntil(snapshotForecasts(env));
     return;
   }

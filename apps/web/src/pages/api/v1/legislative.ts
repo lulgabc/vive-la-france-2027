@@ -13,7 +13,8 @@ export const GET: APIRoute = async ({ url, request }) => {
   )
     ? (strategyParam as Strategy)
     : 'none';
-  return jsonResponse(buildLegislativeScenario(averages.data as any, { baselineYear, strategy }), {
+  const draws = Math.min(Math.max(Number(url.searchParams.get('draws') ?? '200'), 40), 500);
+  return jsonResponse(buildLegislativeScenario(averages.data as any, { baselineYear, strategy, draws }), {
     headers: { 'cache-control': 'public, s-maxage=60, stale-while-revalidate=300' },
   }, request);
 };

@@ -9,6 +9,7 @@ export interface Env {
   ADMIN_TOKEN?: string;
   X_MONTHLY_READ_CAP?: string;
   SITE_URL?: string;
+  WEB?: Fetcher;
   COMPUTE_URL?: string;
   AI_GATEWAY_ID?: string;
   TYPESAFE_API_KEY?: string;

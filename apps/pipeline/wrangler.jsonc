@@ -7,7 +7,7 @@
     "enabled": true
   },
   "triggers": {
-    "crons": ["*/5 * * * *", "*/15 * * * *", "0 * * * *", "0 6 * * *", "0 7 * * *"]
+    "crons": ["*/5 * * * *", "*/15 * * * *", "0 * * * *", "0 6 * * *", "0 */2 * * *"]
   },
   "durable_objects": {
     "bindings": [
@@ -21,20 +21,17 @@
     {
       "binding": "DB",
       "database_name": "vlf-main",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "database_id": "57a6f4fb-e5a6-4b8a-b3e4-b372d7568713",
       "migrations_dir": "../../packages/db/migrations"
     }
   ],
-  "r2_buckets": [
-    {
-      "binding": "RAW",
-      "bucket_name": "vlf-raw"
-    }
+  "services": [
+    { "binding": "WEB", "service": "vlf-web" }
   ],
   "kv_namespaces": [
     {
       "binding": "CACHE",
-      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
+      "id": "b3cb45bf28fd42d38b1995230d387dd8"
     }
   ],
   "queues": {
@@ -58,7 +55,7 @@
     "binding": "AI"
   },
   "vars": {
-    "SITE_URL": "https://vive-la-france-2027.workers.dev",
+    "SITE_URL": "https://vlf-web.ainet-netbook.workers.dev",
     "TYPESAFE_MODEL": "jev-latest",
     "JEV_ELECTION_THRESHOLD": "0.4",
     "X_MONTHLY_READ_CAP": "4000"
