@@ -357,7 +357,7 @@ export function buildProjection(
   }
 
   return {
-    model: 'regional heterogeneous swing, 2022 department baseline, 500 seeded draws',
+    model: 'regional heterogeneous swing, 2022 department baseline',
     selected,
     departments: projected,
     national: { draws, win_prob: nationalWinProb, mean_share: nationalMeanShare },
