@@ -10,7 +10,7 @@ import {
   results2022,
 } from '@vlf/domain';
 import { env } from 'cloudflare:workers';
-import { readFeed, readMarkets, readMomentum, readPollAverages, readScoreHistory, readScores, readSources } from '../lib/api';
+import { readFeed, readLatestUpdate, readMarkets, readMomentum, readPollAverages, readScoreHistory, readScores, readSources } from '../lib/api';
 import { darkPartyColor } from '../lib/colors';
 import { buildProjection } from '../lib/projection';
 import { onlyMetropolitan } from '../lib/geo';
@@ -28,7 +28,7 @@ const db = (env as any).DB as D1Database | undefined;
 const pipelineBase = (import.meta.env.PUBLIC_PIPELINE_URL as string | undefined) ?? '';
 const liveUrl = pipelineBase ? `${pipelineBase.replace(/\/$/, '')}/live` : '';
 
-const [feed, momentum, markets, sources, pollAverages, scores, history] = await Promise.all([
+const [feed, momentum, markets, sources, pollAverages, scores, history, latestUpdate] = await Promise.all([
   readFeed(db, { limit: 60, electionOnly: true }),
   readMomentum(db),
   readMarkets(db),
@@ -36,6 +36,7 @@ const [feed, momentum, markets, sources, pollAverages, scores, history] = await 
   readPollAverages(db),
   readScores(db),
   readScoreHistory(db),
+  readLatestUpdate(db),
 ]);
 
 const pollMap = new Map(pollAverages.data.map((row: any) => [row.candidate_id, row]));
@@ -144,6 +145,7 @@ const stats = {
     stats,
     ticker,
     liveUrl,
+    latestUpdate,
     srTitle:
       lang === 'fr'
         ? 'Vive la France 2027 — observatoire de la présidentielle'

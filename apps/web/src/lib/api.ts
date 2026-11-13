@@ -454,3 +454,24 @@ export async function readConnectorStatus(db: D1Database | undefined) {
     return { source: 'seed', data: [] };
   }
 }
+
+export async function readLatestUpdate(db: D1Database | undefined): Promise<string> {
+  if (!db) return '';
+  try {
+    const row = await db
+      .prepare(
+        `SELECT MAX(ts) AS ts FROM (
+           SELECT MAX(created_at) AS ts FROM articles
+           UNION ALL SELECT MAX(created_at) FROM social_posts
+           UNION ALL SELECT MAX(ts) FROM market_snapshots
+           UNION ALL SELECT MAX(created_at) FROM forecast_runs
+           UNION ALL SELECT MAX(published_at) AS ts FROM polls
+         )`,
+      )
+      .first<{ ts: string | null }>();
+    return row?.ts ?? '';
+  } catch (error) {
+    console.error('D1 latest update unavailable', error);
+    return '';
+  }
+}

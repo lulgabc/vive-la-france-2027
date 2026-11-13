@@ -64,6 +64,7 @@ import { avatarSrcSet } from '../lib/avatars';
     stats?: { articles: number; sources: number; x: number };
     ticker?: string;
     liveUrl?: string;
+    latestUpdate?: string;
     srTitle?: string;
   }
 
@@ -82,12 +83,14 @@ import { avatarSrcSet } from '../lib/avatars';
   export let stats = { articles: 0, sources: 0, x: 25 };
   export let ticker = '';
   export let liveUrl = '';
+  export let latestUpdate = '';
   export let srTitle = 'Vive la France 2027 — observatoire de la présidentielle';
 
   const L = {
     fr: {
       ranking: 'Classement',
       sync: 'Sync',
+      dataUpdated: 'Données',
       sse: 'SSE',
       polling: '45 s',
       sortScore: 'Score',
@@ -149,6 +152,7 @@ import { avatarSrcSet } from '../lib/avatars';
     en: {
       ranking: 'Ranking',
       sync: 'Sync',
+      dataUpdated: 'Data',
       sse: 'SSE',
       polling: '45 s',
       sortScore: 'Score',
@@ -210,6 +214,7 @@ import { avatarSrcSet } from '../lib/avatars';
     zh: {
       ranking: '排名',
       sync: '同步',
+      dataUpdated: '数据',
       sse: 'SSE',
       polling: '45 秒',
       sortScore: '评分',
@@ -397,16 +402,18 @@ import { avatarSrcSet } from '../lib/avatars';
     if (document.visibilityState === 'hidden') return;
     syncing = true;
     try {
-      const [feedResponse, scoresResponse, marketsResponse, momentumResponse] = await Promise.all([
+      const [feedResponse, scoresResponse, marketsResponse, momentumResponse, versionResponse] = await Promise.all([
         fetch('/api/v1/feed?limit=60', { cache: 'no-store' }),
         fetch('/api/v1/scores', { cache: 'no-store' }),
         fetch('/api/v1/markets', { cache: 'no-store' }),
         fetch('/api/v1/momentum?limit=12', { cache: 'no-store' }),
+        fetch('/api/v1/version', { cache: 'no-store' }),
       ]);
       if (feedResponse.ok) applyFeed(((await feedResponse.json()) as any).data ?? []);
       if (scoresResponse.ok) applyScores(((await scoresResponse.json()) as any).data ?? []);
       if (marketsResponse.ok) applyMarkets(((await marketsResponse.json()) as any).data ?? []);
       if (momentumResponse.ok) applyMomentum(((await momentumResponse.json()) as any).data ?? []);
+      if (versionResponse.ok) latestUpdate = ((await versionResponse.json()) as any).updated_at ?? latestUpdate;
       syncedAt = new Intl.DateTimeFormat(locale, {
         timeZone: 'Europe/Paris',
         hour: '2-digit',
@@ -550,6 +557,17 @@ import { avatarSrcSet } from '../lib/avatars';
     return new Intl.DateTimeFormat(locale, { hour: '2-digit', minute: '2-digit' }).format(date);
   }
 
+  function updatedAt(value: string): string {
+    if (!value) return '—';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '—';
+    return new Intl.DateTimeFormat(locale, {
+      timeZone: 'Europe/Paris',
+      dateStyle: 'short',
+      timeStyle: 'short',
+    }).format(date);
+  }
+
   function topicLabel(id: string | null): string {
     if (!id) return '—';
     return TOPICS.find((topic) => topic.id === id)?.[lang] ?? id;
@@ -622,9 +640,9 @@ import { avatarSrcSet } from '../lib/avatars';
           placeholder={L.search}
           class="w-full bg-panel2 border border-line-strong px-2 py-1 font-mono text-[10px] text-fg placeholder:text-dim focus:outline-none focus:border-cyan/60"
         />
-        <div class="mt-1 flex items-center justify-between font-mono text-[8px] text-dim">
-          <span>{L.sync} · {liveMode === 'sse' ? L.sse : L.polling}</span>
-          <span>{syncedAt || '—'}</span>
+        <div class="mt-1 flex items-center justify-between gap-2 font-mono text-[8px] text-dim">
+          <span class="truncate">{L.dataUpdated} {updatedAt(latestUpdate)}</span>
+          <span class="shrink-0">{liveMode === 'sse' ? L.sse : L.polling} · {syncedAt || '—'}</span>
         </div>
       </div>
       {#if showWeights}
