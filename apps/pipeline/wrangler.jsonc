@@ -56,6 +56,8 @@
   },
   "vars": {
     "SITE_URL": "https://vlf-web.ainet-netbook.workers.dev",
+    "DECISION_PROVIDER": "auto",
+    "GEMINI_DECISION_MODEL": "gemini-decision-1",
     "TYPESAFE_MODEL": "jev-latest",
     "JEV_ELECTION_THRESHOLD": "0.4",
     "X_MONTHLY_READ_CAP": "4000"

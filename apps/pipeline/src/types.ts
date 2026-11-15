@@ -13,6 +13,9 @@ export interface Env {
   COMPUTE_URL?: string;
   AI_GATEWAY_ID?: string;
   TYPESAFE_API_KEY?: string;
+  GEMINI_API_KEY?: string;
+  GEMINI_DECISION_MODEL?: string;
+  DECISION_PROVIDER?: string;
   LIVE_HUB?: DurableObjectNamespace;
   TYPESAFE_MODEL?: string;
   JEV_ELECTION_THRESHOLD?: string;

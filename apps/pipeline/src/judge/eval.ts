@@ -1,6 +1,6 @@
 import { TOPICS } from '@vlf/domain';
 import { classifyByRules } from './rules';
-import { runJevModel } from './provider';
+import { runJevModel, type JudgeProvider } from './provider';
 import type { Env } from '../types';
 import syntheticData from './jev-eval-fr.json';
 import realData from './jev-eval-real-fr.json';
@@ -172,7 +172,12 @@ function runRules(samples: EvalSample[]): Prediction[] {
   });
 }
 
-async function runJev(env: Env, samples: EvalSample[], model: string, concurrency = 4) {
+async function runJev(
+  env: Env,
+  samples: EvalSample[],
+  provider?: JudgeProvider,
+  concurrency = 4,
+) {
   const predictions: Prediction[] = [];
   const threshold = Number(env.JEV_ELECTION_THRESHOLD ?? 0.4);
   const models = new Set<string>();
@@ -200,6 +205,7 @@ async function runJev(env: Env, samples: EvalSample[], model: string, concurrenc
               criteria: Object.fromEntries(TOPICS.map((topic) => [topic.id, topic.en])),
             },
           },
+          provider,
         );
         if (response.model) models.add(response.model);
         const answers = response.answers ?? {};
@@ -218,7 +224,7 @@ async function runJev(env: Env, samples: EvalSample[], model: string, concurrenc
 
 export async function evaluateJev(
   env: Env,
-  options: { limit?: number; model?: string; dataset?: EvalDataset } = {},
+  options: { limit?: number; model?: string; dataset?: EvalDataset; provider?: JudgeProvider } = {},
 ) {
   const dataset = options.dataset ?? 'real';
   const source = dataset === 'synthetic' ? SYNTHETIC : dataset === 'all' ? [...REAL, ...SYNTHETIC] : REAL;
@@ -239,20 +245,22 @@ export async function evaluateJev(
   const rules = metrics(samples, runRules(samples));
   const rulesSynthetic = metrics(SYNTHETIC, runRules(SYNTHETIC));
 
-  if (!env.AI && !env.TYPESAFE_API_KEY) {
+  if (!env.AI && !env.TYPESAFE_API_KEY && !env.GEMINI_API_KEY) {
     return {
       model: 'fallback-keywords',
       dataset: datasetInfo,
       rules,
       rules_synthetic: rulesSynthetic,
       jev: null,
-      blocked: 'No Jev provider configured. Set TYPESAFE_API_KEY or deploy with the Workers AI binding.',
+      blocked:
+        'No decision provider configured. Set GEMINI_API_KEY, TYPESAFE_API_KEY or deploy with the Workers AI binding.',
     };
   }
 
-  const model = options.model ?? 'typesafe/jev';
+  const model =
+    options.model ?? (options.provider === 'gemini' ? 'gemini-decision-1' : 'typesafe/jev');
   try {
-    const { predictions, latencyMs, models } = await runJev(env, samples, model);
+    const { predictions, latencyMs, models } = await runJev(env, samples, options.provider);
     return {
       model,
       model_returned: models,

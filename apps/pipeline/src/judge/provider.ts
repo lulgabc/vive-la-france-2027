@@ -1,19 +1,44 @@
 import type { Env } from '../types';
+import { type DecisionQuestion, runGeminiDecision } from './gemini';
+
+export type JudgeProvider = 'gemini' | 'typesafe' | 'workers-ai';
 
 /**
- * Run Jev through TypeSafe direct when TYPESAFE_API_KEY is configured,
- * otherwise through the Workers AI binding.
- *
- * The Cloudflare path requires AI Gateway credits or BYOK for this
- * third-party model. The direct path is useful for local development and for
- * keeping the pipeline working when the account has no AI Gateway balance.
+ * Pick the configured decision provider. `DECISION_PROVIDER` wins when set,
+ * otherwise the first configured provider is used:
+ * Gemini Decisions API -> TypeSafe Jev -> Workers AI Jev.
+ */
+export function resolveJudgeProvider(env: Env, preferred?: JudgeProvider): JudgeProvider | null {
+  if (preferred) return preferred;
+  const configured = (env.DECISION_PROVIDER ?? 'auto').toLowerCase();
+  if (configured === 'gemini' || configured === 'typesafe' || configured === 'workers-ai') {
+    return configured as JudgeProvider;
+  }
+  if (env.GEMINI_API_KEY) return 'gemini';
+  if (env.TYPESAFE_API_KEY) return 'typesafe';
+  if (env.AI) return 'workers-ai';
+  return null;
+}
+
+/**
+ * Run the configured decision model and normalize both providers to the same
+ * response shape: `{ model, answers, usage }`.
  */
 export async function runJevModel(
   env: Env,
   state: unknown,
   questions: Record<string, unknown>,
+  preferred?: JudgeProvider,
 ): Promise<any> {
-  if (env.TYPESAFE_API_KEY) {
+  const provider = resolveJudgeProvider(env, preferred);
+  if (!provider) throw new Error('No decision provider configured');
+
+  if (provider === 'gemini') {
+    return runGeminiDecision(env, state, questions as Record<string, DecisionQuestion>);
+  }
+
+  if (provider === 'typesafe') {
+    if (!env.TYPESAFE_API_KEY) throw new Error('TYPESAFE_API_KEY is not configured');
     const response = await fetch('https://api.typesafe.ai/v1/systemone', {
       method: 'POST',
       headers: {
@@ -28,12 +53,14 @@ export async function runJevModel(
       signal: AbortSignal.timeout(60_000),
     });
     if (!response.ok) {
-      throw new Error(`TypeSafe Jev HTTP ${response.status}: ${(await response.text()).slice(0, 300)}`);
+      throw new Error(
+        `TypeSafe Jev HTTP ${response.status}: ${(await response.text()).slice(0, 300)}`,
+      );
     }
     return response.json();
   }
 
-  if (!env.AI) throw new Error('No Jev provider configured');
+  if (!env.AI) throw new Error('Workers AI binding is not configured');
   const gateway = env.AI_GATEWAY_ID ? ({ gateway: { id: env.AI_GATEWAY_ID } } as any) : undefined;
   return env.AI.run('typesafe/jev' as any, { state, questions } as any, gateway);
 }

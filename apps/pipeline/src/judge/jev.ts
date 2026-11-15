@@ -2,7 +2,7 @@ import { TOPICS } from '@vlf/domain';
 import { storeJudgment } from '../lib/db';
 import type { Env } from '../types';
 import { classifyByRules } from './rules';
-import { runJevModel } from './provider';
+import { runJevModel, type JudgeProvider } from './provider';
 import { publishLive } from '../live/publish';
 
 export const QUESTIONS = {
@@ -106,8 +106,9 @@ export async function backfillJudgments(
 export async function judgeArticle(
   env: Env,
   article: { id: string; title: string; excerpt?: string | null; lang: string; source_id?: string },
+  provider?: JudgeProvider,
 ): Promise<JudgeResult> {
-  if (!env.AI && !env.TYPESAFE_API_KEY) {
+  if (!env.AI && !env.TYPESAFE_API_KEY && !env.GEMINI_API_KEY) {
     const result = fallback(article);
     await persistFallback(env, article, result);
     return result;
@@ -123,6 +124,7 @@ export async function judgeArticle(
         source: article.source_id ?? 'unknown',
       },
       QUESTIONS,
+      provider,
     );
 
     const answers = response.answers ?? {};

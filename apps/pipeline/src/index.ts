@@ -211,10 +211,16 @@ app.post('/admin/reset-fallback-judgments', adminAuth, async (c) => {
 });
 
 app.get('/admin/eval/jev', adminAuth, async (c) => {
+  const providerParam = c.req.query('provider');
+  const provider =
+    providerParam === 'gemini' || providerParam === 'typesafe' || providerParam === 'workers-ai'
+      ? providerParam
+      : undefined;
   const result = await evaluateJev(c.env, {
     limit: Number(c.req.query('limit') ?? '360'),
-    model: c.req.query('model') ?? 'typesafe/jev',
+    model: c.req.query('model') ?? (provider === 'gemini' ? 'gemini-decision-1' : 'typesafe/jev'),
     dataset: (c.req.query('dataset') as 'real' | 'synthetic' | 'all' | undefined) ?? 'real',
+    provider,
   });
   return c.json({ ok: true, ...result });
 });
@@ -232,7 +238,12 @@ app.post('/admin/clean-articles', adminAuth, async (c) => {
 app.post('/admin/judge/:articleId', adminAuth, async (c) => {
   const article = await getArticleById(c.env, c.req.param('articleId'));
   if (!article) return c.json({ error: 'article not found' }, 404);
-  const result = await judgeArticle(c.env, article);
+  const providerParam = c.req.query('provider');
+  const provider =
+    providerParam === 'gemini' || providerParam === 'typesafe' || providerParam === 'workers-ai'
+      ? providerParam
+      : undefined;
+  const result = await judgeArticle(c.env, article, provider);
   return c.json({ ok: true, result });
 });
 

@@ -54,6 +54,8 @@
   "vars": {
     "SITE_URL": "http://localhost:4321",
     "COMPUTE_URL": "http://127.0.0.1:8000",
+    "DECISION_PROVIDER": "auto",
+    "GEMINI_DECISION_MODEL": "gemini-decision-1",
     "TYPESAFE_MODEL": "jev-latest",
     "JEV_ELECTION_THRESHOLD": "0.4",
     "X_MONTHLY_READ_CAP": "4000"
