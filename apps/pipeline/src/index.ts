@@ -329,10 +329,9 @@ async function scheduled(controller: ScheduledController, env: Env, ctx: Executi
       Promise.all([
         runGdelt(env),
         runMastodon(env),
-        (async () => {
-          await runMarkets(env);
-          await computeScores(env);
-        })(),
+        // Scores are recomputed hourly in the `0 * * * *` branch: they only
+        // change when a source changes, and each run writes score rows.
+        runMarkets(env),
       ]),
     );
     return;

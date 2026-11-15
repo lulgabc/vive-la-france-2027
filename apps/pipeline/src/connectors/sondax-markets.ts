@@ -45,12 +45,20 @@ export async function runSondaxMarkets(env: Env): Promise<{ items: number; error
       maj: string;
       marches: Record<
         string,
-        { event_slug: string; candidats: Record<string, { prix_actuel: number; historique: Array<{ d: string; p: number }> }> }
+        {
+          event_slug: string;
+          candidats: Record<
+            string,
+            { prix_actuel: number; historique: Array<{ d: string; p: number }> }
+          >;
+        }
       >;
     };
 
     for (const [type, market] of Object.entries(payload.marches)) {
-      const entries = Object.entries(market.candidats).filter(([externalId]) => CANDIDATES[externalId]);
+      const entries = Object.entries(market.candidats).filter(
+        ([externalId]) => CANDIDATES[externalId],
+      );
       const total = entries.reduce((sum, [, item]) => sum + Number(item.prix_actuel || 0), 0);
       const normalizer = type === 'victoire' ? total : total / 2;
       if (!normalizer) continue;
@@ -79,18 +87,25 @@ export async function runSondaxMarkets(env: Env): Promise<{ items: number; error
           )
           .run();
 
-        const snapshots = [
-          { d: payload.maj.slice(0, 10), p: item.prix_actuel },
-          ...item.historique.slice(-30),
-        ];
-        for (const point of snapshots) {
-          const probability = Math.max(0, Math.min(1, Number(point.p) / normalizer));
+        // Historical points are immutable: write them once with OR IGNORE.
+        // Only today's point is refreshed so intraday price movement is kept.
+        // Rewriting the whole history every 15 minutes burned the D1 daily
+        // row-write budget (~800 rows per run).
+        const today = payload.maj.slice(0, 10);
+        const points = new Map<string, number>();
+        for (const point of item.historique.slice(-30)) {
+          points.set(point.d, Number(point.p));
+        }
+        points.set(today, Number(item.prix_actuel));
+
+        for (const [date, price] of points) {
+          const probability = Math.max(0, Math.min(1, price / normalizer));
           await env.DB.prepare(
-            `INSERT OR REPLACE INTO market_snapshots
+            `${date === today ? 'INSERT OR REPLACE' : 'INSERT OR IGNORE'} INTO market_snapshots
               (id, market_id, ts, outcome, implied_prob, volume, raw_json)
              VALUES (?, ?, ?, ?, ?, NULL, NULL)`,
           )
-            .bind(`snap_${marketId}_${point.d}`, marketId, `${point.d}T12:00:00Z`, type, probability)
+            .bind(`snap_${marketId}_${date}`, marketId, `${date}T12:00:00Z`, type, probability)
             .run();
         }
         items += 1;

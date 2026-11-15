@@ -1,6 +1,6 @@
 # 从 TypeSafe Jev 迁移到 Gemini Decisions API
 
-状态：可行，适配器已实现并默认关闭；未设置 `GEMINI_API_KEY` 前生产行为不变。
+状态：已完成适配与评估，**暂不迁移**。`DECISION_PROVIDER` 固定为 `typesafe`，即使以后添加 `GEMINI_API_KEY` 也不会自动切换；需要切换时再改配置。
 
 ## 1. 先澄清服务名称
 
@@ -79,12 +79,12 @@ Google 定价页写明：Free 层 “Content used to improve our products”，P
 | `apps/pipeline/src/index.ts` | `POST /admin/judge/:id?provider=gemini`、`GET /admin/eval/jev?provider=gemini` |
 | `apps/pipeline/src/types.ts` | `GEMINI_API_KEY`、`GEMINI_DECISION_MODEL`、`DECISION_PROVIDER` |
 | `scripts/check_gemini_adapter.mjs` | 离线契约检查；带 key 可跑真实请求 |
-| `apps/pipeline/wrangler*.jsonc` | `DECISION_PROVIDER=auto`、`GEMINI_DECISION_MODEL=gemini-decision-1` |
+| `apps/pipeline/wrangler*.jsonc` | `DECISION_PROVIDER=typesafe`（暂不迁移）、`GEMINI_DECISION_MODEL=gemini-decision-1` |
 
 设计要点：
 
 - `GEMINI_API_KEY` 只作为 secret，不写入 `wrangler.jsonc`。
-- 未设置 key 时 `auto` 继续使用 TypeSafe，生产行为零变化。
+- 当前固定使用 TypeSafe；未改配置前，添加 `GEMINI_API_KEY` 也不会改变生产行为。
 - 回滚只需 `wrangler secret delete GEMINI_API_KEY` 或把 `DECISION_PROVIDER` 改为 `typesafe`。
 - 旧判断保留在 `judgments` 表；回填会以新 `created_at` 成为“最新判断”，Web 端按时间取最新一条，不会被旧数据覆盖。
 
@@ -99,7 +99,7 @@ Google 定价页写明：Free 层 “Content used to improve our products”，P
 GEMINI_API_KEY=... node --experimental-strip-types scripts/check_gemini_adapter.mjs --live
 ```
 
-3. 设置 secret（此时 `auto` 会优先 Gemini；若不想立即切换，先设置 `DECISION_PROVIDER=typesafe`）：
+3. 设置 secret（此时仍是 TypeSafe，因为 `DECISION_PROVIDER=typesafe`）：
 
 ```bash
 printf '%s' "$GEMINI_API_KEY" | npx wrangler secret put GEMINI_API_KEY --config apps/pipeline/wrangler.jsonc
@@ -145,7 +145,7 @@ curl -X POST ".../admin/judge/<articleId>?provider=gemini" -H "x-admin-token: $T
 
 ```bash
 npx wrangler secret put GEMINI_API_KEY --config apps/pipeline/wrangler.jsonc
-# 确认 DECISION_PROVIDER 未固定为 typesafe，保持 auto 或显式设为 gemini
+# 把 DECISION_PROVIDER 改为 gemini（或 auto），再重新部署
 npx wrangler deploy --config apps/pipeline/wrangler.jsonc
 ```
 

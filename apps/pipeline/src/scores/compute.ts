@@ -24,7 +24,7 @@ const PARTY_BLOC: Record<string, string> = {
 
 const WEIGHTS = { poll: 40, market: 20, media: 15, social: 10, elite: 15 } as const;
 
-export async function computeScores(env: Env): Promise<{ candidates: number }> {
+export async function computeScores(env: Env): Promise<{ candidates: number; changed: number }> {
   const socialSince = new Date(Date.now() - 7 * 86_400_000).toISOString();
   const [pollRows, mediaRows, marketRows, socialRows, endorsementRows, parrainageRows] = await Promise.all([
     env.DB.prepare(
@@ -139,10 +139,19 @@ export async function computeScores(env: Env): Promise<{ candidates: number }> {
   }
 
   const asOf = new Date().toISOString().slice(0, 10);
-  await env.DB.prepare('DELETE FROM scores WHERE as_of = ?').bind(asOf).run();
+  // Scores are recomputed often but rarely change. Compare against what is
+  // already stored and only write the changed rows, instead of deleting and
+  // re-inserting every candidate on each run (this was ~10k D1 row writes/day).
+  const previousRows = await env.DB.prepare(
+    `SELECT entity_id, composite, components_json FROM scores WHERE as_of = ?`,
+  )
+    .bind(asOf)
+    .all<{ entity_id: string; composite: number; components_json: string }>();
+  const previous = new Map(previousRows.results.map((row) => [row.entity_id, row]));
 
   const statements = [];
   let scored = 0;
+  let changed = 0;
   for (const candidate of candidates) {
     const poll = pollMap.get(candidate.id);
     if (!poll) continue;
@@ -209,6 +218,15 @@ export async function computeScores(env: Env): Promise<{ candidates: number }> {
       demo: false,
     };
 
+    const componentsJson = JSON.stringify(components);
+    const previousRow = previous.get(candidate.id);
+    const unchanged =
+      previousRow !== undefined &&
+      Math.abs(previousRow.composite - composite) < 1e-9 &&
+      previousRow.components_json === componentsJson;
+    if (unchanged) continue;
+
+    changed += 1;
     statements.push(
       env.DB.prepare(
         `INSERT OR REPLACE INTO scores
@@ -225,7 +243,7 @@ export async function computeScores(env: Env): Promise<{ candidates: number }> {
         socialAvailable ? socialMentions / totalSocialMentions : null,
         eliteNorm,
         composite,
-        JSON.stringify(components),
+        componentsJson,
         confidence,
       ),
     );
@@ -233,11 +251,11 @@ export async function computeScores(env: Env): Promise<{ candidates: number }> {
       env.DB.prepare(
         `INSERT OR REPLACE INTO score_history (id, entity_id, as_of, composite, components_json)
          VALUES (?, ?, ?, ?, ?)`,
-      ).bind(`hist_${candidate.id}_${asOf}`, candidate.id, asOf, composite, JSON.stringify(components)),
+      ).bind(`hist_${candidate.id}_${asOf}`, candidate.id, asOf, composite, componentsJson),
     );
   }
 
   if (statements.length > 0) await env.DB.batch(statements);
   await publishLive(env, { type: 'scores', candidates: scored });
-  return { candidates: scored };
+  return { candidates: scored, changed };
 }
