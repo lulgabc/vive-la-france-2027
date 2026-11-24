@@ -19,3 +19,6 @@ __pycache__/
 
 # Separate local project embedded inside the workspace
 Gourmet/
+
+# Local data exports
+backups/

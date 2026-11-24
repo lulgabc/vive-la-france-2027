@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://vlf-web.ainet-netbook.workers.dev',
+  site: 'https://vlf-web.example.workers.dev',
   output: 'server',
   adapter: cloudflare({
     persistState: { path: '../../.wrangler/state' },

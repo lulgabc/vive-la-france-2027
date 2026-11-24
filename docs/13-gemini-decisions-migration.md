@@ -111,10 +111,10 @@ npx wrangler deploy --config apps/pipeline/wrangler.jsonc
 ```bash
 TOKEN=$(cat /tmp/vlf-prod-admin-token)
 # 基线（Jev）
-curl -s "https://vlf-pipeline.ainet-netbook.workers.dev/admin/eval/jev?provider=typesafe&limit=360" \
+curl -s "https://vlf-pipeline.example.workers.dev/admin/eval/jev?provider=typesafe&limit=360" \
   -H "x-admin-token: $TOKEN" > /tmp/eval-typesafe.json
 # 候选（Gemini）
-curl -s "https://vlf-pipeline.ainet-netbook.workers.dev/admin/eval/jev?provider=gemini&limit=360" \
+curl -s "https://vlf-pipeline.example.workers.dev/admin/eval/jev?provider=gemini&limit=360" \
   -H "x-admin-token: $TOKEN" > /tmp/eval-gemini.json
 ```
 

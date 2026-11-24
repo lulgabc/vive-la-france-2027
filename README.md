@@ -2,6 +2,8 @@
 
 实时收集 2027 法国总统/立法选举相关的舆论、新闻、观点、民调与预测市场，提供选情地图、候选人/政党评分与可解释预测。
 
+> **线上部署已移除（2026-11-24）。** Cloudflare Workers、D1、KV、Queues 已删除，仓库仅保留代码。删除前的 D1 数据备份在 `backups/2026-11-24/`（本地保留，已加入 `.gitignore`）。重新部署前需要在 `apps/*/wrangler.jsonc` 中填入新建资源的 ID。
+
 - 技术栈：[docs/01-tech-stack.md](docs/01-tech-stack.md)
 - 产品范围与评分模型：[docs/02-product-scope.md](docs/02-product-scope.md)
 - 2026-11 技术栈复核：[docs/03-stack-review-2026-11.md](docs/03-stack-review-2026-11.md)
