@@ -1,0 +1,142 @@
+{
+  "archived_at": "2026-11-24T17:30:00Z",
+  "reason": "线上部署已移除，保存部署参数与数据位置，便于下次重建",
+  "git_commit": "954a4c4",
+  "git_tag": "archive-2026-11-24",
+  "cloudflare": {
+    "account_email": "lulgabc@gmail.com",
+    "account_id": "735697da615cf58f5c2afab87f844d90",
+    "workers_dev_subdomain": "ainet-netbook",
+    "note": "子域仍属于账号；vlf-web / vlf-pipeline 已删除"
+  },
+  "previous_resources": {
+    "workers": [
+      { "name": "vlf-web", "deleted": true },
+      { "name": "vlf-pipeline", "deleted": true }
+    ],
+    "d1": [
+      {
+        "name": "vlf-main",
+        "id": "57a6f4fb-e5a6-4b8a-b3e4-b372d7568713",
+        "region": "WEUR",
+        "deleted": true
+      }
+    ],
+    "kv": [
+      {
+        "binding": "CACHE",
+        "id": "b3cb45bf28fd42d38b1995230d387dd8",
+        "deleted": true
+      },
+      {
+        "binding": "SESSION",
+        "id": "77e84a25467040228a25247f29c8ebec",
+        "deleted": true
+      }
+    ],
+    "queues": [
+      { "name": "vlf-ingest", "deleted": true },
+      { "name": "vlf-ingest-dlq", "deleted": true }
+    ],
+    "durable_objects": [
+      { "binding": "LIVE_HUB", "class": "LiveHub", "storage": "sqlite", "deleted": true }
+    ],
+    "r2": { "enabled": false, "note": "RAW binding 未使用，已从生产配置移除" }
+  },
+  "bindings": {
+    "web": ["DB (D1 vlf-main)", "SESSION (KV)", "ASSETS", "IMAGES"],
+    "pipeline": [
+      "DB (D1 vlf-main)",
+      "CACHE (KV)",
+      "INGEST_QUEUE (vlf-ingest)",
+      "LIVE_HUB (Durable Object LiveHub)",
+      "AI",
+      "WEB (service binding -> vlf-web)"
+    ]
+  },
+  "crons": [
+    { "schedule": "*/5 * * * *", "task": "RSS" },
+    { "schedule": "*/15 * * * *", "task": "GDELT, Mastodon, markets" },
+    { "schedule": "0 * * * *", "task": "X, Bluesky, score recompute" },
+    { "schedule": "0 6 * * *", "task": "full ingest, polls, momentum, scores" },
+    { "schedule": "0 */2 * * *", "task": "forecast snapshot (3 scenarios per batch)" }
+  ],
+  "vars": {
+    "SITE_URL": "https://vlf-web.<subdomain>.workers.dev",
+    "DECISION_PROVIDER": "typesafe",
+    "GEMINI_DECISION_MODEL": "gemini-decision-1",
+    "TYPESAFE_MODEL": "jev-latest",
+    "JEV_ELECTION_THRESHOLD": "0.4",
+    "X_MONTHLY_READ_CAP": "4000"
+  },
+  "secret_names": [
+    "ADMIN_TOKEN",
+    "TYPESAFE_API_KEY",
+    "X_BEARER_TOKEN (可选)",
+    "METACULUS_TOKEN (可选)",
+    "GEMINI_API_KEY (可选)"
+  ],
+  "build": {
+    "node": "22.x (repo requires >=22.23.4)",
+    "pnpm": "12.18.0",
+    "web": "PUBLIC_PIPELINE_URL=https://vlf-pipeline.<subdomain>.workers.dev pnpm --filter @vlf/web build",
+    "web_deploy_config": "apps/web/dist/server/wrangler.json",
+    "pipeline_deploy_config": "apps/pipeline/wrangler.jsonc"
+  },
+  "migrations": [
+    "0001_init.sql",
+    "0002_media_momentum.sql",
+    "0003_candidate_avatar.sql",
+    "0004_poll_averages.sql",
+    "0005_avatar_credit.sql",
+    "0006_score_history_unique.sql",
+    "0007_market_candidate.sql",
+    "0008_poll_drafts.sql",
+    "0009_endorsements.sql",
+    "0010_parrainage_baseline.sql",
+    "0011_forecast_scope.sql"
+  ],
+  "data_backup": {
+    "path": "backups/2026-11-24/",
+    "git_ignored": true,
+    "rows": 47317,
+    "size_mb": 44,
+    "validated": "restored into fresh schema; PRAGMA integrity_check = ok",
+    "tables": {
+      "sources": 24,
+      "articles": 10042,
+      "parties": 16,
+      "candidates": 22,
+      "constituencies": 107,
+      "elections": 5,
+      "candidacies": 22,
+      "endorsements": 11,
+      "forecast_runs": 127,
+      "forecast_outcomes": 10348,
+      "ingestion_runs": 9086,
+      "judgments": 6343,
+      "markets": 26,
+      "market_snapshots": 754,
+      "media_momentum": 15,
+      "parrainage_baseline": 64,
+      "poll_averages": 16,
+      "poll_drafts": 3,
+      "pollsters": 11,
+      "polls": 57,
+      "poll_results": 633,
+      "results": 1284,
+      "score_history": 1154,
+      "scores": 224,
+      "social_posts": 6922,
+      "x_budget": 1,
+      "d1_migrations": 11
+    },
+    "excluded": ["articles_fts* (FTS5)", "_cf_KV", "sqlite_sequence", "d1_migrations (recreated by migrations apply)"]
+  },
+  "known_issues_before_redeploy": [
+    "rss.ts / gdelt.ts / kalshi.ts / x.ts 的 fetch 没有超时；上游挂起会拖死 cron 并让队列消费者停摆",
+    "D1 免费层每日写入行数有限；市场历史用 OR IGNORE、评分只写变化行、评分每小时",
+    "预测快照单次最多 3 个情景，否则 CPU 超时",
+    "管理员 token 曾只存在 /tmp；重建时必须重新生成并妥善保存"
+  ]
+}

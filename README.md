@@ -17,6 +17,7 @@
 - Jev/Clef 校准报告：[docs/11-jev-calibration.md](docs/11-jev-calibration.md)
 - Web 更新机制：[docs/12-update-mechanism.md](docs/12-update-mechanism.md)
 - Gemini Decisions 迁移评估：[docs/13-gemini-decisions-migration.md](docs/13-gemini-decisions-migration.md)
+- 重新部署手册（2026-11-24 存档）：[deploy/archive/2026-11-24/RUNBOOK.md](deploy/archive/2026-11-24/RUNBOOK.md)
 - 状态：**P3 已可运行**（Bluesky、背书、五因子、PDF 复核、市场历史、情景回测、577 选区）
 
 ## 快速结论
